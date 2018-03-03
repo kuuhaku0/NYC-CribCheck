@@ -48,11 +48,17 @@ class MainTableViewController: UIViewController {
     
     private lazy var headerImageView: UIImageView = {
         let hiv = UIImageView()
-        hiv.image = #imageLiteral(resourceName: "image")
+        hiv.image = #imageLiteral(resourceName: "Lower-Manhattan")
         hiv.contentMode = .scaleAspectFill
         return hiv
     }()
     
+    //MARK: - VIOLATIONS
+    var violationsArr = [Violation]() {
+        didSet {
+            //TODO
+        }
+    }
     
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 488
@@ -73,15 +79,16 @@ class MainTableViewController: UIViewController {
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
+        tableView.backgroundView?.contentMode = .scaleAspectFill
     }
     
     private func setupUI() {
         
-//        // Header - Profile image
-//        profileImage.layer.borderWidth = 4
-//        profileImage.layer.borderColor = .white
-//        profileImage.layer.cornerRadius = 20
-//        profileImage.clipsToBounds = true
+        // Header - Profile image
+        profileImage.layer.borderWidth = 4
+        profileImage.layer.borderColor = UIColor.white.cgColor
+        profileImage.layer.cornerRadius = 20
+        profileImage.clipsToBounds = true
         
         // Header - Edit profile button
 //        editProfileButton.layer.borderColor = UIColor.gray.cgColor
