@@ -65,10 +65,11 @@ extension SearchHistoryViewController: UITableViewDelegate {
                 if onlineViolations.isEmpty {
                     self.showAlert(title: "No violations", message: "This address contains no violations. Please check the address or try a different one.")
                 }
-                
+        
                 else {
-//                    let violationVC = MainTableViewController(violations: onlineViolations)
-//                    self.present(violationVC, animated: true, completion: nil)
+                    let violationVC = MainTableViewController()
+                    self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
+                
                 }
                 
             case .failure(let error):
