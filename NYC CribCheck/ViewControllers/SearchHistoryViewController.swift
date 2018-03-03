@@ -46,15 +46,36 @@ class SearchHistoryViewController: UIViewController {
         }
     }
     
-
+    private func showAlert(title: String, message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        ac.addAction(okAction)
+        present(ac, animated: true, completion: nil)
+    }
 }
 
 
 extension SearchHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Clicked cell segues to Violation View Controller
-        let violationVC = UINavigationController(rootViewController: MainTableViewController())
-        present(violationVC, animated: true, completion: nil)
+        let locationRequest = searchHistory[indexPath.row]
+        HousingAPIClient.manager.getViolations(usingLocation: locationRequest) { result in
+            switch result {
+            case .success(let onlineViolations):
+                if onlineViolations.isEmpty {
+                    self.showAlert(title: "No violations", message: "This address contains no violations. Please check the address or try a different one.")
+                }
+                
+                else {
+//                    let violationVC = MainTableViewController(violations: onlineViolations)
+//                    self.present(violationVC, animated: true, completion: nil)
+                }
+                
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription )
+                }
+        }
+        
     }
 }
 
