@@ -1,4 +1,4 @@
-# NYC-CribCheck
+# NYC CribCheck App
 
 ### Contributors 
 - Tyler Zhao
