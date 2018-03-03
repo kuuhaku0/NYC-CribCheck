@@ -85,7 +85,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadData()
+//        loadData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
@@ -105,11 +105,6 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loadData()
-    }
-    
-    private func loadData() {
-
     }
     
     private func setupUI() {

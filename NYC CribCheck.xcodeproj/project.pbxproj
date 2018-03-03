@@ -29,6 +29,7 @@
 		81B61874204AFBA200388FC1 /* Model3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61873204AFBA200388FC1 /* Model3.swift */; };
 		81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61875204B0F9300388FC1 /* FormViewController.swift */; };
 		81B61878204B0F9D00388FC1 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */; };
+		81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61879204B25C700388FC1 /* BoroughTableViewCell.swift */; };
 		A97116CFAC91F69B41F59CC7 /* Pods_NYC_CribCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087F76EAFA843B3E1F38F7ED /* Pods_NYC_CribCheckUITests.framework */; };
 		B90458661F39AE7B062CE71A /* Pods_NYC_CribCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		81B61873204AFBA200388FC1 /* Model3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3.swift; sourceTree = "<group>"; };
 		81B61875204B0F9300388FC1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		81B61879204B25C700388FC1 /* BoroughTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoroughTableViewCell.swift; sourceTree = "<group>"; };
 		AFBD21F2A4DA0E7784FA7661 /* Pods-NYC CribCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3F53241528F098BE1DAF7F1 /* Pods-NYC CribCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		CC2FBE2FA1ED0ED5D09D1AA3 /* Pods-NYC CribCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				81A0166B204A6A43001AB55D /* DemoCell.swift */,
 				81B6186D204AFB7B00388FC1 /* EmptyCell.swift */,
+				81B61879204B25C700388FC1 /* BoroughTableViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81A0163C204A69FD001AB55D /* BoroughSelectViewController.swift in Sources */,
+				81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */,
 				81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */,
 				81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */,
 				81B6186C204AFB6F00388FC1 /* Model4.swift in Sources */,
