@@ -14,25 +14,26 @@ class PersistanceService {
     static let searchHistoryPath = "SearchHistory.plist"
     static let manager = PersistanceService()
     
-    private var locationRequests = [String]()
+    private var locationRequests = [LocationRequest]() {
+        didSet {
+            saveSearchedAddress()
+        }
+    }
     
-    private func getPreviousSearches() -> [String] {
+  func getPreviousSearches() -> [LocationRequest] {
         return self.locationRequests
     }
     
-    private func addToPreviousSearches(search: String) {
+    private func addToPreviousSearches(search: LocationRequest) {
         locationRequests.append(search)
     }
     
     private func saveSearchedAddress() {
-        //Make an encoder
+
         let propertyEncoder = PropertyListEncoder()
-        //Make the string of the path into a url to use
         let path = dataFilePath(withPathName: PersistanceService.searchHistoryPath)
         do {
-            //encode what you want encoded
             let encodedUsers = try propertyEncoder.encode(locationRequests)
-            //write it to the path.
             try encodedUsers.write(to: path, options: .atomic)
             
             print()
@@ -44,13 +45,11 @@ class PersistanceService {
     }
     
     func loadData() {
-        //Make a decoder to retrieve the users. You can just code in the do block but this is just to show when you are decoding/encoding.
         let propertyDecoder = PropertyListDecoder()
-        //Get the url where the users are stored
         let path = dataFilePath(withPathName: PersistanceService.searchHistoryPath)
         do {
             let data = try Data(contentsOf: path)
-            let locationsRequested = try propertyDecoder.decode([String].self, from: data)
+            let locationsRequested = try propertyDecoder.decode([LocationRequest].self, from: data)
             self.locationRequests = locationsRequested
         }
         catch {

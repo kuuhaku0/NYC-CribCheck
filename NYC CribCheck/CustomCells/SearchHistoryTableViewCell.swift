@@ -12,11 +12,17 @@ class SearchHistoryTableViewCell: UITableViewCell {
 
     lazy var streetAddressLabel: UILabel = {
         let lab = UILabel()
+        lab.text = "37 West 6th Street 3C"
+        lab.numberOfLines = 0
+        lab.adjustsFontForContentSizeCategory = true
         return lab
     }()
     
     lazy var cityStateZipLabel: UILabel = {
         let lab = UILabel()
+        lab.text = "New York, NY 10232"
+        lab.numberOfLines = 0
+        lab.adjustsFontForContentSizeCategory = true
         return lab
     }()
     
@@ -35,8 +41,9 @@ class SearchHistoryTableViewCell: UITableViewCell {
         setUpLabels()
     }
     
-    public func configureCell() {
-        
+    public func configureCell(location: LocationRequest) {
+        self.streetAddressLabel.text = "\(location.streetName) \(location.streetName) \(location.apartment ?? "" )"
+        self.cityStateZipLabel.text = "\(location.borough), New York \(location.zipCode)"
     }
     
     private func setUpLabels() {
@@ -45,16 +52,16 @@ class SearchHistoryTableViewCell: UITableViewCell {
         
         streetAddressLabel.snp.makeConstraints { lab in
             lab.centerX.equalTo(self.snp.centerX)
-            lab.width.equalTo(self.snp.width).offset(10)
-            lab.height.equalTo(self.snp.height).multipliedBy(0.5)
+            lab.width.equalTo(self.snp.width).multipliedBy(0.8)
+            lab.height.equalTo(self.snp.height).multipliedBy(0.2)
             lab.top.equalTo(self.snp.top).offset(5)
         }
         
         cityStateZipLabel.snp.makeConstraints { (lab) in
             lab.centerX.equalTo(self.snp.centerX)
-            lab.width.equalTo(self.snp.width).offset(10)
-            lab.height.equalTo(self.snp.height).multipliedBy(0.5)
-            lab.bottom.equalTo(self.snp.bottom).offset(5)
+            lab.width.equalTo(self.snp.width).multipliedBy(0.8)
+            lab.height.equalTo(self.snp.height).multipliedBy(0.2)
+            lab.top.equalTo(streetAddressLabel.snp.bottom).offset(1)
         }
     }
 
