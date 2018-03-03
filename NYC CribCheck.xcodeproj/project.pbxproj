@@ -26,8 +26,8 @@
 		81B6186A204AFB6600388FC1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61869204AFB6600388FC1 /* File.swift */; };
 		81B6186C204AFB6F00388FC1 /* Model4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186B204AFB6F00388FC1 /* Model4.swift */; };
 		81B6186E204AFB7B00388FC1 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186D204AFB7B00388FC1 /* EmptyCell.swift */; };
-		81B61870204AFB8C00388FC1 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186F204AFB8C00388FC1 /* model.swift */; };
-		81B61872204AFB9900388FC1 /* Model2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61871204AFB9900388FC1 /* Model2.swift */; };
+		81B61870204AFB8C00388FC1 /* LocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186F204AFB8C00388FC1 /* LocationRequest.swift */; };
+		81B61872204AFB9900388FC1 /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61871204AFB9900388FC1 /* Violation.swift */; };
 		81B61874204AFBA200388FC1 /* Model3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61873204AFBA200388FC1 /* Model3.swift */; };
 		81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61875204B0F9300388FC1 /* FormViewController.swift */; };
 		81B61878204B0F9D00388FC1 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */; };
@@ -83,8 +83,8 @@
 		81B61869204AFB6600388FC1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		81B6186B204AFB6F00388FC1 /* Model4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model4.swift; sourceTree = "<group>"; };
 		81B6186D204AFB7B00388FC1 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
-		81B6186F204AFB8C00388FC1 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
-		81B61871204AFB9900388FC1 /* Model2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model2.swift; sourceTree = "<group>"; };
+		81B6186F204AFB8C00388FC1 /* LocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequest.swift; sourceTree = "<group>"; };
+		81B61871204AFB9900388FC1 /* Violation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Violation.swift; sourceTree = "<group>"; };
 		81B61873204AFBA200388FC1 /* Model3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3.swift; sourceTree = "<group>"; };
 		81B61875204B0F9300388FC1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
@@ -191,8 +191,8 @@
 		810694D8204A713000DD0D2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				81B6186F204AFB8C00388FC1 /* model.swift */,
-				81B61871204AFB9900388FC1 /* Model2.swift */,
+				81B6186F204AFB8C00388FC1 /* LocationRequest.swift */,
+				81B61871204AFB9900388FC1 /* Violation.swift */,
 				81B61873204AFBA200388FC1 /* Model3.swift */,
 			);
 			path = Models;
@@ -574,12 +574,14 @@
 				81B6186A204AFB6600388FC1 /* File.swift in Sources */,
 				81A0166C204A6A43001AB55D /* DemoCell.swift in Sources */,
 				81B61878204B0F9D00388FC1 /* SearchHistoryViewController.swift in Sources */,
-				81B61870204AFB8C00388FC1 /* model.swift in Sources */,
+				81B61870204AFB8C00388FC1 /* LocationRequest.swift in Sources */,
 				81B61868204AFB6000388FC1 /* Model.swift in Sources */,
 				810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */,
 				8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */,
 				8196C0A2204B325200D5CC45 /* Persistance Service.swift in Sources */,
 				81B61872204AFB9900388FC1 /* Model2.swift in Sources */,
+				81B61872204AFB9900388FC1 /* Violation.swift in Sources */,
+
 				81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */,
 				81B6186E204AFB7B00388FC1 /* EmptyCell.swift in Sources */,
 			);
