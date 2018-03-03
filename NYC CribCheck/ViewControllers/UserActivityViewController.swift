@@ -9,6 +9,8 @@
 import UIKit
 import SnapKit
 
+// FOR TYLER'S USE 
+
 class UserActivityViewController: UIViewController, UITableViewDelegate {
     // Storyboard is great
     
@@ -56,19 +58,8 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
     // At this offset the Header stops its transformations
     private let headerStopOffset:CGFloat = 200 - 64
     private let hiddenLabelDistanceToTop:CGFloat = 30.0
-    private var contentToDisplay: contentTypes = .allPosts // might need this later
+//    private var contentToDisplay: contentTypes = .allPosts // might need this later
     private var selectedSegment = 0 {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    private var posts = [Post]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
-    private var comments = [Comment]() {
         didSet {
             tableView.reloadData()
         }
@@ -80,7 +71,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         let biv = UIImageView()
         biv.alpha = 0.0
         biv.contentMode = .scaleAspectFill
-        biv.image = #imageLiteral(resourceName: "image").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
+//        biv.image = #imageLiteral(resourceName: "image").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
         return biv
     }()
     
@@ -99,18 +90,18 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
         //setupSettingsButton()
-        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
+//        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "FeedCell")
         
-        let currentUser = AuthUserService.getCurrentUser()
-        print("THIS IS THE ID: " + currentUser!.uid)
-        DBService.manager.getAppUser(with: currentUser!.uid) { (appUser) in
-            self.user = appUser
-        }
+//        let currentUser = AuthUserService.getCurrentUser()
+//        print("THIS IS THE ID: " + currentUser!.uid)
+//        DBService.manager.getAppUser(with: currentUser!.uid) { (appUser) in
+//            self.user = appUser
+//        }
         
-        postsCount.text = "Posts: " + posts.count.description
-        handleLabel.text = currentUser!.displayName
-        atDisplayNameLabel.text = "@" + currentUser!.displayName!
-        hiddenLabel.text = "@" + currentUser!.displayName!
+//        postsCount.text = "Posts: " + posts.count.description
+//        handleLabel.text = currentUser!.displayName
+//        atDisplayNameLabel.text = "@" + currentUser!.displayName!
+//        hiddenLabel.text = "@" + currentUser!.displayName!
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -125,7 +116,7 @@ class UserActivityViewController: UIViewController, UITableViewDelegate {
         
         // Header - Profile image
         profileImage.layer.borderWidth = 4
-        profileImage.borderColor = .white
+//        profileImage.layer.borderColor = .white
         profileImage.layer.cornerRadius = 20
         profileImage.clipsToBounds = true
         
@@ -180,9 +171,9 @@ extension UserActivityViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //TODO: return the corresponding correct amount of cells
         if selectedSegment == 0 {
-            return posts.count
+//            return posts.count
         } else if selectedSegment == 1 {
-            return comments.count
+//            return comments.count
         } else if selectedSegment == 2{
             return about.count
         }
@@ -195,45 +186,46 @@ extension UserActivityViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if selectedSegment == 0 {
-            let post = posts[indexPath.row]
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-            cell.configureCell(post: post)
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath)
-            
-            switch self.selectedSegment {
-            case 0: // All posts
-                let post = posts[indexPath.row]
-                cell.isUserInteractionEnabled = true
-                cell.textLabel?.text = post.header
-                cell.detailTextLabel?.text = post.body
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-            case 1: // All comments
-                let comment = comments[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+//        if selectedSegment == 0 {
+////            let post = posts[indexPath.row]
+//
+////            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+////            cell.configureCell(post: post)
+////            return cell
+//        } else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath)
+//
+//            switch self.selectedSegment {
+//            case 0: // All posts
+////                let post = posts[indexPath.row]
+////                cell.isUserInteractionEnabled = true
+////                cell.textLabel?.text = post.header
+////                cell.detailTextLabel?.text = post.body
+//                cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
+//            case 1: // All comments
+//                let comment = comments[indexPath.row]
                 
-                cell.isUserInteractionEnabled = true
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-                cell.textLabel?.text = comment.userName
-                cell.detailTextLabel?.text = comment.text
-            case 2: // About
-                let about = self.about[indexPath.row]
-                if indexPath.row == 0 && indexPath.section == 0 {
-                    cell.isUserInteractionEnabled = false
-                    cell.textLabel?.text = "Account"
-                    cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-                    cell.detailTextLabel?.text = ""
-                } else if indexPath.section == 0 {
-                    cell.textLabel?.text = about
-                    cell.detailTextLabel?.text = ""
-                }
-            default:
-                break
-            }
+//                cell.isUserInteractionEnabled = true
+//                cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
+//                cell.textLabel?.text = comment.userName
+//                cell.detailTextLabel?.text = comment.text
+//            case 2: // About
+//                let about = self.about[indexPath.row]
+//                if indexPath.row == 0 && indexPath.section == 0 {
+//                    cell.isUserInteractionEnabled = false
+//                    cell.textLabel?.text = "Account"
+//                    cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+//                    cell.detailTextLabel?.text = ""
+//                } else if indexPath.section == 0 {
+//                    cell.textLabel?.text = about
+//                    cell.detailTextLabel?.text = ""
+//                }
+//            default:
+//                break
+//            }
             return cell
-        }
+//        }
     }
 }
 

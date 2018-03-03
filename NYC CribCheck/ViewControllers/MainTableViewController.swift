@@ -24,6 +24,8 @@
 import FoldingCell
 import UIKit
 
+// FOR TYLER'S USE ONLY 
+
 class MainTableViewController: UITableViewController {
 
     let kCloseCellHeight: CGFloat = 179
@@ -49,7 +51,7 @@ class MainTableViewController: UITableViewController {
 extension MainTableViewController {
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 10
+        return 5
     }
 
     override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
