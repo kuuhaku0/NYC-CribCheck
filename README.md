@@ -1,6 +1,6 @@
 # NYC-CribCheck
 
-## Contributors 
+### Contributors 
 - Tyler Zhao
 - Diego Baca
 - Lisa Jiang
