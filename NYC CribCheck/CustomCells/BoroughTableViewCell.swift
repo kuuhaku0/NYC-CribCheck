@@ -10,7 +10,11 @@ import UIKit
 
 class BoroughTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.layer.cornerRadius = 15
+        }
+    }
     @IBOutlet weak var boroughLabel: UILabel!
     @IBOutlet weak var boroughImage: UIImageView! {
         didSet {
@@ -28,8 +32,9 @@ class BoroughTableViewCell: UITableViewCell {
     
     
     //need model
-    public func configureCell(with boroughs: String) {
-        
+    public func configureCell(with boroughs: String, image: UIImage) {
+        boroughLabel.text = boroughs
+        boroughImage.image = image
     }
 
 }
