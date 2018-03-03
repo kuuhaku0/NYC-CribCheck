@@ -33,7 +33,7 @@
         <!--Item 2-->
         <scene sceneID="Zuq-SP-yj2">
             <objects>
-                <viewController id="Mez-xk-ctD" sceneMemberID="viewController">
+                <viewController id="Mez-xk-ctD" customClass="SearchHistoryViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pj7-AP-8CC"/>
                         <viewControllerLayoutGuide type="bottom" id="hx7-sl-Wnj"/>
@@ -70,7 +70,7 @@
         <!--Item-->
         <scene sceneID="n7N-Jq-Jdn">
             <objects>
-                <viewController id="8qq-Oq-qUv" sceneMemberID="viewController">
+                <viewController id="8qq-Oq-qUv" customClass="BoroughSelectViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SkP-xZ-171"/>
                         <viewControllerLayoutGuide type="bottom" id="UWN-vB-lzd"/>
@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="-786" y="165"/>
         </scene>
-        <!--View Controller-->
+        <!--Form View Controller-->
         <scene sceneID="QdF-3f-PDT">
             <objects>
-                <viewController id="Uod-5f-fO5" sceneMemberID="viewController">
+                <viewController id="Uod-5f-fO5" customClass="FormViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y5k-wG-eyi"/>
                         <viewControllerLayoutGuide type="bottom" id="rKR-WV-omf"/>
