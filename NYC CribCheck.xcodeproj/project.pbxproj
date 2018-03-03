@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
+		810694DA204A715000DD0D2E /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810694D9204A715000DD0D2E /* ProfileView.storyboard */; };
+		810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810694DB204A71A900DD0D2E /* UserActivityViewController.swift */; };
 		81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01639204A69FD001AB55D /* AppDelegate.swift */; };
 		81A0163C204A69FD001AB55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0163B204A69FD001AB55D /* ViewController.swift */; };
 		81A01641204A69FD001AB55D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A01640204A69FD001AB55D /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D8D64A568F2649934D6841 /* Pods-NYC CribCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		810694D9204A715000DD0D2E /* ProfileView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
+		810694DB204A71A900DD0D2E /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
 		81A01636204A69FD001AB55D /* NYC CribCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYC CribCheck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A01639204A69FD001AB55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81A0163B204A69FD001AB55D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		810694D3204A70D000DD0D2E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
+				81A0166D204A6A73001AB55D /* Main.storyboard */,
+				810694D9204A715000DD0D2E /* ProfileView.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		810694D4204A70E300DD0D2E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81A0163B204A69FD001AB55D /* ViewController.swift */,
+				81A01667204A6A11001AB55D /* MainTableViewController.swift */,
+				810694DB204A71A900DD0D2E /* UserActivityViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		810694D5204A70FC00DD0D2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81A01645204A69FD001AB55D /* Info.plist */,
+				81A01639204A69FD001AB55D /* AppDelegate.swift */,
+				81A01640204A69FD001AB55D /* Assets.xcassets */,
+				81A01669204A6A38001AB55D /* Fonts */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		810694D6204A710D00DD0D2E /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				81A0166B204A6A43001AB55D /* DemoCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		810694D7204A711800DD0D2E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		810694D8204A713000DD0D2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		81A0162D204A69FD001AB55D = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +187,12 @@
 		81A01638204A69FD001AB55D /* NYC CribCheck */ = {
 			isa = PBXGroup;
 			children = (
-				81A01639204A69FD001AB55D /* AppDelegate.swift */,
-				81A0166B204A6A43001AB55D /* DemoCell.swift */,
-				81A0163B204A69FD001AB55D /* ViewController.swift */,
-				81A01667204A6A11001AB55D /* MainTableViewController.swift */,
-				81A01640204A69FD001AB55D /* Assets.xcassets */,
-				81A01669204A6A38001AB55D /* Fonts */,
-				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
-				81A0166D204A6A73001AB55D /* Main.storyboard */,
-				81A01645204A69FD001AB55D /* Info.plist */,
+				810694D8204A713000DD0D2E /* Models */,
+				810694D7204A711800DD0D2E /* Services */,
+				810694D6204A710D00DD0D2E /* CustomCells */,
+				810694D3204A70D000DD0D2E /* Storyboards */,
+				810694D4204A70E300DD0D2E /* ViewControllers */,
+				810694D5204A70FC00DD0D2E /* Supporting Files */,
 			);
 			path = "NYC CribCheck";
 			sourceTree = "<group>";
@@ -294,6 +348,7 @@
 				81A01641204A69FD001AB55D /* Assets.xcassets in Resources */,
 				81A0166A204A6A38001AB55D /* Fonts in Resources */,
 				81A0166E204A6A73001AB55D /* Main.storyboard in Resources */,
+				810694DA204A715000DD0D2E /* ProfileView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +532,7 @@
 				81A0163C204A69FD001AB55D /* ViewController.swift in Sources */,
 				81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */,
 				81A0166C204A6A43001AB55D /* DemoCell.swift in Sources */,
+				810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */,
 				81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
