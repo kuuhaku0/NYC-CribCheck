@@ -17,5 +17,5 @@ struct LocationRequest: Codable {
     let apartment: String?
     let zipCode: String
     
-    static let dummyLR = LocationRequest.init(borough: "Queens", houseNumber: "355", streetName: "east 48 street" ,apartment: "2R", zipCode: "11203")
+    static let dummyLR = LocationRequest.init(borough: "brooklyn", houseNumber: "355", streetName: "east 48 street" ,apartment: "2R", zipCode: "11203")
 }
