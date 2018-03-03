@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
+		81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01639204A69FD001AB55D /* AppDelegate.swift */; };
+		81A0163C204A69FD001AB55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0163B204A69FD001AB55D /* ViewController.swift */; };
+		81A01641204A69FD001AB55D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A01640204A69FD001AB55D /* Assets.xcassets */; };
+		81A01644204A69FD001AB55D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A01642204A69FD001AB55D /* LaunchScreen.storyboard */; };
+		81A0164F204A69FD001AB55D /* NYC_CribCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0164E204A69FD001AB55D /* NYC_CribCheckTests.swift */; };
+		81A0165A204A69FD001AB55D /* NYC_CribCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01659204A69FD001AB55D /* NYC_CribCheckUITests.swift */; };
+		81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01667204A6A11001AB55D /* MainTableViewController.swift */; };
+		81A0166A204A6A38001AB55D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 81A01669204A6A38001AB55D /* Fonts */; };
+		81A0166C204A6A43001AB55D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0166B204A6A43001AB55D /* DemoCell.swift */; };
+		81A0166E204A6A73001AB55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A0166D204A6A73001AB55D /* Main.storyboard */; };
+		A97116CFAC91F69B41F59CC7 /* Pods_NYC_CribCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087F76EAFA843B3E1F38F7ED /* Pods_NYC_CribCheckUITests.framework */; };
+		B90458661F39AE7B062CE71A /* Pods_NYC_CribCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81A0164B204A69FD001AB55D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81A0162E204A69FD001AB55D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81A01635204A69FD001AB55D;
+			remoteInfo = "NYC CribCheck";
+		};
+		81A01656204A69FD001AB55D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81A0162E204A69FD001AB55D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81A01635204A69FD001AB55D;
+			remoteInfo = "NYC CribCheck";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00FC5AB48D1D0FF2BDC3A426 /* Pods-NYC CribCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
+		087F76EAFA843B3E1F38F7ED /* Pods_NYC_CribCheckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D8D64A568F2649934D6841 /* Pods-NYC CribCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A01636204A69FD001AB55D /* NYC CribCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYC CribCheck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A01639204A69FD001AB55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81A0163B204A69FD001AB55D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81A01640204A69FD001AB55D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81A01643204A69FD001AB55D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81A01645204A69FD001AB55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81A0164A204A69FD001AB55D /* NYC CribCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYC CribCheckTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A0164E204A69FD001AB55D /* NYC_CribCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYC_CribCheckTests.swift; sourceTree = "<group>"; };
+		81A01650204A69FD001AB55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81A01655204A69FD001AB55D /* NYC CribCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYC CribCheckUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A01659204A69FD001AB55D /* NYC_CribCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYC_CribCheckUITests.swift; sourceTree = "<group>"; };
+		81A0165B204A69FD001AB55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81A01667204A6A11001AB55D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		81A01669204A6A38001AB55D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		81A0166B204A6A43001AB55D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		81A0166D204A6A73001AB55D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AFBD21F2A4DA0E7784FA7661 /* Pods-NYC CribCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3F53241528F098BE1DAF7F1 /* Pods-NYC CribCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		CC2FBE2FA1ED0ED5D09D1AA3 /* Pods-NYC CribCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6D212A5B9E9603C7B27ED04 /* Pods-NYC CribCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheck.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81A01633204A69FD001AB55D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A01647204A69FD001AB55D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B90458661F39AE7B062CE71A /* Pods_NYC_CribCheckTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A01652204A69FD001AB55D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A97116CFAC91F69B41F59CC7 /* Pods_NYC_CribCheckUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A92849BF2EB1AEFAB74EAA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */,
+				3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */,
+				087F76EAFA843B3E1F38F7ED /* Pods_NYC_CribCheckUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81A0162D204A69FD001AB55D = {
+			isa = PBXGroup;
+			children = (
+				81A01638204A69FD001AB55D /* NYC CribCheck */,
+				81A0164D204A69FD001AB55D /* NYC CribCheckTests */,
+				81A01658204A69FD001AB55D /* NYC CribCheckUITests */,
+				81A01637204A69FD001AB55D /* Products */,
+				992062D4F35F44B28DFC56F7 /* Pods */,
+				1A92849BF2EB1AEFAB74EAA5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		81A01637204A69FD001AB55D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81A01636204A69FD001AB55D /* NYC CribCheck.app */,
+				81A0164A204A69FD001AB55D /* NYC CribCheckTests.xctest */,
+				81A01655204A69FD001AB55D /* NYC CribCheckUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81A01638204A69FD001AB55D /* NYC CribCheck */ = {
+			isa = PBXGroup;
+			children = (
+				81A01639204A69FD001AB55D /* AppDelegate.swift */,
+				81A0166B204A6A43001AB55D /* DemoCell.swift */,
+				81A0163B204A69FD001AB55D /* ViewController.swift */,
+				81A01667204A6A11001AB55D /* MainTableViewController.swift */,
+				81A01640204A69FD001AB55D /* Assets.xcassets */,
+				81A01669204A6A38001AB55D /* Fonts */,
+				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
+				81A0166D204A6A73001AB55D /* Main.storyboard */,
+				81A01645204A69FD001AB55D /* Info.plist */,
+			);
+			path = "NYC CribCheck";
+			sourceTree = "<group>";
+		};
+		81A0164D204A69FD001AB55D /* NYC CribCheckTests */ = {
+			isa = PBXGroup;
+			children = (
+				81A0164E204A69FD001AB55D /* NYC_CribCheckTests.swift */,
+				81A01650204A69FD001AB55D /* Info.plist */,
+			);
+			path = "NYC CribCheckTests";
+			sourceTree = "<group>";
+		};
+		81A01658204A69FD001AB55D /* NYC CribCheckUITests */ = {
+			isa = PBXGroup;
+			children = (
+				81A01659204A69FD001AB55D /* NYC_CribCheckUITests.swift */,
+				81A0165B204A69FD001AB55D /* Info.plist */,
+			);
+			path = "NYC CribCheckUITests";
+			sourceTree = "<group>";
+		};
+		992062D4F35F44B28DFC56F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3F53241528F098BE1DAF7F1 /* Pods-NYC CribCheck.debug.xcconfig */,
+				E6D212A5B9E9603C7B27ED04 /* Pods-NYC CribCheck.release.xcconfig */,
+				00FC5AB48D1D0FF2BDC3A426 /* Pods-NYC CribCheckTests.debug.xcconfig */,
+				AFBD21F2A4DA0E7784FA7661 /* Pods-NYC CribCheckTests.release.xcconfig */,
+				CC2FBE2FA1ED0ED5D09D1AA3 /* Pods-NYC CribCheckUITests.debug.xcconfig */,
+				37D8D64A568F2649934D6841 /* Pods-NYC CribCheckUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81A01635204A69FD001AB55D /* NYC CribCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81A0165E204A69FD001AB55D /* Build configuration list for PBXNativeTarget "NYC CribCheck" */;
+			buildPhases = (
+				739B1E7CA9470C6CBD491541 /* [CP] Check Pods Manifest.lock */,
+				81A01632204A69FD001AB55D /* Sources */,
+				81A01633204A69FD001AB55D /* Frameworks */,
+				81A01634204A69FD001AB55D /* Resources */,
+				14B7D57DBD900B084DB33B53 /* [CP] Embed Pods Frameworks */,
+				897AB9A2C29B8DFBEA6326F9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NYC CribCheck";
+			productName = "NYC CribCheck";
+			productReference = 81A01636204A69FD001AB55D /* NYC CribCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81A01649204A69FD001AB55D /* NYC CribCheckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81A01661204A69FD001AB55D /* Build configuration list for PBXNativeTarget "NYC CribCheckTests" */;
+			buildPhases = (
+				BAA046F01CD6FBAAFC10ECDD /* [CP] Check Pods Manifest.lock */,
+				81A01646204A69FD001AB55D /* Sources */,
+				81A01647204A69FD001AB55D /* Frameworks */,
+				81A01648204A69FD001AB55D /* Resources */,
+				4522D1F4490A8F57C82A9180 /* [CP] Embed Pods Frameworks */,
+				692E3DAA2F2A360A4A5A82B3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81A0164C204A69FD001AB55D /* PBXTargetDependency */,
+			);
+			name = "NYC CribCheckTests";
+			productName = "NYC CribCheckTests";
+			productReference = 81A0164A204A69FD001AB55D /* NYC CribCheckTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		81A01654204A69FD001AB55D /* NYC CribCheckUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81A01664204A69FD001AB55D /* Build configuration list for PBXNativeTarget "NYC CribCheckUITests" */;
+			buildPhases = (
+				4FD32A3FF3433E3D5005FC6F /* [CP] Check Pods Manifest.lock */,
+				81A01651204A69FD001AB55D /* Sources */,
+				81A01652204A69FD001AB55D /* Frameworks */,
+				81A01653204A69FD001AB55D /* Resources */,
+				8345D73932977E124317EA60 /* [CP] Embed Pods Frameworks */,
+				17452B70EE2669D3FAFC032C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81A01657204A69FD001AB55D /* PBXTargetDependency */,
+			);
+			name = "NYC CribCheckUITests";
+			productName = "NYC CribCheckUITests";
+			productReference = 81A01655204A69FD001AB55D /* NYC CribCheckUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81A0162E204A69FD001AB55D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = basedOnTy;
+				TargetAttributes = {
+					81A01635204A69FD001AB55D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					81A01649204A69FD001AB55D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 81A01635204A69FD001AB55D;
+					};
+					81A01654204A69FD001AB55D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 81A01635204A69FD001AB55D;
+					};
+				};
+			};
+			buildConfigurationList = 81A01631204A69FD001AB55D /* Build configuration list for PBXProject "NYC CribCheck" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81A0162D204A69FD001AB55D;
+			productRefGroup = 81A01637204A69FD001AB55D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81A01635204A69FD001AB55D /* NYC CribCheck */,
+				81A01649204A69FD001AB55D /* NYC CribCheckTests */,
+				81A01654204A69FD001AB55D /* NYC CribCheckUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81A01634204A69FD001AB55D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A01644204A69FD001AB55D /* LaunchScreen.storyboard in Resources */,
+				81A01641204A69FD001AB55D /* Assets.xcassets in Resources */,
+				81A0166A204A6A38001AB55D /* Fonts in Resources */,
+				81A0166E204A6A73001AB55D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A01648204A69FD001AB55D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A01653204A69FD001AB55D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14B7D57DBD900B084DB33B53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17452B70EE2669D3FAFC032C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4522D1F4490A8F57C82A9180 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FD32A3FF3433E3D5005FC6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYC CribCheckUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		692E3DAA2F2A360A4A5A82B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		739B1E7CA9470C6CBD491541 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYC CribCheck-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8345D73932977E124317EA60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		897AB9A2C29B8DFBEA6326F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAA046F01CD6FBAAFC10ECDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYC CribCheckTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81A01632204A69FD001AB55D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A0163C204A69FD001AB55D /* ViewController.swift in Sources */,
+				81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */,
+				81A0166C204A6A43001AB55D /* DemoCell.swift in Sources */,
+				81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A01646204A69FD001AB55D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A0164F204A69FD001AB55D /* NYC_CribCheckTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A01651204A69FD001AB55D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A0165A204A69FD001AB55D /* NYC_CribCheckUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81A0164C204A69FD001AB55D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81A01635204A69FD001AB55D /* NYC CribCheck */;
+			targetProxy = 81A0164B204A69FD001AB55D /* PBXContainerItemProxy */;
+		};
+		81A01657204A69FD001AB55D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81A01635204A69FD001AB55D /* NYC CribCheck */;
+			targetProxy = 81A01656204A69FD001AB55D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		81A01642204A69FD001AB55D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81A01643204A69FD001AB55D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81A0165C204A69FD001AB55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		81A0165D204A69FD001AB55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81A0165F204A69FD001AB55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F53241528F098BE1DAF7F1 /* Pods-NYC CribCheck.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
+				INFOPLIST_FILE = "NYC CribCheck/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheck";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81A01660204A69FD001AB55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6D212A5B9E9603C7B27ED04 /* Pods-NYC CribCheck.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
+				INFOPLIST_FILE = "NYC CribCheck/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheck";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		81A01662204A69FD001AB55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FC5AB48D1D0FF2BDC3A426 /* Pods-NYC CribCheckTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
+				INFOPLIST_FILE = "NYC CribCheckTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheckTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYC CribCheck.app/NYC CribCheck";
+			};
+			name = Debug;
+		};
+		81A01663204A69FD001AB55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFBD21F2A4DA0E7784FA7661 /* Pods-NYC CribCheckTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
+				INFOPLIST_FILE = "NYC CribCheckTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheckTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NYC CribCheck.app/NYC CribCheck";
+			};
+			name = Release;
+		};
+		81A01665204A69FD001AB55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC2FBE2FA1ED0ED5D09D1AA3 /* Pods-NYC CribCheckUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
+				INFOPLIST_FILE = "NYC CribCheckUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheckUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NYC CribCheck";
+			};
+			name = Debug;
+		};
+		81A01666204A69FD001AB55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37D8D64A568F2649934D6841 /* Pods-NYC CribCheckUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSNU4DN7MY;
+				INFOPLIST_FILE = "NYC CribCheckUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheckUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NYC CribCheck";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81A01631204A69FD001AB55D /* Build configuration list for PBXProject "NYC CribCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81A0165C204A69FD001AB55D /* Debug */,
+				81A0165D204A69FD001AB55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81A0165E204A69FD001AB55D /* Build configuration list for PBXNativeTarget "NYC CribCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81A0165F204A69FD001AB55D /* Debug */,
+				81A01660204A69FD001AB55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81A01661204A69FD001AB55D /* Build configuration list for PBXNativeTarget "NYC CribCheckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81A01662204A69FD001AB55D /* Debug */,
+				81A01663204A69FD001AB55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81A01664204A69FD001AB55D /* Build configuration list for PBXNativeTarget "NYC CribCheckUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81A01665204A69FD001AB55D /* Debug */,
+				81A01666204A69FD001AB55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81A0162E204A69FD001AB55D /* Project object */;
+}
