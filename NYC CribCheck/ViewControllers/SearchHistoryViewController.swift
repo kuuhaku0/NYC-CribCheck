@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import SnapKit
 
 class SearchHistoryViewController: UIViewController {
+    
+    let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpTV()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setUpTV() {
+        self.view.addSubview(tableView)
+        tableView.snp.makeConstraints { tv in
+            tv.edges.equalTo(self.view.safeAreaLayoutGuide.snp.edges)
+        }
     }
     
 
