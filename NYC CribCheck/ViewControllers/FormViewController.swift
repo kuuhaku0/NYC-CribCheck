@@ -49,7 +49,6 @@ class FormViewController: UIViewController {
     
     var locationRequest: LocationRequest!
     private func search() {
-        var apartment = apartmentTextfield.text?.uppercased()
         guard let houseNumber = houseNumberTextfield.text else {
             showAlert(title: "Missing Input", message: "All Fields must be filled in")
             return
@@ -62,12 +61,12 @@ class FormViewController: UIViewController {
             showAlert(title: "Missing Input", message: "All Fields must be filled in")
             return
         }
+        var apartment: String?
         if apartmentTextfield.text != nil && !(apartmentTextfield.text?.isEmpty)! {
-            let apartment = apartmentTextfield.text
+            apartment = apartmentTextfield.text
         } else {
             apartment = nil
         }
-        
         locationRequest = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
         //TODO: api call with the above params, completion handler contains perform segue
         //completion should populate violationsArr
@@ -78,7 +77,6 @@ class FormViewController: UIViewController {
         // returns [violations]
         //        case let .failure(let failure):
         //        returns an error
-        
         
         HousingAPIClient.manager.getViolations(usingLocation: locationRequest) { (result) in
             switch result {
@@ -99,7 +97,7 @@ class FormViewController: UIViewController {
         if segue.destination is MainTableViewController {
             let mainTableVC = segue.destination as? MainTableViewController
             mainTableVC?.violationsArr = violationsArr
-//            mainTableVC.locationRequest = locationRequest
+            mainTableVC?.locationRequest = locationRequest
         }
     }
     
@@ -117,7 +115,7 @@ extension FormViewController: UITextFieldDelegate {
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
         }
-        
+
         if textField.tag == 4 {
             //Numbers only handling for postCode textfield
             let allowedCharacters = CharacterSet.decimalDigits

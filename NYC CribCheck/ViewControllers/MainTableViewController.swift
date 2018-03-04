@@ -9,6 +9,7 @@ import Material
 
 class MainTableViewController: UIViewController {
     
+    @IBOutlet weak var address: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerLabel: UILabel!
@@ -16,7 +17,11 @@ class MainTableViewController: UIViewController {
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var segmentedView: UIView!
+    @IBOutlet weak var segmentedController: UISegmentedControl!
     
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: // All comments
@@ -55,12 +60,16 @@ class MainTableViewController: UIViewController {
     }()
     
     //MARK: - VIOLATIONS
+
     var violationsArr = [Violation]() {
         didSet {
-            //TODO
-            print("violations from main",violationsArr)
+            tableView?.reloadData()
         }
     }
+    
+    var locationRequest: LocationRequest!
+    
+    var selectedBorough = ""
     
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 488
@@ -69,6 +78,13 @@ class MainTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let btn = UIButton(frame: CGRect(x: 4, y: 20, width: 44, height: 44))
+//        btn.setImage(#imageLiteral(resourceName: "Menu"), for: .normal)
+//        btn.tintColor = UIColor.white
+        
+        // ADDS BUTTON TO ALL VIEWS
+//        UIApplication.shared.keyWindow?.addSubview(btn)
+        
         setup()
         setupUI()
         tableView.delegate = self
@@ -77,12 +93,19 @@ class MainTableViewController: UIViewController {
     }
 
     private func setup() {
-        cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
+        
+        
+        let font = UIFont.systemFont(ofSize: 16)
+        segmentedController.setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
+        
+        cellHeights = Array(repeating: kCloseCellHeight, count: violationsArr.count )
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
             //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
         tableView.backgroundView?.contentMode = .scaleAspectFill
+        
+        address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"
     }
     
     private func setupUI() {
@@ -108,34 +131,33 @@ class MainTableViewController: UIViewController {
 }
 
 // MARK: - TableView
-
 extension MainTableViewController: UITableViewDataSource {
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 5
+        return violationsArr.count
     }
 
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let cell as DemoCell = cell else {
             return
         }
-
         cell.backgroundColor = .clear
-
         if cellHeights[indexPath.row] == kCloseCellHeight {
             cell.unfold(false, animated: false, completion: nil)
         } else {
             cell.unfold(true, animated: false, completion: nil)
         }
-
         cell.number = indexPath.row
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! DemoCell
+        let violation = violationsArr[indexPath.row]
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
+        
+        cell.configCell(with: violation, borough: locationRequest.borough)
         return cell
     }
 
@@ -144,13 +166,10 @@ extension MainTableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
-
         if cell.isAnimating() {
             return
         }
-
         var duration = 0.0
         let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
         if cellIsCollapsed {
