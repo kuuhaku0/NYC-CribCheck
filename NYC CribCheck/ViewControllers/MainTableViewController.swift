@@ -3,6 +3,7 @@
 import FoldingCell
 import UIKit
 import SnapKit
+import Material
 
 // FOR TYLER'S USE ONLY 
 
@@ -29,7 +30,7 @@ class MainTableViewController: UIViewController {
         }
     }
     
-    private let headerStopOffset:CGFloat = 200 - 64
+    private let headerStopOffset:CGFloat = 300 - 64
     private let hiddenLabelDistanceToTop:CGFloat = 30.0
     //    private var contentToDisplay: contentTypes = .allPosts // might need this later
     private var selectedSegment = 0 {
@@ -42,7 +43,7 @@ class MainTableViewController: UIViewController {
         let biv = UIImageView()
         biv.alpha = 0.0
         biv.contentMode = .scaleAspectFill
-        //        biv.image = #imageLiteral(resourceName: "image").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
+        biv.image = #imageLiteral(resourceName: "Lower-Manhattan").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
         return biv
     }()
     
@@ -80,22 +81,11 @@ class MainTableViewController: UIViewController {
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
+            //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
         tableView.backgroundView?.contentMode = .scaleAspectFill
     }
     
     private func setupUI() {
-        
-        // Header - Profile image
-        profileImage.layer.borderWidth = 4
-        profileImage.layer.borderColor = UIColor.white.cgColor
-        profileImage.layer.cornerRadius = 20
-        profileImage.clipsToBounds = true
-        
-        // Header - Edit profile button
-//        editProfileButton.layer.borderColor = UIColor.gray.cgColor
-//        editProfileButton.layer.borderWidth = 1
-//        editProfileButton.layer.cornerRadius = 14
-        
         headerView.clipsToBounds = true
         
         // Header - imageView

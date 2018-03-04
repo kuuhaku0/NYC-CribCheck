@@ -11,6 +11,7 @@ pod 'FoldingCell'
 pod 'Kingfisher'
 pod 'Alamofire'
 pod 'SnapKit'
+pod 'Material'
 
   target 'NYC CribCheckTests' do
     inherit! :search_paths
