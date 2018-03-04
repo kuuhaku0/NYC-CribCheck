@@ -43,7 +43,7 @@ class SearchHistoryTableViewCell: UITableViewCell {
     }
     
     public func configureCell(location: LocationRequest) {
-        self.streetAddressLabel.text = "\(location.streetName) \(location.streetName) \(location.apartment ?? "" )"
+        self.streetAddressLabel.text = "\(location.houseNumber) \(location.streetName) \(location.apartment ?? "" )"
         self.cityStateZipLabel.text = "\(location.borough), New York \(location.zipCode)"
     }
     

@@ -18,12 +18,12 @@ class FormViewController: UIViewController {
     @IBOutlet weak var apartmentTextfield: UITextField!
     @IBOutlet weak var zipCodeTextfield: UITextField!
     
-  
+    
     //    @IBOutlet weak var houseNumberLabel: UILabel!
     //    @IBOutlet weak var streetNameLabel: UILabel!
     //    @IBOutlet weak var apartmentLabel: UILabel!
     //    @IBOutlet weak var zipCodeLabel: UILabel!
-
+    
     
     @IBOutlet weak var searchButton:UIButton!
     
@@ -65,44 +65,45 @@ class FormViewController: UIViewController {
             let apartment = apartmentTextfield.text
         } else {
             apartment = nil
+        }
+        
+        let location = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
+        //TODO: api call with the above params, completion handler contains perform segue
+        //completion should populate violationsArr
+        //violationsArr = [Violation]()
+        //switch on result if failure error
+        //        switch result {
+        //        case .success(let success):
+        // returns [violations]
+        //        case let .failure(let failure):
+        //        returns an error
+        
+        
+        HousingAPIClient.manager.getViolations(usingLocation: location) { (result) in
+            switch result {
+                
+            case .success(let onlineViolations):
+//                PersistanceService.manager.addToPreviousSearches(search: location)
+                self.violationsArr = onlineViolations
+                self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
+            case .failure(_):
+                self.showAlert(title: "Error", message: "No results found, please check address")
+            }
+        }
     }
     
-    let location = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
-    //TODO: api call with the above params, completion handler contains perform segue
-    //completion should populate violationsArr
-    //violationsArr = [Violation]()
-    //switch on result if failure error
-    //        switch result {
-    //        case .success(let success):
-    // returns [violations]
-    //        case let .failure(let failure):
-    //        returns an error
-    
-    
-    HousingAPIClient.manager.getViolations(usingLocation: location) { (result) in
-    switch result {
-    
-    case .success(let onlineViolations):
-    self.violationsArr = onlineViolations
-    self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
-    case .failure(_):
-    self.showAlert(title: "Error", message: "No results found, please check address")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //send array of violations to maintableviewcontroller
+        if segue.destination is MainTableViewController {
+            let mainTableVC = segue.destination as? MainTableViewController
+            mainTableVC?.violationsArr = violationsArr
+        }
     }
+    
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        search()
     }
-}
-
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //send array of violations to maintableviewcontroller
-    if segue.destination is MainTableViewController {
-        let mainTableVC = segue.destination as? MainTableViewController
-        mainTableVC?.violationsArr = violationsArr
-    }
-}
-
-@IBAction func submitButtonPressed(_ sender: Any) {
-    search()
-}
-
+    
 }
 extension FormViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
