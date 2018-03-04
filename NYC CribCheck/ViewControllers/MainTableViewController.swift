@@ -62,7 +62,7 @@ class MainTableViewController: UIViewController {
         }
     }
     
-    var locationRequest: LocationRequest?
+    var locationRequest: LocationRequest!
     
     var selectedBorough = ""
     
