@@ -20,14 +20,14 @@ class PersistanceService {
         }
     }
     
-  func getPreviousSearches() -> [LocationRequest] {
+    public func getPreviousSearches() -> [LocationRequest] {
         return self.locationRequests
     }
     
-    private func addToPreviousSearches(search: LocationRequest) {
-        locationRequests.append(search)
+    public func addToPreviousSearches(search: LocationRequest) {
+        // TODO: linear runtime, fix it
+        locationRequests.insert(search, at: 0)
     }
-    
     private func saveSearchedAddress() {
 
         let propertyEncoder = PropertyListEncoder()
@@ -35,16 +35,12 @@ class PersistanceService {
         do {
             let encodedUsers = try propertyEncoder.encode(locationRequests)
             try encodedUsers.write(to: path, options: .atomic)
-            
-            print()
-        }
-            
-        catch {
+        } catch {
             print(error.localizedDescription)
         }
     }
     
-    func loadData() {
+    public func loadData() {
         let propertyDecoder = PropertyListDecoder()
         let path = dataFilePath(withPathName: PersistanceService.searchHistoryPath)
         do {
@@ -65,6 +61,7 @@ class PersistanceService {
         return PersistanceService.manager.documentDirectory().appendingPathComponent(path)
     }
     
-    
+    // just loads things into manager
+    public func configure(){}
     
 }

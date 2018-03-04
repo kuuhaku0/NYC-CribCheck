@@ -50,7 +50,7 @@ struct Violation: Codable {
     let description: String
     let violationStatus: String
     let approvedDate: String
-    let issueDate: String
+    let issueDate: String?
     let inspectionDate: String
     let `class`: String
     let currentStatus: String

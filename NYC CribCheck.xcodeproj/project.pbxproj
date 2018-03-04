@@ -10,6 +10,7 @@
 		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
 		810694DA204A715000DD0D2E /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810694D9204A715000DD0D2E /* ProfileView.storyboard */; };
 		810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810694DB204A71A900DD0D2E /* UserActivityViewController.swift */; };
+		817DAF7F204B7CD8006D42BE /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61871204AFB9900388FC1 /* Violation.swift */; };
 		8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */; };
 		8196C0A2204B325200D5CC45 /* Persistance Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C0A1204B325200D5CC45 /* Persistance Service.swift */; };
 		81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01639204A69FD001AB55D /* AppDelegate.swift */; };
@@ -564,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817DAF7F204B7CD8006D42BE /* Violation.swift in Sources */,
 				81A0163C204A69FD001AB55D /* BoroughSelectViewController.swift in Sources */,
 				81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */,
 				81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */,

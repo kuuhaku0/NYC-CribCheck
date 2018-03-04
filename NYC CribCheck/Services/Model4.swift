@@ -16,6 +16,18 @@ class Cache {
     private var images: [String: UIImage] = [:]
     private var searches: [LocationRequest] = []
     
+    public func add(violations: [Violation], withUrlStr urlStr: String) {
+        self.violations[urlStr] = violations
+    }
+    public func add(image: UIImage, withUrlStr urlStr: String) {
+        self.images[urlStr] = image
+    }
+    public func add(search: LocationRequest) {
+        // TODO: linear runtime, fix it
+        self.searches.insert(search, at: 0)
+        // same
+        PersistanceService.manager.addToPreviousSearches(search: search)
+    }
     public func getViolations(fromURL urlStr: String) -> [Violation]? {
         if let violations = self.violations[urlStr] {
             if violations.isEmpty {
@@ -38,6 +50,6 @@ class Cache {
     }
     // will load previous searches into cache
     public func configureSearches() {
-        
+        searches = PersistanceService.manager.getPreviousSearches()
     }
 }
