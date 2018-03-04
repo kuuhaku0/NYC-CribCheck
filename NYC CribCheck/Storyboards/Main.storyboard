@@ -768,7 +768,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea4-uN-WrF">
                                 <rect key="frame" x="36" y="28" width="32" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.97969712685824084" green="1" blue="0.97608262813203306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backButton:" destination="uSb-s2-rZu" eventType="touchUpInside" id="hCP-W1-PQR"/>
                                 </connections>
