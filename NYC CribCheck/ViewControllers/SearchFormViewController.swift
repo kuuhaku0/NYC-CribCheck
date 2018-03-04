@@ -147,7 +147,7 @@ class SearchFormViewController: UIViewController {
         if segue.destination is MainTableViewController {
             let mainTableVC = segue.destination as? MainTableViewController
             mainTableVC?.violationsArr = violationsArr
-            //            mainTableVC.locationRequest = locationRequest
+            mainTableVC?.locationRequest = locationRequest
         }
     }
     

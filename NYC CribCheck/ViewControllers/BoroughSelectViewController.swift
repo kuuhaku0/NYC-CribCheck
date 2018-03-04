@@ -32,7 +32,7 @@ class BoroughSelectViewController: UIViewController {
         super.viewDidAppear(animated)
 //       vc.view.backgroundColor = .blue
 //        let vc = TutorialPageViewController.storyboardInstance()
-        let vc = SearchFormViewController.storyboardInstance()
+//        let vc = SearchFormViewController.storyboardInstance()
 //       tabBarController?.present(vc, animated: true, completion: nil)
         
     }
@@ -87,7 +87,7 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
         guard let indexPath = tableView.indexPathForSelectedRow else {
             return
         }
-        if let formVC = segue.destination as? FormViewController {
+        if let formVC = segue.destination as? SearchFormViewController {
             //            let formVC = segue.destination as? FormViewController
             switch indexPath.row {
             case 0:

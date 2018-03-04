@@ -90,6 +90,18 @@ class MainTableViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
+        
+        // TODO: show loading image indicator
+        StreetImageAPIClient.manager.getStreetImage(for: locationRequest) { (result) in
+            switch result {
+            case .success(let onlineImage):
+                self.headerImageView.image = onlineImage
+            case .failure(let error):
+                // TODO: handle this error
+                print(error)
+            }
+        }
+        
     }
 
     private func setup() {

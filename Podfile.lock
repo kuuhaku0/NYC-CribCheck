@@ -59,6 +59,7 @@ DEPENDENCIES:
   - Kingfisher
   - Material
   - MaterialComponents/Buttons+Extensions
+  - MaterialComponents/Palettes
   - MaterialComponents/TextFields+Extensions
   - SnapKit
 
@@ -73,6 +74,6 @@ SPEC CHECKSUMS:
   Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: b139636d4568e516df57becc8a5b805268ef7d72
+PODFILE CHECKSUM: 88e5fdf362ac54529dcee3ed43aa0c781042d665
 
 COCOAPODS: 1.4.0
