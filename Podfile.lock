@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.6.0)
-  - FoldingCell (3.0.3)
-  - Kingfisher (4.6.2)
+  - FoldingCell (3.0.0)
+  - Kingfisher (4.6.1)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
@@ -12,8 +12,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  FoldingCell: 76ce5d1ddba34c6d25548b473b7b51585e992da0
-  Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
+  FoldingCell: 55e9fcac546acc2c8f110f210af892aa90032160
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
 PODFILE CHECKSUM: 8fc7823d2919263f15c50ed174add44113d651a4

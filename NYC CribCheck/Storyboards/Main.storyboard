@@ -124,6 +124,7 @@
                                             <outlet property="boroughImage" destination="HsZ-x0-6i3" id="FNO-5A-gBh"/>
                                             <outlet property="boroughLabel" destination="YBE-3B-uoZ" id="bIC-Fo-aLQ"/>
                                             <outlet property="containerView" destination="kD6-PR-lGu" id="O8a-MJ-IVE"/>
+                                            <segue destination="Uod-5f-fO5" kind="show" id="lFP-BU-U5t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -150,7 +151,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wm0-gV-IlK" id="Sdi-Ev-JkE"/>
-                        <segue destination="Uod-5f-fO5" kind="show" id="wK1-N1-ddg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtG-G8-ZQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,11 +201,19 @@
                                 <rect key="frame" x="173" y="410" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="Uod-5f-fO5" eventType="touchUpInside" id="2Vq-36-2bx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="apartmentTextfield" destination="z2n-lU-IUK" id="tfb-Pw-S7n"/>
+                        <outlet property="houseNumberTextfield" destination="emh-vZ-H17" id="so4-UA-oxe"/>
+                        <outlet property="searchButton" destination="f1J-Sy-tOW" id="xi1-Dz-1W3"/>
+                        <outlet property="streetNameTextfield" destination="hlD-Uc-3No" id="f7E-vO-TL7"/>
+                        <outlet property="zipCodeTextfield" destination="u4m-63-iqB" id="WZg-5h-jeC"/>
                         <segue destination="uSb-s2-rZu" kind="presentation" identifier="ViolationsSegue" id="pJH-4C-GSQ"/>
                     </connections>
                 </viewController>
@@ -324,13 +332,13 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="88" height="165"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0go-gN-iDu">
-                                                                            <rect key="frame" x="27.666666666666664" y="19.333333333333332" width="25.333333333333336" height="57.333333333333343"/>
+                                                                            <rect key="frame" x="28" y="19.000000000000004" width="24.666666666666671" height="57.333333333333343"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="42"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.80086043070000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIP-NH-pzh">
-                                                                            <rect key="frame" x="18.000000000000004" y="101.33333333333333" width="34.333333333333343" height="13.666666666666671"/>
+                                                                            <rect key="frame" x="18.000000000000004" y="101" width="34.333333333333343" height="14"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -479,7 +487,7 @@
                                                                     <rect key="frame" x="0.0" y="165" width="384" height="165"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OWNER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snc-OZ-vpM">
-                                                                            <rect key="frame" x="22.000000000000004" y="9.3333333333333428" width="36.333333333333343" height="13.666666666666664"/>
+                                                                            <rect key="frame" x="22.000000000000004" y="9" width="36.333333333333343" height="14"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                             <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -514,19 +522,19 @@
                                                                             <rect key="frame" x="22" y="92" width="169.66666666666666" height="73"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJl-O2-Jqa">
-                                                                                    <rect key="frame" x="0.0" y="7.9999999999999991" width="159.66666666666666" height="13.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="8" width="159.66666666666666" height="14"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISSUE DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYR-t9-7sv">
-                                                                                    <rect key="frame" x="0.0" y="25.666666666666686" width="159.66666666666666" height="20.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="26" width="159.66666666666666" height="20.666666666666671"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chC-LT-eRE">
-                                                                                    <rect key="frame" x="0.0" y="46.333333333333314" width="159.66666666666666" height="16.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="46.666666666666686" width="159.66666666666666" height="16.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -549,19 +557,19 @@
                                                                             <rect key="frame" x="192.66666666666663" y="92" width="169.33333333333337" height="73"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZu-qr-1dL">
-                                                                                    <rect key="frame" x="0.0" y="7.9999999999999991" width="169.33333333333334" height="13.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="8" width="169.33333333333334" height="14"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOSE DATE OR PRESENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96g-ux-KPA">
-                                                                                    <rect key="frame" x="0.0" y="25.666666666666686" width="169.33333333333334" height="20.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="26" width="169.33333333333334" height="20.666666666666671"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEC-E8-QWy">
-                                                                                    <rect key="frame" x="0.0" y="46.333333333333314" width="169.33333333333334" height="16.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="46.666666666666686" width="169.33333333333334" height="16.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -626,19 +634,19 @@
                                                                             <rect key="frame" x="22" y="0.0" width="168.66666666666666" height="73"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcx-dx-1ah">
-                                                                                    <rect key="frame" x="0.0" y="7.9999999999999991" width="158.66666666666666" height="13.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="8" width="158.66666666666666" height="14"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:30 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EG-ek-CFG">
-                                                                                    <rect key="frame" x="0.0" y="25.666666666666686" width="158.66666666666666" height="20.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="26" width="158.66666666666666" height="20.666666666666671"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGr-m7-tvl">
-                                                                                    <rect key="frame" x="0.0" y="46.333333333333314" width="158.66666666666666" height="16.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="46.666666666666686" width="158.66666666666666" height="16.333333333333329"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -661,13 +669,13 @@
                                                                             <rect key="frame" x="193.66666666666663" y="0.0" width="168.33333333333337" height="73"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REQUEST DEADLINE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoI-tF-jB8">
-                                                                                    <rect key="frame" x="0.0" y="7.9999999999999991" width="168.33333333333334" height="13.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="8" width="168.33333333333334" height="14"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                                     <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="0.49546030410000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO4-gM-ihf">
-                                                                                    <rect key="frame" x="0.0" y="25.666666666666686" width="168.33333333333334" height="20.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="26" width="168.33333333333334" height="20.666666666666671"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                                                                     <color key="textColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -864,6 +872,6 @@
         <image name="stars" width="97" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wa2-17-Drw"/>
+        <segue reference="pJH-4C-GSQ"/>
     </inferredMetricsTieBreakers>
 </document>
