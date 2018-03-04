@@ -158,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="-30.434782608695656" y="164.67391304347828"/>
         </scene>
-        <!--Form View Controller-->
+        <!--Search Form View Controller-->
         <scene sceneID="QdF-3f-PDT">
             <objects>
-                <viewController storyboardIdentifier="FormViewController" id="Uod-5f-fO5" customClass="FormViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FormViewController" id="Uod-5f-fO5" customClass="SearchFormViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y5k-wG-eyi"/>
                         <viewControllerLayoutGuide type="bottom" id="rKR-WV-omf"/>
@@ -170,51 +170,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="emh-vZ-H17">
-                                <rect key="frame" x="148" y="166" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxV-EK-rya" customClass="MDCTextField">
+                                <rect key="frame" x="51.666666666666657" y="114" width="310.66666666666674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z2n-lU-IUK">
-                                <rect key="frame" x="148" y="288" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-jM-a0b" customClass="MDCTextField">
+                                <rect key="frame" x="51.666666666666657" y="146" width="310.66666666666674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlD-Uc-3No">
-                                <rect key="frame" x="148" y="221" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-i8-TBR" customClass="MDCTextField">
+                                <rect key="frame" x="51.666666666666657" y="178" width="310.66666666666674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4m-63-iqB">
-                                <rect key="frame" x="148" y="353" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0e-Hi-6Kl" customClass="MDCTextField">
+                                <rect key="frame" x="51.666666666666657" y="210" width="310.66666666666674" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1J-Sy-tOW">
-                                <rect key="frame" x="173" y="410" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTo-kD-4kW" customClass="MDCRaisedButton">
+                                <rect key="frame" x="183" y="254" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="submitButtonPressed:" destination="Uod-5f-fO5" eventType="touchUpInside" id="hnN-p9-ygT"/>
+                                    <action selector="submitButtonPressed:" destination="Uod-5f-fO5" eventType="touchUpInside" id="N3b-0w-3z2"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cdq-i8-TBR" firstAttribute="width" secondItem="vxV-EK-rya" secondAttribute="width" id="1sg-EC-GjZ"/>
+                            <constraint firstItem="X0e-Hi-6Kl" firstAttribute="width" secondItem="vxV-EK-rya" secondAttribute="width" id="IIl-H6-I1k"/>
+                            <constraint firstItem="YTo-kD-4kW" firstAttribute="centerX" secondItem="NaK-ZY-2yb" secondAttribute="centerX" id="LQj-9l-ctc"/>
+                            <constraint firstItem="vxV-EK-rya" firstAttribute="width" secondItem="hJg-Sk-biS" secondAttribute="width" multiplier="0.75" id="NeX-P9-WUN"/>
+                            <constraint firstItem="YTo-kD-4kW" firstAttribute="top" secondItem="X0e-Hi-6Kl" secondAttribute="bottom" constant="14" id="PXe-rc-5Qz"/>
+                            <constraint firstItem="cdq-i8-TBR" firstAttribute="top" secondItem="h5J-jM-a0b" secondAttribute="bottom" constant="2" id="TbO-ZL-7Ib"/>
+                            <constraint firstItem="cdq-i8-TBR" firstAttribute="centerX" secondItem="vxV-EK-rya" secondAttribute="centerX" id="Ufm-J8-X3s"/>
+                            <constraint firstItem="h5J-jM-a0b" firstAttribute="top" secondItem="vxV-EK-rya" secondAttribute="bottom" constant="2" id="Wjr-CB-RAu"/>
+                            <constraint firstItem="h5J-jM-a0b" firstAttribute="centerX" secondItem="vxV-EK-rya" secondAttribute="centerX" id="c3t-4g-52c"/>
+                            <constraint firstItem="vxV-EK-rya" firstAttribute="centerX" secondItem="NaK-ZY-2yb" secondAttribute="centerX" id="qXY-Qi-Jp0"/>
+                            <constraint firstItem="vxV-EK-rya" firstAttribute="top" secondItem="NaK-ZY-2yb" secondAttribute="top" constant="50" id="rvE-3S-8aX"/>
+                            <constraint firstItem="h5J-jM-a0b" firstAttribute="width" secondItem="vxV-EK-rya" secondAttribute="width" id="uhW-Rm-mH3"/>
+                            <constraint firstItem="X0e-Hi-6Kl" firstAttribute="centerX" secondItem="vxV-EK-rya" secondAttribute="centerX" id="vKn-gu-0qT"/>
+                            <constraint firstItem="X0e-Hi-6Kl" firstAttribute="top" secondItem="cdq-i8-TBR" secondAttribute="bottom" constant="2" id="vYR-Ja-jR2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NaK-ZY-2yb"/>
                     </view>
                     <connections>
-                        <outlet property="apartmentTextfield" destination="z2n-lU-IUK" id="2py-Td-mAN"/>
-                        <outlet property="houseNumberTextfield" destination="emh-vZ-H17" id="KoP-Ds-sK1"/>
-                        <outlet property="searchButton" destination="f1J-Sy-tOW" id="MR9-H2-D31"/>
-                        <outlet property="streetNameTextfield" destination="hlD-Uc-3No" id="mtK-Vb-67O"/>
-                        <outlet property="zipCodeTextfield" destination="u4m-63-iqB" id="jyt-Xq-nIb"/>
+                        <outlet property="apartmentTextfield" destination="cdq-i8-TBR" id="rHB-Jn-t9h"/>
+                        <outlet property="houseNumberTextfield" destination="vxV-EK-rya" id="gOv-8d-ElL"/>
+                        <outlet property="searchButton" destination="YTo-kD-4kW" id="9rz-0m-oLS"/>
+                        <outlet property="streetNameTextfield" destination="h5J-jM-a0b" id="SJm-Sc-NPY"/>
+                        <outlet property="zipCodeTextfield" destination="X0e-Hi-6Kl" id="twq-Tq-2cH"/>
                         <segue destination="uSb-s2-rZu" kind="presentation" identifier="ViolationsSegue" id="pJH-4C-GSQ"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
 		810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810694DB204A71A900DD0D2E /* UserActivityViewController.swift */; };
+		815FA837204C6AB900EC0199 /* SearchForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815FA836204C6AB900EC0199 /* SearchForm.storyboard */; };
+		815FA839204C70C300EC0199 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815FA838204C70C300EC0199 /* SearchFormViewController.swift */; };
 		815C5E37204C67CC0071D588 /* Date format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C5E36204C67CC0071D588 /* Date format.swift */; };
 		817DAF89204BCB95006D42BE /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */; };
 		817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */; };
@@ -63,6 +65,8 @@
 		37D8D64A568F2649934D6841 /* Pods-NYC CribCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810694DB204A71A900DD0D2E /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
+		815FA836204C6AB900EC0199 /* SearchForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchForm.storyboard; sourceTree = "<group>"; };
+		815FA838204C70C300EC0199 /* SearchFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormViewController.swift; sourceTree = "<group>"; };
 		815C5E36204C67CC0071D588 /* Date format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date format.swift"; sourceTree = "<group>"; };
 		817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisclaimerAndTutorial.storyboard; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
 				81A0166D204A6A73001AB55D /* Main.storyboard */,
 				817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */,
+				815FA836204C6AB900EC0199 /* SearchForm.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			children = (
 				81A0163B204A69FD001AB55D /* BoroughSelectViewController.swift */,
 				81B61875204B0F9300388FC1 /* FormViewController.swift */,
+				815FA838204C70C300EC0199 /* SearchFormViewController.swift */,
 				810694DB204A71A900DD0D2E /* UserActivityViewController.swift */,
 				81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */,
 				81A01667204A6A11001AB55D /* MainTableViewController.swift */,
@@ -392,6 +398,7 @@
 				817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */,
 				81A01644204A69FD001AB55D /* LaunchScreen.storyboard in Resources */,
 				81A01641204A69FD001AB55D /* Assets.xcassets in Resources */,
+				815FA837204C6AB900EC0199 /* SearchForm.storyboard in Resources */,
 				81A0166A204A6A38001AB55D /* Fonts in Resources */,
 				81A0166E204A6A73001AB55D /* Main.storyboard in Resources */,
 			);
@@ -424,7 +431,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -433,7 +443,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
@@ -580,6 +593,7 @@
 			files = (
 				D2261D34204B863900D6133A /* Violation.swift in Sources */,
 				81A0163C204A69FD001AB55D /* BoroughSelectViewController.swift in Sources */,
+				815FA839204C70C300EC0199 /* SearchFormViewController.swift in Sources */,
 				81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */,
 				815C5E37204C67CC0071D588 /* Date format.swift in Sources */,
 				81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */,

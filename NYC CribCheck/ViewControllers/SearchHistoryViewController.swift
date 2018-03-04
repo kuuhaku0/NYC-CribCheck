@@ -29,7 +29,8 @@ class SearchHistoryViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.register(SearchHistoryTableViewCell.self, forCellReuseIdentifier: "SearchHistoryCell")
         self.tableView.rowHeight = 100
-        self.searchHistory = PersistanceService.manager.getPreviousSearches()
+//        self.searchHistory = PersistanceService.manager.getPreviousSearches()
+        self.searchHistory = Cache.manager.getSearches()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +76,7 @@ extension SearchHistoryViewController: UITableViewDelegate {
                     let violationVC = storyboard.instantiateViewController(withIdentifier: "MainTableViewController") as! MainTableViewController
                     self.currentViolationArr = onlineViolations
                     violationVC.violationsArr = onlineViolations
-                    violationVC.locationRequest = locationRequest
+//                    violationVC.locationRequest = locationRequest
                     self.present(violationVC, animated: true, completion: nil)
                 }
                 
