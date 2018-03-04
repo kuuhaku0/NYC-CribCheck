@@ -124,6 +124,7 @@
                                             <outlet property="boroughImage" destination="HsZ-x0-6i3" id="FNO-5A-gBh"/>
                                             <outlet property="boroughLabel" destination="YBE-3B-uoZ" id="bIC-Fo-aLQ"/>
                                             <outlet property="containerView" destination="kD6-PR-lGu" id="O8a-MJ-IVE"/>
+                                            <segue destination="Uod-5f-fO5" kind="show" id="lFP-BU-U5t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -150,7 +151,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wm0-gV-IlK" id="Sdi-Ev-JkE"/>
-                        <segue destination="Uod-5f-fO5" kind="show" id="wK1-N1-ddg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtG-G8-ZQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,11 +201,19 @@
                                 <rect key="frame" x="173" y="410" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="Uod-5f-fO5" eventType="touchUpInside" id="2Vq-36-2bx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="apartmentTextfield" destination="z2n-lU-IUK" id="tfb-Pw-S7n"/>
+                        <outlet property="houseNumberTextfield" destination="emh-vZ-H17" id="so4-UA-oxe"/>
+                        <outlet property="searchButton" destination="f1J-Sy-tOW" id="xi1-Dz-1W3"/>
+                        <outlet property="streetNameTextfield" destination="hlD-Uc-3No" id="f7E-vO-TL7"/>
+                        <outlet property="zipCodeTextfield" destination="u4m-63-iqB" id="WZg-5h-jeC"/>
                         <segue destination="uSb-s2-rZu" kind="presentation" identifier="ViolationsSegue" id="pJH-4C-GSQ"/>
                     </connections>
                 </viewController>
@@ -864,6 +872,6 @@
         <image name="stars" width="97" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wa2-17-Drw"/>
+        <segue reference="pJH-4C-GSQ"/>
     </inferredMetricsTieBreakers>
 </document>
