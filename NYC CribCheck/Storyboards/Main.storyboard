@@ -142,13 +142,7 @@
                             <constraint firstItem="wm0-gV-IlK" firstAttribute="leading" secondItem="9xt-bO-Eca" secondAttribute="leading" id="N5u-xe-cpV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Boroughs" id="9E6-9o-Z3g">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Oln-YK-HSP">
-                            <connections>
-                                <segue destination="uSb-s2-rZu" kind="presentation" id="Wa2-17-Drw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Boroughs" id="9E6-9o-Z3g"/>
                     <connections>
                         <outlet property="tableView" destination="wm0-gV-IlK" id="Sdi-Ev-JkE"/>
                     </connections>
@@ -767,7 +761,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea4-uN-WrF">
                                 <rect key="frame" x="36" y="28" width="32" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.97969712685824084" green="1" blue="0.97608262813203306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backButton:" destination="uSb-s2-rZu" eventType="touchUpInside" id="hCP-W1-PQR"/>
                                 </connections>
@@ -824,7 +820,4 @@
         <image name="Lower-Manhattan" width="1200" height="800"/>
         <image name="dots" width="14" height="84"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="pJH-4C-GSQ"/>
-    </inferredMetricsTieBreakers>
 </document>
