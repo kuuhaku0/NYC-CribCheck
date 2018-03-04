@@ -56,8 +56,14 @@ class MainTableViewController: UIViewController {
     }()
     
     //MARK: - VIOLATIONS
-    var violationsArr = [Violation]()
-    var locationRequest: LocationRequest?
+
+    var violationsArr = [Violation]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var locationRequest: LocationRequest!
     
     var selectedBorough = ""
     
