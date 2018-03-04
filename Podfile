@@ -12,6 +12,9 @@ pod 'Kingfisher'
 pod 'Alamofire'
 pod 'SnapKit'
 pod 'Material'
+pod 'MaterialComponents/TextFields+Extensions'
+pod 'MaterialComponents/Buttons+Extensions'
+pod 'MaterialComponents/Palettes'
 
   target 'NYC CribCheckTests' do
     inherit! :search_paths

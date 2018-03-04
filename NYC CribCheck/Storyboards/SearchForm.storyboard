@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Form View Controller-->
+        <scene sceneID="EId-rS-eSh">
+            <objects>
+                <viewController storyboardIdentifier="SearchFormViewController" id="cBE-fH-lv7" customClass="SearchFormViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qU0-1p-TWD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oG7-e7-0t7" customClass="MDCTextField">
+                                <rect key="frame" x="47" y="70" width="281" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8c-CW-THK" customClass="MDCTextField">
+                                <rect key="frame" x="47" y="102" width="281" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FP9-0a-Nae" customClass="MDCTextField">
+                                <rect key="frame" x="47" y="134" width="281" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oeN-hb-kel" customClass="MDCTextField">
+                                <rect key="frame" x="47" y="166" width="281" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMU-7i-6hm" customClass="MDCRaisedButton">
+                                <rect key="frame" x="163" y="210" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FP9-0a-Nae" firstAttribute="top" secondItem="W8c-CW-THK" secondAttribute="bottom" constant="2" id="6MK-B0-Hh8"/>
+                            <constraint firstItem="JMU-7i-6hm" firstAttribute="top" secondItem="oeN-hb-kel" secondAttribute="bottom" constant="14" id="83y-N1-8XJ"/>
+                            <constraint firstItem="oG7-e7-0t7" firstAttribute="top" secondItem="BM3-qx-R52" secondAttribute="top" constant="50" id="I7M-oP-9PK"/>
+                            <constraint firstItem="FP9-0a-Nae" firstAttribute="centerX" secondItem="oG7-e7-0t7" secondAttribute="centerX" id="JIb-Cs-2Ac"/>
+                            <constraint firstItem="oG7-e7-0t7" firstAttribute="centerX" secondItem="BM3-qx-R52" secondAttribute="centerX" id="Ncq-Ig-B7i"/>
+                            <constraint firstItem="oeN-hb-kel" firstAttribute="top" secondItem="FP9-0a-Nae" secondAttribute="bottom" constant="2" id="Rv8-tr-p8S"/>
+                            <constraint firstItem="oeN-hb-kel" firstAttribute="width" secondItem="oG7-e7-0t7" secondAttribute="width" id="SOG-Ok-MBc"/>
+                            <constraint firstItem="W8c-CW-THK" firstAttribute="top" secondItem="oG7-e7-0t7" secondAttribute="bottom" constant="2" id="TbS-Mc-yjk"/>
+                            <constraint firstItem="W8c-CW-THK" firstAttribute="width" secondItem="oG7-e7-0t7" secondAttribute="width" id="WX8-1b-pEt"/>
+                            <constraint firstItem="JMU-7i-6hm" firstAttribute="centerX" secondItem="BM3-qx-R52" secondAttribute="centerX" id="da9-qy-KWG"/>
+                            <constraint firstItem="oeN-hb-kel" firstAttribute="centerX" secondItem="oG7-e7-0t7" secondAttribute="centerX" id="pbT-Zn-If3"/>
+                            <constraint firstItem="W8c-CW-THK" firstAttribute="centerX" secondItem="oG7-e7-0t7" secondAttribute="centerX" id="qzS-zV-FGs"/>
+                            <constraint firstItem="FP9-0a-Nae" firstAttribute="width" secondItem="oG7-e7-0t7" secondAttribute="width" id="tVy-6l-Frb"/>
+                            <constraint firstItem="oG7-e7-0t7" firstAttribute="width" secondItem="qU0-1p-TWD" secondAttribute="width" multiplier="0.75" id="wqI-US-5YH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BM3-qx-R52"/>
+                    </view>
+                    <connections>
+                        <outlet property="apartmentTextfield" destination="FP9-0a-Nae" id="7DZ-xn-S7T"/>
+                        <outlet property="houseNumberTextfield" destination="oG7-e7-0t7" id="ST9-ZY-yVj"/>
+                        <outlet property="searchButton" destination="JMU-7i-6hm" id="LkS-yd-YGO"/>
+                        <outlet property="streetNameTextfield" destination="W8c-CW-THK" id="kgv-49-bDp"/>
+                        <outlet property="zipCodeTextfield" destination="oeN-hb-kel" id="NbD-VA-9aw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isD-yg-WKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-482" y="55"/>
+        </scene>
+    </scenes>
+</document>
