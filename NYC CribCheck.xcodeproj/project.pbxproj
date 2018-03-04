@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
+		8103DB57204B6FB60038845B /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61871204AFB9900388FC1 /* Violation.swift */; };
 		810694DA204A715000DD0D2E /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810694D9204A715000DD0D2E /* ProfileView.storyboard */; };
 		810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810694DB204A71A900DD0D2E /* UserActivityViewController.swift */; };
 		8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */; };
@@ -414,6 +415,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -421,6 +424,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8103DB57204B6FB60038845B /* Violation.swift in Sources */,
 				81A0163C204A69FD001AB55D /* BoroughSelectViewController.swift in Sources */,
 				81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */,
 				81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */,

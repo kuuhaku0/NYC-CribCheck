@@ -9,8 +9,14 @@
 import UIKit
 
 class BoroughSelectViewController: UIViewController {
+
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.backgroundView?.contentMode = .scaleAspectFill
+            tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
+        }
+    }
     
     let boroughs = [("Manhattan", #imageLiteral(resourceName: "Lower-Manhattan")), ("Brooklyn", #imageLiteral(resourceName: "downtown-brooklyn-aerial-hires")), ("Queens", #imageLiteral(resourceName: "Queens")), ("Bronx", #imageLiteral(resourceName: "Yankee_Stadium_001")), ("Staten Island", #imageLiteral(resourceName: "Staten Island"))]
 
@@ -41,12 +47,10 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FormViewController {
             //TODO
+            
         }
     }
 }
-
-
-
 
 
 
