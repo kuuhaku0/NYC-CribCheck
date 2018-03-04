@@ -190,7 +190,7 @@ extension MainTableViewController: UITableViewDataSource {
 }
 
 extension MainTableViewController: UITableViewDelegate {
-    
+
 }
 
 extension MainTableViewController: UIScrollViewDelegate {

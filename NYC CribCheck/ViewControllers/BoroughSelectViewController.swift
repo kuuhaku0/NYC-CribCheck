@@ -19,7 +19,7 @@ class BoroughSelectViewController: UIViewController {
     }
     
     var currentBorough = ""
-    let boroughs = [("Manhattan", #imageLiteral(resourceName: "Lower-Manhattan")), ("Brooklyn", #imageLiteral(resourceName: "downtown-brooklyn-aerial-hires")), ("Queens", #imageLiteral(resourceName: "Queens")), ("Bronx", #imageLiteral(resourceName: "Yankee_Stadium_001")), ("Staten Island", #imageLiteral(resourceName: "Staten Island"))]
+    let boroughs = [("Manhattan", #imageLiteral(resourceName: "Lower-Manhattan")), ("Brooklyn", #imageLiteral(resourceName: "downtown-brooklyn-aerial-hires")), ("Queens", #imageLiteral(resourceName: "Queens")), ("Bronx", #imageLiteral(resourceName: "Yankee_Stadium_001")), ("Staten Island", #imageLiteral(resourceName: "D479A0F9-3048-64E8-401D2A34379418D1"))]
     
     
     override func viewDidLoad() {
@@ -55,6 +55,7 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
         //        switch indexPath.row {
         //        case 0:
         //            currentBorough = "MANHATTAN"
@@ -80,6 +81,10 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
         //            print("gdf")
         //
         //        }
+        var cellTransform = CATransform3DIdentity
+        cellTransform = CATransform3DTranslate(cellTransform, 10, 10, 10)
+        cell?.imageView?.layer.transform = cellTransform
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
