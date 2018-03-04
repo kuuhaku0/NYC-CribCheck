@@ -16,6 +16,7 @@ class MainTableViewController: UIViewController {
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var segmentedView: UIView!
+    @IBOutlet weak var segmentedController: UISegmentedControl!
     
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -57,9 +58,13 @@ class MainTableViewController: UIViewController {
     //MARK: - VIOLATIONS
     var violationsArr = [Violation]() {
         didSet {
-            //TODO
+            tableView.reloadData()
         }
     }
+    
+    var locationRequest: LocationRequest?
+    
+    var selectedBorough = ""
     
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 488
@@ -76,6 +81,9 @@ class MainTableViewController: UIViewController {
     }
 
     private func setup() {
+        let font = UIFont.systemFont(ofSize: 16)
+        segmentedController.setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
+        
         cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -111,7 +119,7 @@ class MainTableViewController: UIViewController {
 extension MainTableViewController: UITableViewDataSource {
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 5
+        return violationsArr.count
     }
 
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -131,10 +139,13 @@ extension MainTableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! DemoCell
+        let violation = violationsArr[indexPath.row]
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
+        
+        cell.configCell(with: violation, borough: selectedBorough)
         return cell
     }
 

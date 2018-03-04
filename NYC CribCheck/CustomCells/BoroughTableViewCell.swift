@@ -12,13 +12,13 @@ class BoroughTableViewCell: UITableViewCell {
 
     @IBOutlet weak var containerView: UIView! {
         didSet {
-            containerView.layer.cornerRadius = 15
+            containerView.layer.cornerRadius = 10
         }
     }
     @IBOutlet weak var boroughLabel: UILabel!
     @IBOutlet weak var boroughImage: UIImageView! {
         didSet {
-            boroughImage.layer.cornerRadius = 15
+            boroughImage.layer.cornerRadius = 10
         }
     }
     
