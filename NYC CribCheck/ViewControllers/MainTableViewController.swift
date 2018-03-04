@@ -55,12 +55,7 @@ class MainTableViewController: UIViewController {
     }()
     
     //MARK: - VIOLATIONS
-    var violationsArr = [Violation]() {
-        didSet {
-            //TODO
-            print("violations from main",violationsArr)
-        }
-    }
+    var violationsArr = [Violation]()
     
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 488
