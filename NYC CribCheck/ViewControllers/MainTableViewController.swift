@@ -59,7 +59,7 @@ class MainTableViewController: UIViewController {
 
     var violationsArr = [Violation]() {
         didSet {
-            tableView.reloadData()
+            tableView?.reloadData()
         }
     }
     
