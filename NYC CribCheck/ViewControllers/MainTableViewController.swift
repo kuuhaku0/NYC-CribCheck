@@ -57,6 +57,7 @@ class MainTableViewController: UIViewController {
     var violationsArr = [Violation]() {
         didSet {
             //TODO
+            print("violations from main",violationsArr)
         }
     }
     
