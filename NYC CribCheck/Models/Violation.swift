@@ -57,8 +57,10 @@ struct Violation: Codable {
     let currentStatusDate: String
     let noticeType: String
     let violationID: String
+    let latitude: String
+    let longitude: String
     
-    static let dummyViolation = Violation.init(description: "SECTION 27-2013 ADM CODE  PAINT WITH LIGHT COLORED PAINT TO THE SATISFACTION OF THIS DEPARTMENT  ALL PEELING PAINT SURFACES IN  THE 4th ROOM  FROM EAST AT SOUTH,  THE 2nd ROOM  FROM EAST AT NORTH  LOCATED AT APT 2R, 2nd STORY, 1st APARTMENT FROM NORTH AT EAST", violationStatus: "Open", approvedDate: "2015-10-27T00:00:00.000", issueDate: "2015-10-28T00:00:00.000", inspectionDate: "2015-10-26T00:00:00.000", class: "A", currentStatus: "NOV SENT OUT", currentStatusDate: "2015-10-28T00:00:00.000", noticeType: "Original", violationID: "10980603")
+    static let dummyViolation = Violation.init(description: "SECTION 27-2013 ADM CODE  PAINT WITH LIGHT COLORED PAINT TO THE SATISFACTION OF THIS DEPARTMENT  ALL PEELING PAINT SURFACES IN  THE 4th ROOM  FROM EAST AT SOUTH,  THE 2nd ROOM  FROM EAST AT NORTH  LOCATED AT APT 2R, 2nd STORY, 1st APARTMENT FROM NORTH AT EAST", violationStatus: "Open", approvedDate: "2015-10-27T00:00:00.000", issueDate: "2015-10-28T00:00:00.000", inspectionDate: "2015-10-26T00:00:00.000", class: "A", currentStatus: "NOV SENT OUT", currentStatusDate: "2015-10-28T00:00:00.000", noticeType: "Original", violationID: "10980603", latitude: "40.653217", longitude: "-73.932480")
     
     enum CodingKeys: String, CodingKey {
         case description = "novdescription"
@@ -71,6 +73,8 @@ struct Violation: Codable {
         case currentStatusDate = "currentstatusdate"
         case noticeType = "novtype"
         case violationID = "violationid"
+        case latitude = "latitude"
+        case longitude = "longitude"
     }
     
 }

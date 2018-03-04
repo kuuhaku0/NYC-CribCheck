@@ -9,13 +9,15 @@
 import Foundation
 import Alamofire
 
-enum Result {
+enum HousingResult {
     case success([Violation])
-    case failure(Error)
+    case failure(HousingError)
 }
 
-enum AppError: Error {
-    case urlError(String)
+enum HousingError: Error {
+    case networkError(rawError: Error)
+    case noResults
+    case badUrl(String)
 }
 
 class HousingAPIClient {
@@ -43,27 +45,36 @@ class HousingAPIClient {
     
     // public -- for use in getting data for viewcontrollers
     public let dummyRequest = "https://data.cityofnewyork.us/resource/b2iz-pps8.json?streetname=EAST 48 STREET&housenumber=355"
-    public func getViolations(usingLocation locationRequest: LocationRequest, completion: @escaping (Result) -> Void) {
-//        let _ = urlString(from: locationRequest).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    public func getViolations(usingLocation locationRequest: LocationRequest, completion: @escaping (HousingResult) -> Void) {
         guard let urlStr = urlString(from: locationRequest).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            completion(Result.failure(AppError.urlError(urlString(from: locationRequest))))
+            completion(.failure(.badUrl(urlString(from: locationRequest))))
             return
         }
-        print(urlStr)
-//        let urlStr = urlString(from: locationRequest)
-        guard let url = URL(string: urlStr) else { completion(Result.failure(AppError.urlError(urlStr))); return }
-        // TODO: - add caching call here
-        // only call alamofire when cache call fails
+        if let violations = Cache.manager.getViolations(fromURL: urlStr) {
+            completion(HousingResult.success(violations))
+            return
+        }
+        // only continue if getting violations from cache fails
+        guard let url = URL(string: urlStr) else {
+            completion(.failure(.badUrl(urlStr)))
+            return
+        }
         
         Alamofire.request(url).responseData { (response) in
             if let error = response.error {
-                completion(Result.failure(error))
+                completion(.failure(.networkError(rawError: error)))
             } else if let data = response.data {
                 do {
                     let violations = try JSONDecoder().decode([Violation].self, from: data)
-                    completion(Result.success(violations))
+                    if violations.isEmpty {
+                        completion(.failure(.noResults))
+                    } else {
+                        completion(.success(violations))
+                        // TODO: add image to cache and persistence model?
+                        
+                    }
                 } catch {
-                    completion(Result.failure(error))
+                    completion(.failure(.networkError(rawError: error)))
                 }
             }
         }
