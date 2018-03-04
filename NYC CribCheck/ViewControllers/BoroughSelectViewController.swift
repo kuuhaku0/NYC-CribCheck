@@ -25,7 +25,16 @@ class BoroughSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    var vc = TutorialPageViewController.storyboardInstance()
+//    var vc = StillImageViewController.storyboardInstance(withName: "One")
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//       vc.view.backgroundColor = .blue
+//        let vc = TutorialPageViewController.storyboardInstance()
+//       tabBarController?.present(vc, animated: true, completion: nil)
+        
+    }
 }
 
 extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegate {

@@ -47,6 +47,7 @@ class FormViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    var locationRequest: LocationRequest!
     private func search() {
         var apartment = apartmentTextfield.text?.uppercased()
         guard let houseNumber = houseNumberTextfield.text else {
@@ -67,7 +68,7 @@ class FormViewController: UIViewController {
             apartment = nil
         }
         
-        let location = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
+        locationRequest = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
         //TODO: api call with the above params, completion handler contains perform segue
         //completion should populate violationsArr
         //violationsArr = [Violation]()
@@ -79,14 +80,15 @@ class FormViewController: UIViewController {
         //        returns an error
         
         
-        HousingAPIClient.manager.getViolations(usingLocation: location) { (result) in
+        HousingAPIClient.manager.getViolations(usingLocation: locationRequest) { (result) in
             switch result {
                 
             case .success(let onlineViolations):
 //                PersistanceService.manager.addToPreviousSearches(search: location)
                 self.violationsArr = onlineViolations
                 self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
-            case .failure(_):
+            case .failure(let error):
+                print(error)
                 self.showAlert(title: "Error", message: "No results found, please check address")
             }
         }
@@ -97,6 +99,7 @@ class FormViewController: UIViewController {
         if segue.destination is MainTableViewController {
             let mainTableVC = segue.destination as? MainTableViewController
             mainTableVC?.violationsArr = violationsArr
+            mainTableVC.locationRequest = locationRequest
         }
     }
     

@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
-		8103DB57204B6FB60038845B /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61871204AFB9900388FC1 /* Violation.swift */; };
 		810694DA204A715000DD0D2E /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 810694D9204A715000DD0D2E /* ProfileView.storyboard */; };
 		810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810694DB204A71A900DD0D2E /* UserActivityViewController.swift */; };
-		817DAF7F204B7CD8006D42BE /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61871204AFB9900388FC1 /* Violation.swift */; };
+		817DAF89204BCB95006D42BE /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */; };
+		817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */; };
+		817DAF8D204BCC2D006D42BE /* StillImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */; };
 		8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */; };
 		8196C0A2204B325200D5CC45 /* Persistance Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C0A1204B325200D5CC45 /* Persistance Service.swift */; };
 		81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01639204A69FD001AB55D /* AppDelegate.swift */; };
@@ -63,6 +64,9 @@
 		3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810694D9204A715000DD0D2E /* ProfileView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		810694DB204A71A900DD0D2E /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
+		817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisclaimerAndTutorial.storyboard; sourceTree = "<group>"; };
+		817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StillImageViewController.swift; sourceTree = "<group>"; };
 		8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8196C0A1204B325200D5CC45 /* Persistance Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistance Service.swift"; sourceTree = "<group>"; };
 		81A01636204A69FD001AB55D /* NYC CribCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYC CribCheck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +145,7 @@
 				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
 				81A0166D204A6A73001AB55D /* Main.storyboard */,
 				810694D9204A715000DD0D2E /* ProfileView.storyboard */,
+				817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -153,6 +158,8 @@
 				810694DB204A71A900DD0D2E /* UserActivityViewController.swift */,
 				81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */,
 				81A01667204A6A11001AB55D /* MainTableViewController.swift */,
+				817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */,
+				817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -382,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */,
 				81A01644204A69FD001AB55D /* LaunchScreen.storyboard in Resources */,
 				81A01641204A69FD001AB55D /* Assets.xcassets in Resources */,
 				81A0166A204A6A38001AB55D /* Fonts in Resources */,
@@ -576,6 +584,7 @@
 				81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */,
 				81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */,
 				81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */,
+				817DAF8D204BCC2D006D42BE /* StillImageViewController.swift in Sources */,
 				81B6186C204AFB6F00388FC1 /* Model4.swift in Sources */,
 				81B61874204AFBA200388FC1 /* Model3.swift in Sources */,
 				81B6186A204AFB6600388FC1 /* File.swift in Sources */,
@@ -585,6 +594,7 @@
 				81B61868204AFB6000388FC1 /* Model.swift in Sources */,
 				810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */,
 				8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */,
+				817DAF89204BCB95006D42BE /* TutorialPageViewController.swift in Sources */,
 				8196C0A2204B325200D5CC45 /* Persistance Service.swift in Sources */,
 				81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */,
 				81B6186E204AFB7B00388FC1 /* EmptyCell.swift in Sources */,

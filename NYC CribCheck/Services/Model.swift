@@ -50,6 +50,7 @@ class HousingAPIClient {
             completion(.failure(.badUrl(urlString(from: locationRequest))))
             return
         }
+        print(urlStr)
         if let violations = Cache.manager.getViolations(fromURL: urlStr) {
             completion(HousingResult.success(violations))
             return
