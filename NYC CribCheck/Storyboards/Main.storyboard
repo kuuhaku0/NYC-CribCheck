@@ -224,7 +224,7 @@
         <!--Main Table View Controller-->
         <scene sceneID="zQM-SH-kLQ">
             <objects>
-                <viewController id="uSb-s2-rZu" customClass="MainTableViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainTableViewController" id="uSb-s2-rZu" customClass="MainTableViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sF6-4V-cAp"/>
                         <viewControllerLayoutGuide type="bottom" id="Iqv-K6-h85"/>
