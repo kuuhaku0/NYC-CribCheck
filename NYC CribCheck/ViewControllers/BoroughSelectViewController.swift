@@ -40,37 +40,59 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            currentBorough = "MANHATTAN"
-            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-            print("M")
-        case 1:
-            currentBorough = "BROOKLYN"
-            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-            print("Bk")
-        case 2:
-            currentBorough = "QUEENS"
-            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-            print("Q")
-        case 3:
-            currentBorough = "BRONX"
-            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-            print("Bx")
-        case 4:
-            currentBorough = "STATEN ISLAND"
-            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-            print("SI")
-        default:
-            print("gdf")
-            
-        }
+//        switch indexPath.row {
+//        case 0:
+//            currentBorough = "MANHATTAN"
+//            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
+//            print("M")
+//        case 1:
+//            currentBorough = "BROOKLYN"
+//            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
+//            print("Bk")
+//        case 2:
+//            currentBorough = "QUEENS"
+//            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
+//            print("Q")
+//        case 3:
+//            currentBorough = "BRONX"
+//            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
+//            print("Bx")
+//        case 4:
+//            currentBorough = "STATEN ISLAND"
+//            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
+//            print("SI")
+//        default:
+//            print("gdf")
+//            
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is FormViewController {
-            let formVC = segue.destination as? FormViewController
-            formVC?.borough = currentBorough
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        if let formVC = segue.destination as? FormViewController {
+//            let formVC = segue.destination as? FormViewController
+            switch indexPath.row {
+            case 0:
+                currentBorough = "MANHATTAN"
+                print("M")
+            case 1:
+                currentBorough = "BROOKLYN"
+                print("Bk")
+            case 2:
+                currentBorough = "QUEENS"
+                print("Q")
+            case 3:
+                currentBorough = "BRONX"
+                print("Bx")
+            case 4:
+                currentBorough = "STATEN ISLAND"
+                print("SI")
+            default:
+                print("gdf")
+            }
+            formVC.borough = currentBorough
         }
     }
     

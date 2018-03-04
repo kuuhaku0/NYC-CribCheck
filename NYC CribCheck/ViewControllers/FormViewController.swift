@@ -61,7 +61,7 @@ class FormViewController: UIViewController {
             showAlert(title: "Missing Input", message: "All Fields must be filled in")
             return
         }
-        if apartmentTextfield.text != nil {
+        if apartmentTextfield.text != nil && !(apartmentTextfield.text?.isEmpty)! {
             let apartment = apartmentTextfield.text
         } else {
             apartment = nil
