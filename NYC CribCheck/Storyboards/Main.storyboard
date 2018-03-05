@@ -46,6 +46,41 @@
             </objects>
             <point key="canvasLocation" x="-1584" y="886"/>
         </scene>
+        <!--Search History View Controlle-->
+        <scene sceneID="qLW-LX-d73">
+            <objects>
+                <collectionViewController storyboardIdentifier="SearchHistoryViewControlle" id="0VG-us-7hv" customClass="SearchHistoryViewControlle" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ma6-3X-KP8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZQO-Ig-Dxv">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Plt-KU-XOZ">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="0VG-us-7hv" id="ATn-s3-Rfi"/>
+                            <outlet property="delegate" destination="0VG-us-7hv" id="Kch-hO-sj2"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="wPZ-rv-yTd"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5D-bL-UGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-811" y="878"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f8Y-4D-nP5">
             <objects>
@@ -57,7 +92,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="p2U-sL-hhd" kind="relationship" relationship="viewControllers" id="7ha-4n-4II"/>
-                        <segue destination="Mez-xk-ctD" kind="relationship" relationship="viewControllers" id="tuN-yK-at9"/>
+                        <segue destination="0VG-us-7hv" kind="relationship" relationship="viewControllers" id="yP0-ns-i0b"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2x-Hm-WFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
