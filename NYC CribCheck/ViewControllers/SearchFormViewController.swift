@@ -165,7 +165,7 @@ extension SearchFormViewController: UITextFieldDelegate {
 //        searchButton.isEnabled = fieldsFilledOut
         switch textField {
         case houseNumberTextfield:
-            let allowedCharacters = CharacterSet.decimalDigits
+            let allowedCharacters = CharacterSet.init(charactersIn: "1234567890-")
             let characterSet = CharacterSet(charactersIn: string)
             fieldsFilledOut = !((houseNumberTextfield.text! + string).isEmpty ||
                 streetNameTextfield.text!.isEmpty ||
