@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
+		810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810694DB204A71A900DD0D2E /* UserActivityViewController.swift */; };
+		815C5E37204C67CC0071D588 /* Date format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C5E36204C67CC0071D588 /* Date format.swift */; };
+		815FA837204C6AB900EC0199 /* SearchForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815FA836204C6AB900EC0199 /* SearchForm.storyboard */; };
+		815FA839204C70C300EC0199 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815FA838204C70C300EC0199 /* SearchFormViewController.swift */; };
+		817DAF89204BCB95006D42BE /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */; };
+		817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */; };
+		817DAF8D204BCC2D006D42BE /* StillImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */; };
+		8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */; };
+		8196C0A2204B325200D5CC45 /* Persistance Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C0A1204B325200D5CC45 /* Persistance Service.swift */; };
+		819DF06F204CC84C00083B49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819DF06E204CC84C00083B49 /* Main.storyboard */; };
 		81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01639204A69FD001AB55D /* AppDelegate.swift */; };
-		81A0163C204A69FD001AB55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0163B204A69FD001AB55D /* ViewController.swift */; };
+		81A0163C204A69FD001AB55D /* BoroughSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0163B204A69FD001AB55D /* BoroughSelectViewController.swift */; };
 		81A01641204A69FD001AB55D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A01640204A69FD001AB55D /* Assets.xcassets */; };
 		81A01644204A69FD001AB55D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A01642204A69FD001AB55D /* LaunchScreen.storyboard */; };
 		81A0164F204A69FD001AB55D /* NYC_CribCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0164E204A69FD001AB55D /* NYC_CribCheckTests.swift */; };
@@ -17,9 +27,18 @@
 		81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01667204A6A11001AB55D /* MainTableViewController.swift */; };
 		81A0166A204A6A38001AB55D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 81A01669204A6A38001AB55D /* Fonts */; };
 		81A0166C204A6A43001AB55D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0166B204A6A43001AB55D /* DemoCell.swift */; };
-		81A0166E204A6A73001AB55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A0166D204A6A73001AB55D /* Main.storyboard */; };
+		81B61868204AFB6000388FC1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61867204AFB6000388FC1 /* Model.swift */; };
+		81B6186A204AFB6600388FC1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61869204AFB6600388FC1 /* File.swift */; };
+		81B6186C204AFB6F00388FC1 /* Model4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186B204AFB6F00388FC1 /* Model4.swift */; };
+		81B6186E204AFB7B00388FC1 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186D204AFB7B00388FC1 /* EmptyCell.swift */; };
+		81B61870204AFB8C00388FC1 /* LocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186F204AFB8C00388FC1 /* LocationRequest.swift */; };
+		81B61874204AFBA200388FC1 /* Model3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61873204AFBA200388FC1 /* Model3.swift */; };
+		81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61875204B0F9300388FC1 /* FormViewController.swift */; };
+		81B61878204B0F9D00388FC1 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */; };
+		81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61879204B25C700388FC1 /* BoroughTableViewCell.swift */; };
 		A97116CFAC91F69B41F59CC7 /* Pods_NYC_CribCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087F76EAFA843B3E1F38F7ED /* Pods_NYC_CribCheckUITests.framework */; };
 		B90458661F39AE7B062CE71A /* Pods_NYC_CribCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */; };
+		D2261D34204B863900D6133A /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61871204AFB9900388FC1 /* Violation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +64,19 @@
 		372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D8D64A568F2649934D6841 /* Pods-NYC CribCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		810694DB204A71A900DD0D2E /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
+		815C5E36204C67CC0071D588 /* Date format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date format.swift"; sourceTree = "<group>"; };
+		815FA836204C6AB900EC0199 /* SearchForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchForm.storyboard; sourceTree = "<group>"; };
+		815FA838204C70C300EC0199 /* SearchFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormViewController.swift; sourceTree = "<group>"; };
+		817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisclaimerAndTutorial.storyboard; sourceTree = "<group>"; };
+		817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StillImageViewController.swift; sourceTree = "<group>"; };
+		8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		8196C0A1204B325200D5CC45 /* Persistance Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistance Service.swift"; sourceTree = "<group>"; };
+		819DF06E204CC84C00083B49 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		81A01636204A69FD001AB55D /* NYC CribCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYC CribCheck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A01639204A69FD001AB55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81A0163B204A69FD001AB55D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81A0163B204A69FD001AB55D /* BoroughSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoroughSelectViewController.swift; sourceTree = "<group>"; };
 		81A01640204A69FD001AB55D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81A01643204A69FD001AB55D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81A01645204A69FD001AB55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +89,16 @@
 		81A01667204A6A11001AB55D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		81A01669204A6A38001AB55D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		81A0166B204A6A43001AB55D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
-		81A0166D204A6A73001AB55D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		81B61867204AFB6000388FC1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		81B61869204AFB6600388FC1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		81B6186B204AFB6F00388FC1 /* Model4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model4.swift; sourceTree = "<group>"; };
+		81B6186D204AFB7B00388FC1 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		81B6186F204AFB8C00388FC1 /* LocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequest.swift; sourceTree = "<group>"; };
+		81B61871204AFB9900388FC1 /* Violation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Violation.swift; sourceTree = "<group>"; };
+		81B61873204AFBA200388FC1 /* Model3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3.swift; sourceTree = "<group>"; };
+		81B61875204B0F9300388FC1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		81B61879204B25C700388FC1 /* BoroughTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoroughTableViewCell.swift; sourceTree = "<group>"; };
 		AFBD21F2A4DA0E7784FA7661 /* Pods-NYC CribCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3F53241528F098BE1DAF7F1 /* Pods-NYC CribCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		CC2FBE2FA1ED0ED5D09D1AA3 /* Pods-NYC CribCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +143,76 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		810694D3204A70D000DD0D2E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
+				817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */,
+				815FA836204C6AB900EC0199 /* SearchForm.storyboard */,
+				819DF06E204CC84C00083B49 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		810694D4204A70E300DD0D2E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81A0163B204A69FD001AB55D /* BoroughSelectViewController.swift */,
+				81B61875204B0F9300388FC1 /* FormViewController.swift */,
+				815FA838204C70C300EC0199 /* SearchFormViewController.swift */,
+				810694DB204A71A900DD0D2E /* UserActivityViewController.swift */,
+				81B61877204B0F9D00388FC1 /* SearchHistoryViewController.swift */,
+				81A01667204A6A11001AB55D /* MainTableViewController.swift */,
+				817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */,
+				817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		810694D5204A70FC00DD0D2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81A01645204A69FD001AB55D /* Info.plist */,
+				81A01639204A69FD001AB55D /* AppDelegate.swift */,
+				81A01640204A69FD001AB55D /* Assets.xcassets */,
+				81A01669204A6A38001AB55D /* Fonts */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		810694D6204A710D00DD0D2E /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				81A0166B204A6A43001AB55D /* DemoCell.swift */,
+				81B6186D204AFB7B00388FC1 /* EmptyCell.swift */,
+				81B61879204B25C700388FC1 /* BoroughTableViewCell.swift */,
+				8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		810694D7204A711800DD0D2E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				81B61867204AFB6000388FC1 /* Model.swift */,
+				81B61869204AFB6600388FC1 /* File.swift */,
+				81B6186B204AFB6F00388FC1 /* Model4.swift */,
+				8196C0A1204B325200D5CC45 /* Persistance Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		810694D8204A713000DD0D2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81B6186F204AFB8C00388FC1 /* LocationRequest.swift */,
+				81B61871204AFB9900388FC1 /* Violation.swift */,
+				81B61873204AFBA200388FC1 /* Model3.swift */,
+				815C5E36204C67CC0071D588 /* Date format.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		81A0162D204A69FD001AB55D = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +238,12 @@
 		81A01638204A69FD001AB55D /* NYC CribCheck */ = {
 			isa = PBXGroup;
 			children = (
-				81A01639204A69FD001AB55D /* AppDelegate.swift */,
-				81A0166B204A6A43001AB55D /* DemoCell.swift */,
-				81A0163B204A69FD001AB55D /* ViewController.swift */,
-				81A01667204A6A11001AB55D /* MainTableViewController.swift */,
-				81A01640204A69FD001AB55D /* Assets.xcassets */,
-				81A01669204A6A38001AB55D /* Fonts */,
-				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
-				81A0166D204A6A73001AB55D /* Main.storyboard */,
-				81A01645204A69FD001AB55D /* Info.plist */,
+				810694D8204A713000DD0D2E /* Models */,
+				810694D7204A711800DD0D2E /* Services */,
+				810694D6204A710D00DD0D2E /* CustomCells */,
+				810694D3204A70D000DD0D2E /* Storyboards */,
+				810694D4204A70E300DD0D2E /* ViewControllers */,
+				810694D5204A70FC00DD0D2E /* Supporting Files */,
 			);
 			path = "NYC CribCheck";
 			sourceTree = "<group>";
@@ -290,10 +395,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */,
 				81A01644204A69FD001AB55D /* LaunchScreen.storyboard in Resources */,
 				81A01641204A69FD001AB55D /* Assets.xcassets in Resources */,
+				819DF06F204CC84C00083B49 /* Main.storyboard in Resources */,
+				815FA837204C6AB900EC0199 /* SearchForm.storyboard in Resources */,
 				81A0166A204A6A38001AB55D /* Fonts in Resources */,
-				81A0166E204A6A73001AB55D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +431,12 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -331,6 +444,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,10 +593,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A0163C204A69FD001AB55D /* ViewController.swift in Sources */,
+				D2261D34204B863900D6133A /* Violation.swift in Sources */,
+				81A0163C204A69FD001AB55D /* BoroughSelectViewController.swift in Sources */,
+				815FA839204C70C300EC0199 /* SearchFormViewController.swift in Sources */,
+				81B6187A204B25C700388FC1 /* BoroughTableViewCell.swift in Sources */,
+				815C5E37204C67CC0071D588 /* Date format.swift in Sources */,
+				81B61876204B0F9300388FC1 /* FormViewController.swift in Sources */,
 				81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */,
+				817DAF8D204BCC2D006D42BE /* StillImageViewController.swift in Sources */,
+				81B6186C204AFB6F00388FC1 /* Model4.swift in Sources */,
+				81B61874204AFBA200388FC1 /* Model3.swift in Sources */,
+				81B6186A204AFB6600388FC1 /* File.swift in Sources */,
 				81A0166C204A6A43001AB55D /* DemoCell.swift in Sources */,
+				81B61878204B0F9D00388FC1 /* SearchHistoryViewController.swift in Sources */,
+				81B61870204AFB8C00388FC1 /* LocationRequest.swift in Sources */,
+				81B61868204AFB6000388FC1 /* Model.swift in Sources */,
+				810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */,
+				8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */,
+				817DAF89204BCB95006D42BE /* TutorialPageViewController.swift in Sources */,
+				8196C0A2204B325200D5CC45 /* Persistance Service.swift in Sources */,
 				81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */,
+				81B6186E204AFB7B00388FC1 /* EmptyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,7 +774,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSNU4DN7MY;
-				INFOPLIST_FILE = "NYC CribCheck/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NYC CribCheck/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheck";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -654,7 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSNU4DN7MY;
-				INFOPLIST_FILE = "NYC CribCheck/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NYC CribCheck/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "basedOnTy.NYC-CribCheck";
 				PRODUCT_NAME = "$(TARGET_NAME)";

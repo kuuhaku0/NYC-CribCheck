@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-8H-Llx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NYC-logo-880x704" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pA7-de-9mI">
+                                        <rect key="frame" x="0.0" y="-66.5" width="375" height="733.5"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crib Check" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-8G-TW0">
+                                        <rect key="frame" x="82.5" y="325" width="210" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
+                                        <color key="textColor" red="0.34503239390000001" green="0.34497383240000001" blue="0.35321360829999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e3496b3f1110a234cadd70a8eef71076-new-york-city-skyline-by-vexels" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-zi-zu1">
+                                        <rect key="frame" x="-15" y="445" width="405" height="242"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pA7-de-9mI" firstAttribute="leading" secondItem="3Jm-8H-Llx" secondAttribute="leading" id="1yb-rL-Drw"/>
+                                    <constraint firstItem="nS0-zi-zu1" firstAttribute="height" secondItem="pA7-de-9mI" secondAttribute="height" multiplier="0.33" id="Kdn-MZ-YT2"/>
+                                    <constraint firstItem="nS0-zi-zu1" firstAttribute="bottom" secondItem="PoU-7h-a5j" secondAttribute="bottom" constant="20" id="Ost-ak-Cyw"/>
+                                    <constraint firstItem="nS0-zi-zu1" firstAttribute="leading" secondItem="PoU-7h-a5j" secondAttribute="leading" constant="-15" id="a2a-w9-yJM"/>
+                                    <constraint firstItem="DdH-8G-TW0" firstAttribute="centerY" secondItem="3Jm-8H-Llx" secondAttribute="centerY" multiplier="1.05" id="b0t-V2-KZb"/>
+                                    <constraint firstItem="PoU-7h-a5j" firstAttribute="trailing" secondItem="nS0-zi-zu1" secondAttribute="trailing" constant="-15" id="bcY-Qo-4OH"/>
+                                    <constraint firstAttribute="trailing" secondItem="pA7-de-9mI" secondAttribute="trailing" id="coB-2Q-9gR"/>
+                                    <constraint firstItem="DdH-8G-TW0" firstAttribute="centerX" secondItem="3Jm-8H-Llx" secondAttribute="centerX" id="glf-wa-rss"/>
+                                    <constraint firstItem="pA7-de-9mI" firstAttribute="centerX" secondItem="3Jm-8H-Llx" secondAttribute="centerX" id="oLa-vd-3Oy"/>
+                                    <constraint firstItem="pA7-de-9mI" firstAttribute="centerY" secondItem="3Jm-8H-Llx" secondAttribute="centerY" multiplier="0.9" id="rfW-X3-RBg"/>
+                                    <constraint firstAttribute="bottom" secondItem="pA7-de-9mI" secondAttribute="bottom" id="xbO-ge-rxb"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="PoU-7h-a5j"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3Jm-8H-Llx" secondAttribute="trailing" id="2eC-dt-AG3"/>
+                            <constraint firstItem="3Jm-8H-Llx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="VXP-Fu-Eca"/>
+                            <constraint firstItem="3Jm-8H-Llx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="afF-dk-d6f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Jm-8H-Llx" secondAttribute="bottom" id="r0W-dg-eVo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NYC-logo-880x704" width="880" height="704"/>
+        <image name="e3496b3f1110a234cadd70a8eef71076-new-york-city-skyline-by-vexels" width="512" height="512"/>
+    </resources>
+</document>

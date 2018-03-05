@@ -11,6 +11,12 @@ pod 'FoldingCell'
 pod 'Kingfisher'
 pod 'Alamofire'
 pod 'SnapKit'
+pod 'Material'
+pod 'MaterialComponents/Collections'
+pod 'MaterialComponents/TextFields+Extensions'
+pod 'MaterialComponents/Buttons+Extensions'
+pod 'MaterialComponents/Palettes'
+pod 'SVProgressHUD'
 
   target 'NYC CribCheckTests' do
     inherit! :search_paths
