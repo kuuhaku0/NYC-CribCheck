@@ -30,7 +30,6 @@ class StreetImageAPIClient {
     private let apiKey = "AIzaSyARPaGAS3g4oaHzIpdHDk6iCn2FFgp1nP8"
     // helper -- make url from Violation
     private func urlString(from locationRequest: LocationRequest) -> String {
-//        let url = "https://maps.googleapis.com/maps/api/streetview?size=640x640&location=\(lat),\(lon)&key=\(self.apiKey)"
         let houseNumber = locationRequest.houseNumber
         let streetName = locationRequest.streetName
         let borough = locationRequest.borough
@@ -43,19 +42,11 @@ class StreetImageAPIClient {
     // public -- for use in getting data for viewcontrollers
     
     public func getStreetImage(for locationRequest: LocationRequest, completion: @escaping (StreetImageResult) -> Void) {
-//        let violations = violations.filter{$0.latitude != nil}
-//        guard let violation = violations.first else {
-//            completion(.failure(.noImage))
-//            return
-//        }
         
         guard let urlStr = urlString(from: locationRequest).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             completion(.failure(.badUrl(urlString(from: locationRequest))))
             return
         }
-//        guard let url = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-//            completion(.failure(<#T##StreetImageError#>))
-//        }
         
         if let image = Cache.manager.getImage(fromURL: urlStr) {
             completion(.success(image))
@@ -68,7 +59,7 @@ class StreetImageAPIClient {
             } else if let data = response.data {
                 if let image = UIImage.init(data: data) {
                     completion(.success(image))
-                    // TODO: add image to cache and persistence model?
+                    Cache.manager.add(image: image, withUrlStr: urlStr)
                 } else {
                     completion(.failure(.badData))
                 }

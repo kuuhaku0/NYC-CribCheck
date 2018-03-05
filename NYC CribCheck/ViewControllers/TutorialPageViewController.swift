@@ -10,7 +10,6 @@ import UIKit
 
 class TutorialPageViewController: UIPageViewController {
     
-    // var vc = StillImageViewController.storyboardInstance(withName: "One")
     
     private(set) lazy var orderedViewControllers: [StillImageViewController] = {
         return [self.simpleViewController("One"),
@@ -21,9 +20,6 @@ class TutorialPageViewController: UIPageViewController {
     
     private func simpleViewController(_ name: String) -> StillImageViewController {
         return StillImageViewController.storyboardInstance(withName: name)
-//        return UIStoryboard(name: "Main", bundle: nil) .
-//            instantiateViewControllerWithIdentifier("\(color)ViewController")
-//        self.control
     }
     
     override func viewDidLoad() {
@@ -37,7 +33,6 @@ class TutorialPageViewController: UIPageViewController {
                                animated: true,
                                completion: nil)
         }
-//        setViewControllers(orderedViewControllers, direction: .forward, animated: true, completion: nil)
     }
     override func viewDidLayoutSubviews() {
         //corrects scrollview frame to allow for full-screen view controller pages
@@ -50,11 +45,6 @@ class TutorialPageViewController: UIPageViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
-//        let vc = StillImageViewController.storyboardInstance(withName: "One")
-//        self.setViewControllers([vc], direction: .forward, animated: false, completion: nil)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,15 +58,6 @@ class TutorialPageViewController: UIPageViewController {
         return vc
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -84,7 +65,6 @@ class TutorialPageViewController: UIPageViewController {
 
 extension TutorialPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-//        return nil
         guard let viewController = viewController as? StillImageViewController else {
             return nil
         }
@@ -95,7 +75,7 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
         let previousIndex = viewControllerIndex - 1
         
         guard previousIndex >= 0 else {
-            return orderedViewControllers.last
+            return nil
         }
         
         guard orderedViewControllers.count > previousIndex else {
@@ -105,21 +85,9 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[previousIndex]
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        print(self.orderedViewControllers.index(of: viewController as! StillImageViewController))
-        //        return nil
-//        print(orderedV)
-        dump(viewController)
         guard let viewController = viewController as? StillImageViewController else {
             return nil
         }
-        print(viewController.view.tag)
-        print(viewController === orderedViewControllers[0])
-        print(viewController === orderedViewControllers[1])
-        print(viewController === orderedViewControllers[2])
-        print(orderedViewControllers.index(of: viewController))
-        print(orderedViewControllers.count)
-        dump(orderedViewControllers)
-        dump(viewController)
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
@@ -128,7 +96,7 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
         let orderedViewControllersCount = orderedViewControllers.count
         
         guard orderedViewControllersCount != nextIndex else {
-            return orderedViewControllers.first
+            return nil
         }
         
         guard orderedViewControllersCount > nextIndex else {
@@ -150,16 +118,5 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
         
         return firstViewControllerIndex
     }
-    
-    
-//    func pageViewController(pageViewController: UIPageViewController,
-//                            viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-//        return nil
-//    }
-//
-//    func pageViewController(pageViewController: UIPageViewController,
-//                            viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-//        return nil
-//    }
     
 }
