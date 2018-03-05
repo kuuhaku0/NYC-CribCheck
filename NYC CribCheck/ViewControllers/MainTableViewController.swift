@@ -43,13 +43,11 @@ class MainTableViewController: UIViewController {
         let biv = UIImageView()
         biv.alpha = 0.0
         biv.contentMode = .scaleAspectFill
-        biv.image = #imageLiteral(resourceName: "Lower-Manhattan").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
         return biv
     }()
     
     private lazy var headerImageView: UIImageView = {
         let hiv = UIImageView()
-        hiv.image = #imageLiteral(resourceName: "Lower-Manhattan")
         hiv.contentMode = .scaleAspectFill
         return hiv
     }()
@@ -125,7 +123,6 @@ class MainTableViewController: UIViewController {
         //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
         tableView.backgroundView?.contentMode = .scaleAspectFill
 
-//        dump(locationRequest)
         boroughHiddenLabel.text = locationRequest.borough
         
         address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"
@@ -179,8 +176,6 @@ extension MainTableViewController: UITableViewDataSource {
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
-        
-        dump(violation)
         cell.configCell(with: violation, borough: locationRequest.borough)
         return cell
     }
