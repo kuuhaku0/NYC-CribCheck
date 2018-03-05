@@ -50,18 +50,21 @@ class DemoCell: FoldingCell {
     public func configCell(with violation: Violation, borough: String) {
         
         //Formatting Date
-//        let currentStatusDate = DateFormatHelper.formatter.formateDate(from: violation.currentStatusDate,
-//                                                                       inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ",
-//                                                                       outputDateFormat: "MMM d, yyyy")
-//        let inspectionDate = DateFormatHelper.formatter.formateDate(from: violation.inspectionDate,
-//                                                                    inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ",
-//                                                                    outputDateFormat: "MMM d, yyyy")
-//        let formattedApprovedDate = DateFormatHelper.formatter.formateDate(from: violation.approvedDate ?? "" ,
-//                                                                  inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ",
-//                                                                  outputDateFormat: "MMM d, yyyy")
-//        let formattedIssueDate = DateFormatHelper.formatter.formateDate(from: violation.issueDate ?? "Present",
-//                                                               inputDateFormat: "yyyy-MM-dd'T'HH:mm:ssZ",
-//                                                               outputDateFormat: "MMM d, yyyy")
+        let currentStatusDate = DateFormatHelper.formatter.formateDate(from: violation.currentStatusDate,
+                                                                       inputDateFormat: "yyyy-MM-dd'T'HH:mm:ss",
+                                                                       outputDateFormat: "MMM d, yyyy")
+        let inspectionDate = DateFormatHelper.formatter.formateDate(from: violation.inspectionDate,
+                                                                    inputDateFormat: "yyyy-MM-dd'T'HH:mm:ss",
+                                                                    outputDateFormat: "MMM d, yyyy")
+        var formattedApprovedDate: String?
+        if violation.approvedDate != "" {
+            formattedApprovedDate = DateFormatHelper.formatter.formateDate(from: violation.approvedDate,
+                                                                  inputDateFormat: "yyyy-MM-dd'T'HH:mm:ss",
+                                                                  outputDateFormat: "MMM d, yyyy")
+        }
+        let formattedIssueDate = DateFormatHelper.formatter.formateDate(from: violation.issueDate ?? "Present",
+                                                               inputDateFormat: "yyyy-MM-dd'T'HH:mm:ss",
+                                                               outputDateFormat: "MMM d, yyyy")
         
         boroughLabel.isEnabled = false
         switch violation.violationStatus {
@@ -87,11 +90,11 @@ class DemoCell: FoldingCell {
         boroughLabel.setTitle(borough, for: .normal)
         severityClassLabel.text = violation.`class`
         severityLabelUnfolded.text = "Severity: \(violation.`class`)".uppercased()
-        insectionDate.text = violation.inspectionDate
-        issueDate.text = violation.issueDate
-        approvedDate.text = violation.approvedDate
+        insectionDate.text = inspectionDate
+        issueDate.text = formattedIssueDate
+        approvedDate.text = formattedApprovedDate ?? "N/A"
         noticeType.text = violation.noticeType
-        lastUpdatedLabel.text = "Last Updated: \(violation.currentStatusDate)"
+        lastUpdatedLabel.text = "Last Updated: \(currentStatusDate)"
     }
 }
 

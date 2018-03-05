@@ -25,11 +25,11 @@ class MainTableViewController: UIViewController {
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: // All comments
-            selectedSegment = 0
+            violationsArr = allViolations
         case 1: // All posts
-            selectedSegment = 1
+            violationsArr = openViolations
         case 2: // About
-            selectedSegment = 2
+            violationsArr = closedViolations
         default:
             break
         }
@@ -37,12 +37,6 @@ class MainTableViewController: UIViewController {
     
     private let headerStopOffset:CGFloat = 300 - 64
     private let hiddenLabelDistanceToTop:CGFloat = 30.0
-    //    private var contentToDisplay: contentTypes = .allPosts // might need this later
-    private var selectedSegment = 0 {
-        didSet {
-            tableView.reloadData()
-        }
-    }
     
     private lazy var headerBlurImageView: UIImageView = {
         let biv = UIImageView()
@@ -60,17 +54,32 @@ class MainTableViewController: UIViewController {
     }()
     
     //MARK: - VIOLATIONS
-
+    
     var violationsArr = [Violation]() {
         didSet {
             tableView?.reloadData()
         }
     }
     
-    var locationRequest: LocationRequest!
-    
+    var allViolations = [Violation]() {
+        didSet {
+            tableView?.reloadData()
+            print("ALL VIOLATIONS: \(allViolations)")
+        }
+    }
+
+    lazy var openViolations: [Violation]  = {
+        return allViolations.filter{ $0.violationStatus == "Open"}
+    }()
+
+    lazy var closedViolations: [Violation] = {
+        return allViolations.filter{ $0.violationStatus == "Close"}
+    }()
+
+    var locationRequest: LocationRequest! 
+
     var selectedBorough = ""
-    
+
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 488
     let kRowsCount = 10
@@ -78,19 +87,19 @@ class MainTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let btn = UIButton(frame: CGRect(x: 4, y: 20, width: 44, height: 44))
-//        btn.setImage(#imageLiteral(resourceName: "Menu"), for: .normal)
-//        btn.tintColor = UIColor.white
+        //        let btn = UIButton(frame: CGRect(x: 4, y: 20, width: 44, height: 44))
+        //        btn.setImage(#imageLiteral(resourceName: "Menu"), for: .normal)
+        //        btn.tintColor = UIColor.white
         
         // ADDS BUTTON TO ALL VIEWS
-//        UIApplication.shared.keyWindow?.addSubview(btn)
-        
+        //        UIApplication.shared.keyWindow?.addSubview(btn)
+
         setup()
         setupUI()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
-        
+        violationsArr = allViolations
         // TODO: show loading image indicator
         StreetImageAPIClient.manager.getStreetImage(for: locationRequest) { (result) in
             switch result {
@@ -102,28 +111,28 @@ class MainTableViewController: UIViewController {
                 print(error)
             }
         }
-        
     }
 
     private func setup() {
-        
-        
         let font = UIFont.systemFont(ofSize: 16)
         segmentedController.setTitleTextAttributes([NSAttributedStringKey.font: font], for: .normal)
-        
-        cellHeights = Array(repeating: kCloseCellHeight, count: violationsArr.count )
+
+        cellHeights = Array(repeating: kCloseCellHeight, count: allViolations.count )
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-            //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
+        //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
         tableView.backgroundView?.contentMode = .scaleAspectFill
+
+//        dump(locationRequest)
+        
         
         address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"
     }
-    
+
     private func setupUI() {
         headerView.clipsToBounds = true
-        
+
         // Header - imageView
         headerView.insertSubview(headerImageView, belowSubview: headerLabel)
         headerImageView.snp.makeConstraints { (make) in
@@ -170,6 +179,7 @@ extension MainTableViewController: UITableViewDataSource {
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
+        dump(violation)
         cell.configCell(with: violation, borough: locationRequest.borough)
         return cell
     }
@@ -203,7 +213,7 @@ extension MainTableViewController: UITableViewDataSource {
 }
 
 extension MainTableViewController: UITableViewDelegate {
-    
+
 }
 
 extension MainTableViewController: UIScrollViewDelegate {
@@ -272,5 +282,5 @@ extension MainTableViewController: UIScrollViewDelegate {
         
         // Set scroll view insets just underneath the segment control
         tableView.scrollIndicatorInsets = UIEdgeInsetsMake(segmentedView.bounds.maxY, 0, 0, 0)
-}
+    }
 }

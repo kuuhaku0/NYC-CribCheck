@@ -24,6 +24,9 @@ class Cache {
     }
     public func add(search: LocationRequest) {
         // TODO: linear runtime, fix it
+        guard !searches.contains(search) else {
+            return
+        }
         self.searches.insert(search, at: 0)
         // same
         PersistanceService.manager.addToPreviousSearches(search: search)

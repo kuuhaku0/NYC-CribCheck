@@ -153,7 +153,7 @@ class SearchFormViewController: UIViewController {
             switch result {
                 
             case .success(let onlineViolations):
-                //                PersistanceService.manager.addToPreviousSearches(search: location)
+//                           PersistanceService.manager.addToPreviousSearches(search: location)
                 self.violationsArr = onlineViolations
                 self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
             case .failure(let error):
@@ -167,7 +167,7 @@ class SearchFormViewController: UIViewController {
         //send array of violations to maintableviewcontroller
         if segue.destination is MainTableViewController {
             let mainTableVC = segue.destination as? MainTableViewController
-            mainTableVC?.violationsArr = violationsArr
+            mainTableVC?.allViolations = violationsArr
             mainTableVC?.locationRequest = locationRequest
         }
     }
@@ -186,7 +186,7 @@ extension SearchFormViewController: UITextFieldDelegate {
 //        searchButton.isEnabled = fieldsFilledOut
         switch textField {
         case houseNumberTextfield:
-            let allowedCharacters = CharacterSet.decimalDigits
+            let allowedCharacters = CharacterSet.init(charactersIn: "1234567890-")
             let characterSet = CharacterSet(charactersIn: string)
             fieldsFilledOut = !((houseNumberTextfield.text! + string).isEmpty ||
                 streetNameTextfield.text!.isEmpty ||

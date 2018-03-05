@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PersistanceService.manager.loadData()
         Cache.manager.configureSearches()
         // Override point for customization after application launch.
+        Cache.manager.configureSearches()
         return true
     }
 

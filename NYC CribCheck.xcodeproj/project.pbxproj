@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		4E7021FE49B91B51DB58A282 /* Pods_NYC_CribCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D8FC5086D63AD78DE375E /* Pods_NYC_CribCheck.framework */; };
 		810694DC204A71A900DD0D2E /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810694DB204A71A900DD0D2E /* UserActivityViewController.swift */; };
+		815C5E37204C67CC0071D588 /* Date format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C5E36204C67CC0071D588 /* Date format.swift */; };
 		815FA837204C6AB900EC0199 /* SearchForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815FA836204C6AB900EC0199 /* SearchForm.storyboard */; };
 		815FA839204C70C300EC0199 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815FA838204C70C300EC0199 /* SearchFormViewController.swift */; };
-		815C5E37204C67CC0071D588 /* Date format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C5E36204C67CC0071D588 /* Date format.swift */; };
 		817DAF89204BCB95006D42BE /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */; };
 		817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */; };
 		817DAF8D204BCC2D006D42BE /* StillImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */; };
 		8196C0A0204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */; };
 		8196C0A2204B325200D5CC45 /* Persistance Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8196C0A1204B325200D5CC45 /* Persistance Service.swift */; };
+		819DF06F204CC84C00083B49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819DF06E204CC84C00083B49 /* Main.storyboard */; };
 		81A0163A204A69FD001AB55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01639204A69FD001AB55D /* AppDelegate.swift */; };
 		81A0163C204A69FD001AB55D /* BoroughSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0163B204A69FD001AB55D /* BoroughSelectViewController.swift */; };
 		81A01641204A69FD001AB55D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A01640204A69FD001AB55D /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		81A01668204A6A11001AB55D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A01667204A6A11001AB55D /* MainTableViewController.swift */; };
 		81A0166A204A6A38001AB55D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 81A01669204A6A38001AB55D /* Fonts */; };
 		81A0166C204A6A43001AB55D /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0166B204A6A43001AB55D /* DemoCell.swift */; };
-		81A0166E204A6A73001AB55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A0166D204A6A73001AB55D /* Main.storyboard */; };
 		81B61868204AFB6000388FC1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61867204AFB6000388FC1 /* Model.swift */; };
 		81B6186A204AFB6600388FC1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B61869204AFB6600388FC1 /* File.swift */; };
 		81B6186C204AFB6F00388FC1 /* Model4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B6186B204AFB6F00388FC1 /* Model4.swift */; };
@@ -65,14 +65,15 @@
 		37D8D64A568F2649934D6841 /* Pods-NYC CribCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYC CribCheckUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3ECB5DFE814DFFA4DCD47084 /* Pods_NYC_CribCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYC_CribCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810694DB204A71A900DD0D2E /* UserActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
+		815C5E36204C67CC0071D588 /* Date format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date format.swift"; sourceTree = "<group>"; };
 		815FA836204C6AB900EC0199 /* SearchForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchForm.storyboard; sourceTree = "<group>"; };
 		815FA838204C70C300EC0199 /* SearchFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormViewController.swift; sourceTree = "<group>"; };
-		815C5E36204C67CC0071D588 /* Date format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date format.swift"; sourceTree = "<group>"; };
 		817DAF88204BCB95006D42BE /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisclaimerAndTutorial.storyboard; sourceTree = "<group>"; };
 		817DAF8C204BCC2D006D42BE /* StillImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StillImageViewController.swift; sourceTree = "<group>"; };
 		8196C09F204B2EDA00D5CC45 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8196C0A1204B325200D5CC45 /* Persistance Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistance Service.swift"; sourceTree = "<group>"; };
+		819DF06E204CC84C00083B49 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		81A01636204A69FD001AB55D /* NYC CribCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYC CribCheck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A01639204A69FD001AB55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81A0163B204A69FD001AB55D /* BoroughSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoroughSelectViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		81A01667204A6A11001AB55D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		81A01669204A6A38001AB55D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		81A0166B204A6A43001AB55D /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
-		81A0166D204A6A73001AB55D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		81B61867204AFB6000388FC1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		81B61869204AFB6600388FC1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		81B6186B204AFB6F00388FC1 /* Model4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model4.swift; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				81A01642204A69FD001AB55D /* LaunchScreen.storyboard */,
-				81A0166D204A6A73001AB55D /* Main.storyboard */,
 				817DAF8A204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard */,
 				815FA836204C6AB900EC0199 /* SearchForm.storyboard */,
+				819DF06E204CC84C00083B49 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -398,9 +398,9 @@
 				817DAF8B204BCBDD006D42BE /* DisclaimerAndTutorial.storyboard in Resources */,
 				81A01644204A69FD001AB55D /* LaunchScreen.storyboard in Resources */,
 				81A01641204A69FD001AB55D /* Assets.xcassets in Resources */,
+				819DF06F204CC84C00083B49 /* Main.storyboard in Resources */,
 				815FA837204C6AB900EC0199 /* SearchForm.storyboard in Resources */,
 				81A0166A204A6A38001AB55D /* Fonts in Resources */,
-				81A0166E204A6A73001AB55D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

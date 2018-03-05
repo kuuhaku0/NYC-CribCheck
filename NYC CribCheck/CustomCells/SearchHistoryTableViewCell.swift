@@ -13,7 +13,6 @@ class SearchHistoryTableViewCell: UITableViewCell {
 
     lazy var streetAddressLabel: UILabel = {
         let lab = UILabel()
-        lab.text = "37 West 6th Street 3C"
         lab.numberOfLines = 0
         lab.adjustsFontForContentSizeCategory = true
         return lab
@@ -21,7 +20,6 @@ class SearchHistoryTableViewCell: UITableViewCell {
     
     lazy var cityStateZipLabel: UILabel = {
         let lab = UILabel()
-        lab.text = "New York, NY 10232"
         lab.numberOfLines = 0
         lab.adjustsFontForContentSizeCategory = true
         return lab
@@ -29,7 +27,6 @@ class SearchHistoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

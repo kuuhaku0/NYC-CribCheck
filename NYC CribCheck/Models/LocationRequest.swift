@@ -10,7 +10,16 @@ import Foundation
 
 
 // Borough, house number, street name, optional apartment number and zip code as Strings
-struct LocationRequest: Codable {
+struct LocationRequest: Codable, Equatable {
+    static func ==(lhs: LocationRequest, rhs: LocationRequest) -> Bool {
+        return lhs.borough == rhs.borough &&
+            lhs.houseNumber == rhs.houseNumber &&
+            lhs.streetName == rhs.streetName &&
+            lhs.apartment == rhs.apartment &&
+            lhs.zipCode == rhs.zipCode
+    }
+    
+    
     let borough: String
     let houseNumber: String
     let streetName: String

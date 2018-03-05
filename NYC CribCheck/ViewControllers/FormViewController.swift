@@ -98,7 +98,7 @@ class FormViewController: UIViewController {
         //send array of violations to maintableviewcontroller
         if segue.destination is MainTableViewController {
             let mainTableVC = segue.destination as? MainTableViewController
-            mainTableVC?.violationsArr = violationsArr
+            mainTableVC?.allViolations = violationsArr
             mainTableVC?.locationRequest = locationRequest
         }
     }
