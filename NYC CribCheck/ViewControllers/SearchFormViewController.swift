@@ -9,6 +9,7 @@
 import UIKit
 import MaterialComponents.MaterialTextFields
 import MaterialComponents.MaterialButtons
+import SVProgressHUD
 
 class SearchFormViewController: UIViewController {
     var borough = ""
@@ -21,18 +22,20 @@ class SearchFormViewController: UIViewController {
     @IBOutlet weak var zipCodeTextfield: MDCTextField!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
-    
-    
     var hnTFController: MDCTextInputControllerLegacyDefault!
     var snTFController: MDCTextInputControllerLegacyDefault!
     var aptTFController: MDCTextInputControllerLegacyDefault!
     var zcTFController: MDCTextInputControllerLegacyDefault!
     
-    
     @IBOutlet weak var searchButton:MDCRaisedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        houseNumberTextfield.textColor = .white
+        streetNameTextfield.textColor = .white
+        apartmentTextfield.textColor = .white
+        zipCodeTextfield.textColor = .white
+        
         navigationItem.title = borough
         houseNumberTextfield.delegate = self
         houseNumberTextfield.tag = 1
@@ -65,7 +68,6 @@ class SearchFormViewController: UIViewController {
         aptTFController.inlinePlaceholderColor = UIColor.white
         zcTFController.inlinePlaceholderColor = UIColor.white
         
-        
         hnTFController.setErrorText("i.e. 1234", errorAccessibilityValue: nil)
         snTFController.setErrorText("i.e. East 48 Street", errorAccessibilityValue: nil)
         aptTFController.setErrorText("*optional i.e. 2R ", errorAccessibilityValue: nil)
@@ -90,7 +92,6 @@ class SearchFormViewController: UIViewController {
         zipCodeTextfield.autocapitalizationType = .none
         
         backgroundImageView.image = bgImage
-        
     }
     
     func showAlert(title: String, message: String) {
@@ -125,15 +126,16 @@ class SearchFormViewController: UIViewController {
         }
         
         locationRequest = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
-        
         HousingAPIClient.manager.getViolations(usingLocation: locationRequest) { (result) in
             switch result {
                 
             case .success(let onlineViolations):
                 self.violationsArr = onlineViolations
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
             case .failure(let error):
                 print(error)
+                SVProgressHUD.dismiss()
                 self.showAlert(title: "Error", message: "No results found, please check address")
             }
         }
@@ -149,6 +151,7 @@ class SearchFormViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
+        SVProgressHUD.show()
         search()
     }
     
@@ -197,8 +200,6 @@ extension SearchFormViewController: UITextFieldDelegate {
         }
         return true
     }
-    
-    
 }
 
 

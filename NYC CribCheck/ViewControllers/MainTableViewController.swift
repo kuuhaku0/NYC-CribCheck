@@ -42,13 +42,11 @@ class MainTableViewController: UIViewController {
         let biv = UIImageView()
         biv.alpha = 0.0
         biv.contentMode = .scaleAspectFill
-        biv.image = #imageLiteral(resourceName: "Lower-Manhattan").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
         return biv
     }()
     
     private lazy var headerImageView: UIImageView = {
         let hiv = UIImageView()
-        hiv.image = #imageLiteral(resourceName: "Lower-Manhattan")
         hiv.contentMode = .scaleAspectFill
         return hiv
     }()
@@ -113,7 +111,7 @@ class MainTableViewController: UIViewController {
         cellHeights = Array(repeating: kCloseCellHeight, count: allViolations.count )
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
+        tableView.backgroundColor = UIColor.lightGray
         tableView.backgroundView?.contentMode = .scaleAspectFill
         boroughHiddenLabel.text = locationRequest.borough
         
