@@ -9,6 +9,7 @@ import Material
 
 class MainTableViewController: UIViewController {
     
+    @IBOutlet weak var boroughHiddenLabel: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -125,7 +126,7 @@ class MainTableViewController: UIViewController {
         tableView.backgroundView?.contentMode = .scaleAspectFill
 
 //        dump(locationRequest)
-        
+        boroughHiddenLabel.text = locationRequest.borough
         
         address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"
     }

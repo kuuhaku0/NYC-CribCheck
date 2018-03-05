@@ -10,6 +10,11 @@ import UIKit
 
 class BoroughTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var opaqueView: UIView! {
+        didSet {
+            opaqueView.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 10
