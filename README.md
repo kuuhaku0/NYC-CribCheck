@@ -1,5 +1,5 @@
-# NYC-CribCheck
-## A C4Q Access Code Hackathon Project
+# NYC CribCheck
+### A C4Q Access Code Hackathon Project
 
 An App serving NYC residents, check property for housing violations before making a move. 
 
