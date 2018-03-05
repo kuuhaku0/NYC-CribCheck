@@ -14,11 +14,14 @@ struct DateFormatHelper {
     public func formateDate(from date: String,
                             inputDateFormat inputFormat: String,
                             outputDateFormat outputFormat: String) -> String {
+        //for this app
+        let date = date.replacingOccurrences(of: ".000", with: "")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = inputFormat
-        let date = dateFormatter.date(from: date)
+        print(date)
+        let date1 = dateFormatter.date(from: date)
         dateFormatter.dateFormat = outputFormat
-        return dateFormatter.string(from: date!)
+        return dateFormatter.string(from: date1!)
     }
 }
 /*

@@ -123,6 +123,9 @@ class MainTableViewController: UIViewController {
         //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
         tableView.backgroundView?.contentMode = .scaleAspectFill
 
+//        dump(locationRequest)
+        
+        
         address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"
     }
 
@@ -174,7 +177,8 @@ extension MainTableViewController: UITableViewDataSource {
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
-
+        
+        dump(violation)
         cell.configCell(with: violation, borough: locationRequest.borough)
         return cell
     }

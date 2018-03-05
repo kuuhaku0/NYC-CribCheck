@@ -132,7 +132,7 @@ class SearchFormViewController: UIViewController {
             switch result {
                 
             case .success(let onlineViolations):
-                //                PersistanceService.manager.addToPreviousSearches(search: location)
+//                           PersistanceService.manager.addToPreviousSearches(search: location)
                 self.violationsArr = onlineViolations
                 self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
             case .failure(let error):

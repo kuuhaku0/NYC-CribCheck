@@ -26,6 +26,9 @@ class PersistanceService {
     
     public func addToPreviousSearches(search: LocationRequest) {
         // TODO: linear runtime, fix it
+        guard !locationRequests.contains(search) else {
+            return
+        }
         locationRequests.insert(search, at: 0)
     }
     private func saveSearchedAddress() {
