@@ -12,7 +12,6 @@ import MaterialComponents.MaterialButtons
 import SVProgressHUD
 
 class SearchFormViewController: UIViewController {
-    //TODO: get borough from borough select view
     var borough = ""
     var violationsArr = [Violation]()
     var bgImage: UIImage!
@@ -27,18 +26,8 @@ class SearchFormViewController: UIViewController {
     var snTFController: MDCTextInputControllerLegacyDefault!
     var aptTFController: MDCTextInputControllerLegacyDefault!
     var zcTFController: MDCTextInputControllerLegacyDefault!
-    //    @IBOutlet weak var houseNumberLabel: UILabel!
-    //    @IBOutlet weak var streetNameLabel: UILabel!
-    //    @IBOutlet weak var apartmentLabel: UILabel!
-    //    @IBOutlet weak var zipCodeLabel: UILabel!
     
     @IBOutlet weak var searchButton:MDCRaisedButton!
-    
-    public static func storyboardInstance() -> SearchFormViewController {
-        let storyboard = UIStoryboard(name: "SearchForm", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SearchFormViewController") as! SearchFormViewController
-        return vc
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,10 +79,9 @@ class SearchFormViewController: UIViewController {
         zcTFController.isFloatingEnabled = true
         
         searchButton.isEnabled = false
-//        searchButton.setElevation(.none, for: .normal)
         searchButton.setBackgroundColor(UIColor.white)
         searchButton.setTitleColor(UIColor.black, for: .normal)
-//        searchButton
+        
         houseNumberTextfield.autocorrectionType = .no
         houseNumberTextfield.autocapitalizationType = .none
         streetNameTextfield.autocorrectionType = .no
@@ -118,7 +106,6 @@ class SearchFormViewController: UIViewController {
         guard searchButton.isEnabled else {
             return
         }
-//        var apartment = apartmentTextfield.text?.uppercased()
         guard let houseNumber = houseNumberTextfield.text else {
             showAlert(title: "Missing Input", message: "All Fields must be filled in")
             return
@@ -139,20 +126,10 @@ class SearchFormViewController: UIViewController {
         }
         
         locationRequest = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
-        //TODO: api call with the above params, completion handler contains perform segue
-        //completion should populate violationsArr
-        //violationsArr = [Violation]()
-        //switch on result if failure error
-        //        switch result {
-        //        case .success(let success):
-        // returns [violations]
-        //        case let .failure(let failure):
-        //        returns an error
         HousingAPIClient.manager.getViolations(usingLocation: locationRequest) { (result) in
             switch result {
                 
             case .success(let onlineViolations):
-//                           PersistanceService.manager.addToPreviousSearches(search: location)
                 self.violationsArr = onlineViolations
                 SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
@@ -182,10 +159,6 @@ class SearchFormViewController: UIViewController {
 extension SearchFormViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var fieldsFilledOut: Bool
-//        let fieldsFilledOut = !(houseNumberTextfield.text!.isEmpty ||
-//                                streetNameTextfield.text!.isEmpty ||
-//                                 zipCodeTextfield.text!.isEmpty)
-//        searchButton.isEnabled = fieldsFilledOut
         switch textField {
         case houseNumberTextfield:
             let allowedCharacters = CharacterSet.init(charactersIn: "1234567890-")
@@ -228,5 +201,6 @@ extension SearchFormViewController: UITextFieldDelegate {
         return true
     }
 }
+
 
 

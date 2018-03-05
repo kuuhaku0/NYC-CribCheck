@@ -29,7 +29,7 @@ class Cache {
         }
         self.searches.insert(search, at: 0)
         // same
-        PersistanceService.manager.addToPreviousSearches(search: search)
+        PersistenceService.manager.addToPreviousSearches(search: search)
     }
     public func getViolations(fromURL urlStr: String) -> [Violation]? {
         if let violations = self.violations[urlStr] {
@@ -53,6 +53,6 @@ class Cache {
     }
     // will load previous searches into cache
     public func configureSearches() {
-        searches = PersistanceService.manager.getPreviousSearches()
+        searches = PersistenceService.manager.getPreviousSearches()
     }
 }

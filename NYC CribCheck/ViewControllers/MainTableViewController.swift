@@ -5,7 +5,6 @@ import UIKit
 import SnapKit
 import Material
 
-// FOR TYLER'S USE ONLY 
 
 class MainTableViewController: UIViewController {
     
@@ -63,7 +62,6 @@ class MainTableViewController: UIViewController {
     var allViolations = [Violation]() {
         didSet {
             tableView?.reloadData()
-            print("ALL VIOLATIONS: \(allViolations)")
         }
     }
 
@@ -86,12 +84,6 @@ class MainTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        let btn = UIButton(frame: CGRect(x: 4, y: 20, width: 44, height: 44))
-        //        btn.setImage(#imageLiteral(resourceName: "Menu"), for: .normal)
-        //        btn.tintColor = UIColor.white
-        
-        // ADDS BUTTON TO ALL VIEWS
-        //        UIApplication.shared.keyWindow?.addSubview(btn)
 
         setup()
         setupUI()
@@ -119,10 +111,7 @@ class MainTableViewController: UIViewController {
         cellHeights = Array(repeating: kCloseCellHeight, count: allViolations.count )
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-        //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
         tableView.backgroundView?.contentMode = .scaleAspectFill
-
         boroughHiddenLabel.text = locationRequest.borough
         
         address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"

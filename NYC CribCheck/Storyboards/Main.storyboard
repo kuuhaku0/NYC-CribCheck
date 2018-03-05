@@ -60,16 +60,7 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Plt-KU-XOZ">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="0VG-us-7hv" id="ATn-s3-Rfi"/>
                             <outlet property="delegate" destination="0VG-us-7hv" id="Kch-hO-sj2"/>
@@ -89,6 +80,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="p2U-sL-hhd" kind="relationship" relationship="viewControllers" id="7ha-4n-4II"/>
@@ -163,6 +155,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="kD6-PR-lGu" secondAttribute="bottom" constant="4" id="pDT-N4-kN0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="boroughImage" destination="HsZ-x0-6i3" id="FNO-5A-gBh"/>
                                             <outlet property="boroughLabel" destination="YBE-3B-uoZ" id="bIC-Fo-aLQ"/>
@@ -278,7 +271,7 @@
                             <constraint firstItem="vxV-EK-rya" firstAttribute="centerX" secondItem="NaK-ZY-2yb" secondAttribute="centerX" id="qXY-Qi-Jp0"/>
                             <constraint firstItem="vxV-EK-rya" firstAttribute="top" secondItem="NaK-ZY-2yb" secondAttribute="top" constant="50" id="rvE-3S-8aX"/>
                             <constraint firstItem="pkz-2c-nYS" firstAttribute="centerY" secondItem="Rl5-w7-If0" secondAttribute="centerY" id="ryk-Mi-TOs"/>
-                            <constraint firstItem="pkz-2c-nYS" firstAttribute="height" secondItem="Rl5-w7-If0" secondAttribute="height" id="sMr-Wb-jm7"/>
+                            <constraint firstItem="pkz-2c-nYS" firstAttribute="height" secondItem="hJg-Sk-biS" secondAttribute="height" id="sMr-Wb-jm7"/>
                             <constraint firstItem="h5J-jM-a0b" firstAttribute="width" secondItem="vxV-EK-rya" secondAttribute="width" id="uhW-Rm-mH3"/>
                             <constraint firstItem="X0e-Hi-6Kl" firstAttribute="centerX" secondItem="vxV-EK-rya" secondAttribute="centerX" id="vKn-gu-0qT"/>
                             <constraint firstItem="X0e-Hi-6Kl" firstAttribute="top" secondItem="cdq-i8-TBR" secondAttribute="bottom" constant="2" id="vYR-Ja-jR2"/>
@@ -316,7 +309,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mNl-2j-IAQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <view key="tableHeaderView" contentMode="scaleToFill" id="alU-R7-4Qh" userLabel="Profile View">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -716,7 +709,7 @@
                                                         <constraint firstItem="hdw-eY-8iM" firstAttribute="top" secondItem="G41-Oe-k0n" secondAttribute="topMargin" identifier="foregroundViewTop" id="pEr-13-jB1"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" red="0.5725490196078431" green="0.61960784313725492" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.93323183059692383" green="0.9333917498588562" blue="0.93322181701660156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <outlet property="DescriptionLabel" destination="Q9p-2z-gDN" id="xt8-lm-i8n"/>
                                                     <outlet property="DescriptionLabelUnfolded" destination="KSE-bC-1we" id="gSx-ih-V4E"/>
@@ -771,7 +764,7 @@
                                                     <segment title="Open"/>
                                                     <segment title="Closed"/>
                                                 </segments>
-                                                <color key="tintColor" red="0.50980392156862742" green="0.46274509803921571" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="segmentedControl:" destination="uSb-s2-rZu" eventType="valueChanged" id="A3Z-st-kjz"/>
                                                 </connections>
@@ -866,9 +859,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p2U-sL-hhd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="G8m-Kd-OFt"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXb-Pw-2Q1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXb-Pw-2Q1">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
