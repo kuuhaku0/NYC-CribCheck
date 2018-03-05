@@ -14,11 +14,15 @@ class SearchFormViewController: UIViewController {
     //TODO: get borough from borough select view
     var borough = ""
     var violationsArr = [Violation]()
+    var bgImage: UIImage!
     
     @IBOutlet weak var houseNumberTextfield: MDCTextField!
     @IBOutlet weak var streetNameTextfield: MDCTextField!
     @IBOutlet weak var apartmentTextfield: MDCTextField!
     @IBOutlet weak var zipCodeTextfield: MDCTextField!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    
     
     var hnTFController: MDCTextInputControllerLegacyDefault!
     var snTFController: MDCTextInputControllerLegacyDefault!
@@ -55,10 +59,24 @@ class SearchFormViewController: UIViewController {
         aptTFController = MDCTextInputControllerLegacyDefault(textInput: apartmentTextfield)
         zcTFController = MDCTextInputControllerLegacyDefault(textInput: zipCodeTextfield)
         
-        hnTFController.errorColor = UIColor.lightGray
-        snTFController.errorColor = UIColor.lightGray
-        aptTFController.errorColor = UIColor.lightGray
-        zcTFController.errorColor = UIColor.lightGray
+        hnTFController.errorColor = UIColor.white
+        snTFController.errorColor = UIColor.white
+        aptTFController.errorColor = UIColor.white
+        zcTFController.errorColor = UIColor.white
+        hnTFController.normalColor = UIColor.white
+        snTFController.normalColor = UIColor.white
+        aptTFController.normalColor = UIColor.white
+        zcTFController.normalColor = UIColor.white
+        hnTFController.floatingPlaceholderNormalColor = UIColor.white
+        snTFController.floatingPlaceholderNormalColor = UIColor.white
+        aptTFController.floatingPlaceholderNormalColor = UIColor.white
+        zcTFController.floatingPlaceholderNormalColor = UIColor.white
+        hnTFController.inlinePlaceholderColor = UIColor.white
+        snTFController.inlinePlaceholderColor = UIColor.white
+        aptTFController.inlinePlaceholderColor = UIColor.white
+        zcTFController.inlinePlaceholderColor = UIColor.white
+        
+        
         hnTFController.setErrorText("i.e. 1234", errorAccessibilityValue: nil)
         snTFController.setErrorText("i.e. East 48 Street", errorAccessibilityValue: nil)
         aptTFController.setErrorText("*optional i.e. 2R ", errorAccessibilityValue: nil)
@@ -71,8 +89,8 @@ class SearchFormViewController: UIViewController {
         
         searchButton.isEnabled = false
 //        searchButton.setElevation(.none, for: .normal)
-//        searchButton.setBackgroundColor(<#T##backgroundColor: UIColor?##UIColor?#>)
-//        searchButton.setTitleColor(<#T##color: UIColor?##UIColor?#>, for: <#T##UIControlState#>)
+        searchButton.setBackgroundColor(UIColor.white)
+        searchButton.setTitleColor(UIColor.black, for: .normal)
 //        searchButton
         houseNumberTextfield.autocorrectionType = .no
         houseNumberTextfield.autocapitalizationType = .none
@@ -82,6 +100,9 @@ class SearchFormViewController: UIViewController {
         apartmentTextfield.autocapitalizationType = .none
         zipCodeTextfield.autocorrectionType = .no
         zipCodeTextfield.autocapitalizationType = .none
+        
+        backgroundImageView.image = bgImage
+        
     }
     
     func showAlert(title: String, message: String) {

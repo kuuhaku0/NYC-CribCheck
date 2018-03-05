@@ -38,6 +38,8 @@ class FormViewController: UIViewController {
         apartmentTextfield.tag = 3
         zipCodeTextfield.delegate = self
         zipCodeTextfield.tag = 4
+        
+        
     }
     
     func showAlert(title: String, message: String) {

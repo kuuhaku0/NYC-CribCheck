@@ -96,6 +96,7 @@ class MainTableViewController: UIViewController {
             switch result {
             case .success(let onlineImage):
                 self.headerImageView.image = onlineImage
+                self.headerBlurImageView.image = onlineImage.blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
             case .failure(let error):
                 // TODO: handle this error
                 print(error)

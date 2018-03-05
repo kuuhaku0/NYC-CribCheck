@@ -109,6 +109,7 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
                 print("gdf")
             }
             formVC.borough = currentBorough
+            formVC.bgImage = boroughs[indexPath.row].1
         }
     }
 }

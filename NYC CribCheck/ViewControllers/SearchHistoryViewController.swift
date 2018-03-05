@@ -75,7 +75,8 @@ extension SearchHistoryViewController: UITableViewDelegate {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let violationVC = storyboard.instantiateViewController(withIdentifier: "MainTableViewController") as! MainTableViewController
                     self.currentViolationArr = onlineViolations
-                    violationVC.violationsArr = onlineViolations
+                    violationVC.allViolations = onlineViolations
+                    violationVC.locationRequest = location
 //                    violationVC.locationRequest = locationRequest
                     self.present(violationVC, animated: true, completion: nil)
                 }

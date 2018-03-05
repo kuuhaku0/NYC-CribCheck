@@ -50,7 +50,7 @@
         <scene sceneID="f8Y-4D-nP5">
             <objects>
                 <tabBarController id="NDx-3m-hNi" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zei-89-a4h">
+                    <tabBar key="tabBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zei-89-a4h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,6 +163,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rl5-w7-If0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSU-oJ-niL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mK3-kv-8TY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <view alpha="0.050000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkz-2c-nYS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxV-EK-rya" customClass="MDCTextField">
                                 <rect key="frame" x="51.666666666666657" y="114" width="310.66666666666674" height="30"/>
                                 <nil key="textColor"/>
@@ -200,14 +215,26 @@
                             <constraint firstItem="cdq-i8-TBR" firstAttribute="width" secondItem="vxV-EK-rya" secondAttribute="width" id="1sg-EC-GjZ"/>
                             <constraint firstItem="X0e-Hi-6Kl" firstAttribute="width" secondItem="vxV-EK-rya" secondAttribute="width" id="IIl-H6-I1k"/>
                             <constraint firstItem="YTo-kD-4kW" firstAttribute="centerX" secondItem="NaK-ZY-2yb" secondAttribute="centerX" id="LQj-9l-ctc"/>
+                            <constraint firstItem="RSU-oJ-niL" firstAttribute="centerX" secondItem="pkz-2c-nYS" secondAttribute="centerX" id="LcQ-2O-kfM"/>
+                            <constraint firstAttribute="bottom" secondItem="Rl5-w7-If0" secondAttribute="bottom" id="NKc-eX-DHS"/>
                             <constraint firstItem="vxV-EK-rya" firstAttribute="width" secondItem="hJg-Sk-biS" secondAttribute="width" multiplier="0.75" id="NeX-P9-WUN"/>
                             <constraint firstItem="YTo-kD-4kW" firstAttribute="top" secondItem="X0e-Hi-6Kl" secondAttribute="bottom" constant="14" id="PXe-rc-5Qz"/>
+                            <constraint firstItem="RSU-oJ-niL" firstAttribute="height" secondItem="pkz-2c-nYS" secondAttribute="height" id="T9r-YL-GdR"/>
                             <constraint firstItem="cdq-i8-TBR" firstAttribute="top" secondItem="h5J-jM-a0b" secondAttribute="bottom" constant="2" id="TbO-ZL-7Ib"/>
                             <constraint firstItem="cdq-i8-TBR" firstAttribute="centerX" secondItem="vxV-EK-rya" secondAttribute="centerX" id="Ufm-J8-X3s"/>
                             <constraint firstItem="h5J-jM-a0b" firstAttribute="top" secondItem="vxV-EK-rya" secondAttribute="bottom" constant="2" id="Wjr-CB-RAu"/>
+                            <constraint firstItem="RSU-oJ-niL" firstAttribute="width" secondItem="pkz-2c-nYS" secondAttribute="width" id="XMV-ZN-sOP"/>
+                            <constraint firstItem="pkz-2c-nYS" firstAttribute="centerX" secondItem="Rl5-w7-If0" secondAttribute="centerX" id="ZLJ-RC-g1Z"/>
+                            <constraint firstItem="Rl5-w7-If0" firstAttribute="leading" secondItem="NaK-ZY-2yb" secondAttribute="leading" id="boz-sA-4bm"/>
                             <constraint firstItem="h5J-jM-a0b" firstAttribute="centerX" secondItem="vxV-EK-rya" secondAttribute="centerX" id="c3t-4g-52c"/>
+                            <constraint firstItem="pkz-2c-nYS" firstAttribute="width" secondItem="Rl5-w7-If0" secondAttribute="width" id="elG-q0-uKf"/>
+                            <constraint firstItem="RSU-oJ-niL" firstAttribute="centerY" secondItem="pkz-2c-nYS" secondAttribute="centerY" id="fDd-dM-R5N"/>
+                            <constraint firstItem="Rl5-w7-If0" firstAttribute="top" secondItem="hJg-Sk-biS" secondAttribute="top" id="gFP-h8-YIr"/>
+                            <constraint firstItem="NaK-ZY-2yb" firstAttribute="trailing" secondItem="Rl5-w7-If0" secondAttribute="trailing" id="hXl-7T-u0m"/>
                             <constraint firstItem="vxV-EK-rya" firstAttribute="centerX" secondItem="NaK-ZY-2yb" secondAttribute="centerX" id="qXY-Qi-Jp0"/>
                             <constraint firstItem="vxV-EK-rya" firstAttribute="top" secondItem="NaK-ZY-2yb" secondAttribute="top" constant="50" id="rvE-3S-8aX"/>
+                            <constraint firstItem="pkz-2c-nYS" firstAttribute="centerY" secondItem="Rl5-w7-If0" secondAttribute="centerY" id="ryk-Mi-TOs"/>
+                            <constraint firstItem="pkz-2c-nYS" firstAttribute="height" secondItem="Rl5-w7-If0" secondAttribute="height" id="sMr-Wb-jm7"/>
                             <constraint firstItem="h5J-jM-a0b" firstAttribute="width" secondItem="vxV-EK-rya" secondAttribute="width" id="uhW-Rm-mH3"/>
                             <constraint firstItem="X0e-Hi-6Kl" firstAttribute="centerX" secondItem="vxV-EK-rya" secondAttribute="centerX" id="vKn-gu-0qT"/>
                             <constraint firstItem="X0e-Hi-6Kl" firstAttribute="top" secondItem="cdq-i8-TBR" secondAttribute="bottom" constant="2" id="vYR-Ja-jR2"/>
@@ -216,6 +243,7 @@
                     </view>
                     <connections>
                         <outlet property="apartmentTextfield" destination="cdq-i8-TBR" id="rHB-Jn-t9h"/>
+                        <outlet property="backgroundImageView" destination="Rl5-w7-If0" id="90f-xT-Vqe"/>
                         <outlet property="houseNumberTextfield" destination="vxV-EK-rya" id="gOv-8d-ElL"/>
                         <outlet property="searchButton" destination="YTo-kD-4kW" id="9rz-0m-oLS"/>
                         <outlet property="streetNameTextfield" destination="h5J-jM-a0b" id="SJm-Sc-NPY"/>
@@ -248,7 +276,7 @@
         <!--Main Table View Controller-->
         <scene sceneID="zQM-SH-kLQ">
             <objects>
-                <viewController id="uSb-s2-rZu" customClass="MainTableViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainTableViewController" id="uSb-s2-rZu" customClass="MainTableViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sF6-4V-cAp"/>
                         <viewControllerLayoutGuide type="bottom" id="Iqv-K6-h85"/>
@@ -802,7 +830,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p2U-sL-hhd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="G8m-Kd-OFt"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXb-Pw-2Q1">
+                    <navigationBar key="navigationBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXb-Pw-2Q1">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
