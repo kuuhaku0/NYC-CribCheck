@@ -111,7 +111,6 @@ class MainTableViewController: UIViewController {
         cellHeights = Array(repeating: kCloseCellHeight, count: allViolations.count )
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.backgroundColor = UIColor.lightGray
         tableView.backgroundView?.contentMode = .scaleAspectFill
         boroughHiddenLabel.text = locationRequest.borough
         
