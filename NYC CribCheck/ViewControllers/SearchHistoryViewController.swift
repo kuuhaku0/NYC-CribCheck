@@ -23,6 +23,7 @@ class SearchHistoryViewControlle: MDCCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = collectionView?.backgroundColor
         styler.cellStyle = .card
 //        self.collectionView = CustomCollectionView(frame: (self.collectionView?.frame)!,
 //                                                   collectionViewLayout: (self.collectionViewLayout))

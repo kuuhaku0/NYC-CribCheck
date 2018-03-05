@@ -72,8 +72,7 @@ class HousingAPIClient {
                     } else {
                         completion(.success(violations))
                         // TODO: add image to cache and persistence model?
-                        PersistanceService.manager.addToPreviousSearches(search: locationRequest)
-                        print(PersistanceService.manager.getPreviousSearches().count)
+                        Cache.manager.add(search: locationRequest)
                     }
                 } catch {
                     completion(.failure(.networkError(rawError: error)))
