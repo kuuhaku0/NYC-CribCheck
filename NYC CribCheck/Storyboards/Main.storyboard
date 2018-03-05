@@ -36,7 +36,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hx7-sl-Wnj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qdp-Ff-1tE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -50,7 +50,7 @@
         <scene sceneID="f8Y-4D-nP5">
             <objects>
                 <tabBarController id="NDx-3m-hNi" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Zei-89-a4h">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zei-89-a4h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,11 +73,11 @@
                         <viewControllerLayoutGuide type="bottom" id="UWN-vB-lzd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9xt-bO-Eca">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-gV-IlK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoroughCell" rowHeight="155" id="JvS-GP-NfX" customClass="BoroughTableViewCell" customModule="NYC_CribCheck" customModuleProvider="target">
@@ -87,16 +87,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-PR-lGu">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-PR-lGu">
                                                     <rect key="frame" x="8" y="4" width="398" height="147"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lower-Manhattan" translatesAutoresizingMaskIntoConstraints="NO" id="HsZ-x0-6i3">
                                                             <rect key="frame" x="0.0" y="0.0" width="398" height="147"/>
                                                         </imageView>
-                                                        <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbU-DV-Qor">
-                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="147"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manhattan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBE-3B-uoZ">
                                                             <rect key="frame" x="16" y="93" width="382" height="54"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
@@ -104,18 +100,15 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="HsZ-x0-6i3" secondAttribute="trailing" id="979-E4-KcZ"/>
                                                         <constraint firstItem="HsZ-x0-6i3" firstAttribute="top" secondItem="kD6-PR-lGu" secondAttribute="top" id="JoN-Ud-WQa"/>
-                                                        <constraint firstItem="bbU-DV-Qor" firstAttribute="top" secondItem="kD6-PR-lGu" secondAttribute="top" id="Lwn-7V-VEs"/>
                                                         <constraint firstItem="YBE-3B-uoZ" firstAttribute="leading" secondItem="kD6-PR-lGu" secondAttribute="leading" constant="16" id="PwG-bV-pZ2"/>
                                                         <constraint firstItem="YBE-3B-uoZ" firstAttribute="leading" secondItem="kD6-PR-lGu" secondAttribute="leading" constant="16" id="Wdq-xu-Pyh"/>
-                                                        <constraint firstItem="bbU-DV-Qor" firstAttribute="leading" secondItem="kD6-PR-lGu" secondAttribute="leading" id="amb-kR-BHC"/>
-                                                        <constraint firstAttribute="trailing" secondItem="bbU-DV-Qor" secondAttribute="trailing" id="ep6-ji-lIM"/>
                                                         <constraint firstAttribute="bottom" secondItem="HsZ-x0-6i3" secondAttribute="bottom" id="fkI-UQ-IsY"/>
                                                         <constraint firstAttribute="bottom" secondItem="YBE-3B-uoZ" secondAttribute="bottom" id="mIs-kJ-MyA"/>
                                                         <constraint firstAttribute="trailing" secondItem="YBE-3B-uoZ" secondAttribute="trailing" id="tAG-KE-6up"/>
-                                                        <constraint firstAttribute="bottom" secondItem="bbU-DV-Qor" secondAttribute="bottom" id="vvZ-hk-wma"/>
                                                         <constraint firstItem="HsZ-x0-6i3" firstAttribute="leading" secondItem="kD6-PR-lGu" secondAttribute="leading" id="xK9-lW-9ql"/>
                                                     </constraints>
                                                 </view>
@@ -166,8 +159,8 @@
                         <viewControllerLayoutGuide type="top" id="Y5k-wG-eyi"/>
                         <viewControllerLayoutGuide type="bottom" id="rKR-WV-omf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="m2G-DG-7Wn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                    <view key="view" contentMode="scaleToFill" id="hJg-Sk-biS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxV-EK-rya" customClass="MDCTextField">
@@ -791,7 +784,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p2U-sL-hhd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="G8m-Kd-OFt"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="mXb-Pw-2Q1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXb-Pw-2Q1">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
