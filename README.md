@@ -10,7 +10,7 @@ An App serving NYC residents, check property for housing violations before makin
 * **Gloria Washington** - [Github](https://github.com/gewashington)
 
 ## GIFs
-<a href="https://gfycat.com/GrossGiftedCoypu"><img src="https://gfycat.com/GrossGiftedCoypu"/></a>
+<div class='gfyitem' data-id='GrossGiftedCoypu'></div>
 
 ### Dependencies 
 - Alamofire
