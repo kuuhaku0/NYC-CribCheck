@@ -9,6 +9,7 @@
 import UIKit
 import MaterialComponents.MaterialTextFields
 import MaterialComponents.MaterialButtons
+import SVProgressHUD
 
 class SearchFormViewController: UIViewController {
     //TODO: get borough from borough select view
@@ -22,8 +23,6 @@ class SearchFormViewController: UIViewController {
     @IBOutlet weak var zipCodeTextfield: MDCTextField!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
-    
-    
     var hnTFController: MDCTextInputControllerLegacyDefault!
     var snTFController: MDCTextInputControllerLegacyDefault!
     var aptTFController: MDCTextInputControllerLegacyDefault!
@@ -32,7 +31,6 @@ class SearchFormViewController: UIViewController {
     //    @IBOutlet weak var streetNameLabel: UILabel!
     //    @IBOutlet weak var apartmentLabel: UILabel!
     //    @IBOutlet weak var zipCodeLabel: UILabel!
-    
     
     @IBOutlet weak var searchButton:MDCRaisedButton!
     
@@ -44,6 +42,11 @@ class SearchFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        houseNumberTextfield.textColor = .white
+        streetNameTextfield.textColor = .white
+        apartmentTextfield.textColor = .white
+        zipCodeTextfield.textColor = .white
+        
         navigationItem.title = borough
         houseNumberTextfield.delegate = self
         houseNumberTextfield.tag = 1
@@ -76,7 +79,6 @@ class SearchFormViewController: UIViewController {
         aptTFController.inlinePlaceholderColor = UIColor.white
         zcTFController.inlinePlaceholderColor = UIColor.white
         
-        
         hnTFController.setErrorText("i.e. 1234", errorAccessibilityValue: nil)
         snTFController.setErrorText("i.e. East 48 Street", errorAccessibilityValue: nil)
         aptTFController.setErrorText("*optional i.e. 2R ", errorAccessibilityValue: nil)
@@ -102,7 +104,6 @@ class SearchFormViewController: UIViewController {
         zipCodeTextfield.autocapitalizationType = .none
         
         backgroundImageView.image = bgImage
-        
     }
     
     func showAlert(title: String, message: String) {
@@ -147,17 +148,17 @@ class SearchFormViewController: UIViewController {
         // returns [violations]
         //        case let .failure(let failure):
         //        returns an error
-        
-        
         HousingAPIClient.manager.getViolations(usingLocation: locationRequest) { (result) in
             switch result {
                 
             case .success(let onlineViolations):
 //                           PersistanceService.manager.addToPreviousSearches(search: location)
                 self.violationsArr = onlineViolations
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
             case .failure(let error):
                 print(error)
+                SVProgressHUD.dismiss()
                 self.showAlert(title: "Error", message: "No results found, please check address")
             }
         }
@@ -173,6 +174,7 @@ class SearchFormViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
+        SVProgressHUD.show()
         search()
     }
     
@@ -223,12 +225,8 @@ extension SearchFormViewController: UITextFieldDelegate {
             search()
         default: return true
         }
-        
-        
         return true
     }
-    
-    
 }
 
 

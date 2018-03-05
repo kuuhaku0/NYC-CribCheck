@@ -207,10 +207,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rl5-w7-If0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rl5-w7-If0">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSU-oJ-niL">
+                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSU-oJ-niL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mK3-kv-8TY">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -218,7 +218,7 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <view alpha="0.050000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkz-2c-nYS">
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkz-2c-nYS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -297,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBo-VG-sDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="165"/>
+            <point key="canvasLocation" x="741" y="165"/>
         </scene>
         <!--Main Table View Controller-->
         <scene sceneID="zQM-SH-kLQ">
@@ -812,10 +812,14 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="CuM-Dg-Z8S"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea4-uN-WrF">
-                                <rect key="frame" x="36" y="28" width="32" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Back">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea4-uN-WrF">
+                                <rect key="frame" x="8" y="22" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="dQt-v9-R61"/>
+                                    <constraint firstAttribute="height" constant="35" id="tJy-ZF-2Ea"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="back">
                                     <color key="titleColor" red="0.97969712685824084" green="1" blue="0.97608262813203306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -828,10 +832,16 @@
                             <constraint firstItem="lrr-j0-6wQ" firstAttribute="leading" secondItem="8aL-Oe-kj5" secondAttribute="leading" id="146-vr-ud7"/>
                             <constraint firstAttribute="trailing" secondItem="lrr-j0-6wQ" secondAttribute="trailing" id="9Ev-bM-Lyi"/>
                             <constraint firstItem="Iqv-K6-h85" firstAttribute="top" secondItem="lrr-j0-6wQ" secondAttribute="bottom" id="TdE-iR-Xdd"/>
-                            <constraint firstItem="Ea4-uN-WrF" firstAttribute="top" secondItem="sF6-4V-cAp" secondAttribute="bottom" constant="8" id="VOO-d7-FCe"/>
+                            <constraint firstItem="Ea4-uN-WrF" firstAttribute="top" secondItem="sF6-4V-cAp" secondAttribute="bottom" constant="2" id="VOO-d7-FCe"/>
                             <constraint firstItem="lrr-j0-6wQ" firstAttribute="top" secondItem="8aL-Oe-kj5" secondAttribute="top" id="ZDa-WP-NUJ"/>
-                            <constraint firstItem="Ea4-uN-WrF" firstAttribute="leading" secondItem="8aL-Oe-kj5" secondAttribute="leadingMargin" constant="16" id="ftk-hP-hQZ"/>
+                            <constraint firstItem="Ea4-uN-WrF" firstAttribute="leading" secondItem="8aL-Oe-kj5" secondAttribute="leading" constant="8" id="ftk-hP-hQZ"/>
+                            <constraint firstItem="Ea4-uN-WrF" firstAttribute="leading" secondItem="8aL-Oe-kj5" secondAttribute="leading" constant="8" id="yRU-2L-Gpg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yRU-2L-Gpg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="address" destination="8xA-s7-AFp" id="yFA-JC-tpD"/>
@@ -867,11 +877,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waU-dN-7qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786.95652173913049" y="164.67391304347828"/>
+            <point key="canvasLocation" x="-806" y="165"/>
         </scene>
     </scenes>
     <resources>
         <image name="Lower-Manhattan" width="1200" height="800"/>
+        <image name="back" width="100" height="100"/>
         <image name="dots" width="14" height="84"/>
     </resources>
 </document>
