@@ -73,11 +73,13 @@ class DemoCell: FoldingCell {
             bar.backgroundColor = UIColor.red
             topContaier.backgroundColor = UIColor.red
             statusLabel.text = violation.violationStatus.uppercased()
+            statusLabelUnfolded.text = "STATUS: \(violation.violationStatus.uppercased())"
         case "Close":
             leftView.backgroundColor = UIColor(displayP3Red: 12 / 255, green: 150 / 255, blue: 67 / 255, alpha: 1)
             bar.backgroundColor = UIColor(displayP3Red: 12 / 255, green: 150 / 255, blue: 67 / 255, alpha: 1)
             topContaier.backgroundColor = UIColor(displayP3Red: 12 / 255, green: 150 / 255, blue: 67 / 255, alpha: 1)
             statusLabel.text = violation.violationStatus.uppercased() + "D"
+            statusLabelUnfolded.text = "STATUS: \(violation.violationStatus.uppercased() + "D")"
         default:
             //WHITE
             leftView.backgroundColor = UIColor.white

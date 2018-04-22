@@ -22,6 +22,7 @@ class MainTableViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: // All comments
@@ -114,7 +115,10 @@ class MainTableViewController: UIViewController {
         tableView.backgroundView?.contentMode = .scaleAspectFill
         boroughHiddenLabel.text = locationRequest.borough
         
+        address.textAlignment = .center
         address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"
+        
+        tableView.tableHeaderView?.backgroundColor = .darkGray
     }
 
     private func setupUI() {
