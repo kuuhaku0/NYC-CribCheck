@@ -66,5 +66,4 @@ class PersistenceService {
     
     // just loads things into manager
     public func configure(){}
-    
 }

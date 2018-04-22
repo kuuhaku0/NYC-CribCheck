@@ -20,6 +20,9 @@ struct DateFormatHelper {
         dateFormatter.dateFormat = inputFormat
         let date1 = dateFormatter.date(from: date)
         dateFormatter.dateFormat = outputFormat
+        if date == "Present" {
+            return ""
+        }
         return dateFormatter.string(from: date1!)
     }
 }

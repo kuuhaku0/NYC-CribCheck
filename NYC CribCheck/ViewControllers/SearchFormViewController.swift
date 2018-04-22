@@ -35,6 +35,11 @@ class SearchFormViewController: UIViewController {
         streetNameTextfield.textColor = .white
         apartmentTextfield.textColor = .white
         zipCodeTextfield.textColor = .white
+        houseNumberTextfield.font = UIFont.systemFont(ofSize: 20)
+        streetNameTextfield.font = UIFont.systemFont(ofSize: 20)
+        apartmentTextfield.font = UIFont.systemFont(ofSize: 20)
+        zipCodeTextfield.font = UIFont.systemFont(ofSize: 20)
+        
         
         navigationItem.title = borough
         houseNumberTextfield.delegate = self
@@ -67,6 +72,12 @@ class SearchFormViewController: UIViewController {
         snTFController.inlinePlaceholderColor = UIColor.white
         aptTFController.inlinePlaceholderColor = UIColor.white
         zcTFController.inlinePlaceholderColor = UIColor.white
+        hnTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        snTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        aptTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        zcTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        
+        
         
         hnTFController.setErrorText("i.e. 1234", errorAccessibilityValue: nil)
         snTFController.setErrorText("i.e. East 48 Street", errorAccessibilityValue: nil)
@@ -85,7 +96,7 @@ class SearchFormViewController: UIViewController {
         houseNumberTextfield.autocorrectionType = .no
         houseNumberTextfield.autocapitalizationType = .none
         streetNameTextfield.autocorrectionType = .no
-        streetNameTextfield.autocapitalizationType = .none
+        streetNameTextfield.autocapitalizationType = .words
         apartmentTextfield.autocorrectionType = .no
         apartmentTextfield.autocapitalizationType = .none
         zipCodeTextfield.autocorrectionType = .no
