@@ -24,15 +24,14 @@ class BoroughSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.present(vc, animated: false, completion: nil)
     }
+    
     var vc = TutorialPageViewController.storyboardInstance()
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       // if !UserDefaults.standard.bool(forKey: "dismissedTutorial") {
-      //  }
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !UserDefaults.standard.bool(forKey: "dismissedTutorial") {
+            tabBarController?.present(vc, animated: false, completion: nil)
+        }
     }
 }
 
