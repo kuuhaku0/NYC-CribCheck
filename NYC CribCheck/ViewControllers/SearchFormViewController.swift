@@ -31,6 +31,10 @@ class SearchFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerForKeyboardNotifications()
+        addDismisKeyboardOnTap()
+        
         houseNumberTextfield.textColor = .white
         streetNameTextfield.textColor = .white
         apartmentTextfield.textColor = .white
@@ -166,8 +170,57 @@ class SearchFormViewController: UIViewController {
         search()
     }
     
+    // MARK: - Keyboard handling
+    
+    @IBOutlet weak var formScrollView: UIScrollView!
+    var activeTextfield: UITextField?
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: Notification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWasShown(_ aNotification: NSNotification) {
+        guard let info = aNotification.userInfo,
+            let activeTextfield = self.activeTextfield else { return }
+        let kbSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        let contentInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: kbSize.height, right: 0)
+        
+        self.formScrollView.contentInset = contentInsets
+        self.formScrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect = self.view.frame
+        aRect.size.height -= kbSize.height
+        if (!aRect.contains(activeTextfield.frame.origin)) {
+            
+            let scrollPoint = CGPoint(x: 0.0, y: activeTextfield.frame.origin.y - kbSize.height)
+            self.formScrollView.setContentOffset(scrollPoint, animated: true)
+        }
+    }
+    
+    @objc func keyboardWillBeHidden(_ aNotification: NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        self.formScrollView.contentInset = contentInsets
+        self.formScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    
+    // MARK: Dismiss keyboard with tap
+    
+    func addDismisKeyboardOnTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.formScrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.activeTextfield?.resignFirstResponder()
+    }
 }
 extension SearchFormViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextfield = textField
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var fieldsFilledOut: Bool
         switch textField {
@@ -212,6 +265,51 @@ extension SearchFormViewController: UITextFieldDelegate {
         return true
     }
 }
+
+
+//// Call this method somewhere in your view controller setup code.
+//- (void)registerForKeyboardNotifications
+//    {
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//            selector:@selector(keyboardWasShown:)
+//            name:UIKeyboardDidShowNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//            selector:@selector(keyboardWillBeHidden:)
+//            name:UIKeyboardWillHideNotification object:nil];
+//    }
+//
+//
+//
+//
+//    // Called when the UIKeyboardDidShowNotification is sent.
+//    - (void)keyboardWasShown:(NSNotification*)aNotification
+//{
+//    NSDictionary* info = [aNotification userInfo];
+//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+//    scrollView.contentInset = contentInsets;
+//    scrollView.scrollIndicatorInsets = contentInsets;
+//
+//    // If active text field is hidden by keyboard, scroll it so it's visible
+//    // Your application might not need or want this behavior.
+//    CGRect aRect = self.view.frame;
+//    aRect.size.height -= kbSize.height;
+//    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+//        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height);
+//        [scrollView setContentOffset:scrollPoint animated:YES];
+//    }
+//    }
+//
+//
+//    // Called when the UIKeyboardWillHideNotification is sent
+//    - (void)keyboardWillBeHidden:(NSNotification*)aNotification
+//{
+//    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+//    scrollView.contentInset = contentInsets;
+//    scrollView.scrollIndicatorInsets = contentInsets;
+//}
+//
+
 
 
 

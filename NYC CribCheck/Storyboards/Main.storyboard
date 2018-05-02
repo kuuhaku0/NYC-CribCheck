@@ -157,7 +157,7 @@
                                             <outlet property="boroughLabel" destination="YBE-3B-uoZ" id="bIC-Fo-aLQ"/>
                                             <outlet property="containerView" destination="kD6-PR-lGu" id="O8a-MJ-IVE"/>
                                             <outlet property="opaqueView" destination="XNW-JQ-RDl" id="cwm-fN-t3x"/>
-                                            <segue destination="Uod-5f-fO5" kind="show" id="hMK-Xo-Dtu"/>
+                                            <segue destination="b09-GR-K0X" kind="show" id="9IZ-1V-7Op"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -187,7 +187,7 @@
         <!--Search Form View Controller-->
         <scene sceneID="QdF-3f-PDT">
             <objects>
-                <viewController storyboardIdentifier="FormViewController" id="Uod-5f-fO5" customClass="SearchFormViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FormViewController1" id="Uod-5f-fO5" customClass="SearchFormViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y5k-wG-eyi"/>
                         <viewControllerLayoutGuide type="bottom" id="rKR-WV-omf"/>
@@ -212,31 +212,31 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxV-EK-rya" customClass="MDCTextField">
-                                <rect key="frame" x="51.666666666666657" y="114" width="310.66666666666674" height="30"/>
+                                <rect key="frame" x="51.666666666666657" y="70" width="310.66666666666674" height="30"/>
                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5J-jM-a0b" customClass="MDCTextField">
-                                <rect key="frame" x="51.666666666666657" y="146" width="310.66666666666674" height="30"/>
+                                <rect key="frame" x="51.666666666666657" y="102" width="310.66666666666674" height="30"/>
                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdq-i8-TBR" customClass="MDCTextField">
-                                <rect key="frame" x="51.666666666666657" y="178" width="310.66666666666674" height="30"/>
+                                <rect key="frame" x="51.666666666666657" y="134" width="310.66666666666674" height="30"/>
                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0e-Hi-6Kl" customClass="MDCTextField">
-                                <rect key="frame" x="51.666666666666657" y="210" width="310.66666666666674" height="30"/>
+                                <rect key="frame" x="51.666666666666657" y="166" width="310.66666666666674" height="30"/>
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTo-kD-4kW" customClass="MDCRaisedButton">
-                                <rect key="frame" x="183" y="254" width="48" height="30"/>
+                                <rect key="frame" x="183" y="210" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="Uod-5f-fO5" eventType="touchUpInside" id="N3b-0w-3z2"/>
@@ -281,7 +281,7 @@
                         <outlet property="searchButton" destination="YTo-kD-4kW" id="9rz-0m-oLS"/>
                         <outlet property="streetNameTextfield" destination="h5J-jM-a0b" id="SJm-Sc-NPY"/>
                         <outlet property="zipCodeTextfield" destination="X0e-Hi-6Kl" id="twq-Tq-2cH"/>
-                        <segue destination="uSb-s2-rZu" kind="presentation" identifier="ViolationsSegue" id="pJH-4C-GSQ"/>
+                        <segue destination="uSb-s2-rZu" kind="presentation" identifier="ViolationsSegue1" id="pJH-4C-GSQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBo-VG-sDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -883,10 +883,124 @@
             </objects>
             <point key="canvasLocation" x="-811.59420289855075" y="877.98913043478262"/>
         </scene>
+        <!--Search Form View Controller-->
+        <scene sceneID="pt9-Ho-QaU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0u-X2-JMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="FormViewController" id="b09-GR-K0X" customClass="SearchFormViewController" customModule="NYC_CribCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pjZ-eJ-XD2"/>
+                        <viewControllerLayoutGuide type="bottom" id="ODA-6Z-BqH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vpk-Xi-6vd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JHc-B3-0jv">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g8P-KY-1R0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="j2j-BU-3i9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQ8-QH-LZH">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S0A-XZ-N6D" customClass="MDCTextField">
+                                        <rect key="frame" x="0.0" y="50" width="310.66666666666669" height="30"/>
+                                        <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-Wi-6OY" customClass="MDCTextField">
+                                        <rect key="frame" x="0.0" y="146" width="310.66666666666669" height="30"/>
+                                        <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-fJ-bGz" customClass="MDCTextField">
+                                        <rect key="frame" x="0.0" y="82" width="310.66666666666669" height="30"/>
+                                        <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXo-bW-oxB" customClass="MDCTextField">
+                                        <rect key="frame" x="0.33333333333334281" y="114" width="310.66666666666663" height="30"/>
+                                        <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEF-y7-I7j" customClass="MDCRaisedButton">
+                                        <rect key="frame" x="131.33333333333334" y="190" width="48" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="Uod-5f-fO5" eventType="touchUpInside" id="Gjg-Iy-JeO"/>
+                                            <action selector="submitButtonPressed:" destination="b09-GR-K0X" eventType="touchUpInside" id="KQw-X4-PHH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="IEF-y7-I7j" secondAttribute="bottom" constant="100" id="4Yg-8G-q3n"/>
+                                    <constraint firstItem="s6v-Wi-6OY" firstAttribute="top" secondItem="AXo-bW-oxB" secondAttribute="bottom" constant="2" id="4kv-DI-Wey"/>
+                                    <constraint firstItem="rPg-fJ-bGz" firstAttribute="centerX" secondItem="S0A-XZ-N6D" secondAttribute="centerX" id="7kj-aW-hHA"/>
+                                    <constraint firstItem="S0A-XZ-N6D" firstAttribute="leading" secondItem="wQ8-QH-LZH" secondAttribute="leading" id="8Ri-3r-9EQ"/>
+                                    <constraint firstItem="AXo-bW-oxB" firstAttribute="centerX" secondItem="rPg-fJ-bGz" secondAttribute="centerX" id="Cgk-8t-ezt"/>
+                                    <constraint firstItem="AXo-bW-oxB" firstAttribute="width" secondItem="rPg-fJ-bGz" secondAttribute="width" id="DBs-l1-gMy"/>
+                                    <constraint firstItem="S0A-XZ-N6D" firstAttribute="trailing" secondItem="wQ8-QH-LZH" secondAttribute="trailing" id="LC2-kf-5Gk"/>
+                                    <constraint firstItem="IEF-y7-I7j" firstAttribute="centerX" secondItem="s6v-Wi-6OY" secondAttribute="centerX" id="Nhi-r0-7x3"/>
+                                    <constraint firstItem="S0A-XZ-N6D" firstAttribute="top" secondItem="wQ8-QH-LZH" secondAttribute="top" constant="50" id="SDf-hR-KpD"/>
+                                    <constraint firstItem="rPg-fJ-bGz" firstAttribute="top" secondItem="S0A-XZ-N6D" secondAttribute="bottom" constant="2" id="czL-1l-8Ty"/>
+                                    <constraint firstItem="s6v-Wi-6OY" firstAttribute="centerX" secondItem="AXo-bW-oxB" secondAttribute="centerX" id="ePy-22-Liq"/>
+                                    <constraint firstItem="IEF-y7-I7j" firstAttribute="top" secondItem="s6v-Wi-6OY" secondAttribute="bottom" constant="14" id="lMx-WC-waD"/>
+                                    <constraint firstItem="AXo-bW-oxB" firstAttribute="top" secondItem="rPg-fJ-bGz" secondAttribute="bottom" constant="2" id="lYG-5S-Q8g"/>
+                                    <constraint firstItem="s6v-Wi-6OY" firstAttribute="width" secondItem="AXo-bW-oxB" secondAttribute="width" id="uEL-5g-ZTf"/>
+                                    <constraint firstItem="rPg-fJ-bGz" firstAttribute="width" secondItem="S0A-XZ-N6D" secondAttribute="width" id="urh-jg-n6v"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wQ8-QH-LZH" firstAttribute="top" secondItem="pjZ-eJ-XD2" secondAttribute="bottom" id="3qT-HT-q9J"/>
+                            <constraint firstItem="wQ8-QH-LZH" firstAttribute="trailing" secondItem="BqA-Nh-kqZ" secondAttribute="trailing" id="7p5-im-jiq"/>
+                            <constraint firstItem="wQ8-QH-LZH" firstAttribute="leading" secondItem="BqA-Nh-kqZ" secondAttribute="leading" id="Iq1-dQ-94U"/>
+                            <constraint firstItem="ODA-6Z-BqH" firstAttribute="top" secondItem="wQ8-QH-LZH" secondAttribute="bottom" id="QdQ-5A-dvx"/>
+                            <constraint firstItem="JHc-B3-0jv" firstAttribute="top" secondItem="pjZ-eJ-XD2" secondAttribute="bottom" id="SVr-td-JUZ"/>
+                            <constraint firstItem="BqA-Nh-kqZ" firstAttribute="trailing" secondItem="JHc-B3-0jv" secondAttribute="trailing" id="Tan-Mh-XYE"/>
+                            <constraint firstItem="S0A-XZ-N6D" firstAttribute="width" secondItem="JHc-B3-0jv" secondAttribute="width" multiplier="0.75" id="dmt-In-dCe"/>
+                            <constraint firstItem="S0A-XZ-N6D" firstAttribute="centerX" secondItem="JHc-B3-0jv" secondAttribute="centerX" id="ffr-O1-kwT"/>
+                            <constraint firstItem="S0A-XZ-N6D" firstAttribute="centerX" secondItem="BqA-Nh-kqZ" secondAttribute="centerX" id="h2K-1a-vi0"/>
+                            <constraint firstItem="ODA-6Z-BqH" firstAttribute="top" secondItem="JHc-B3-0jv" secondAttribute="bottom" id="sqJ-cZ-vLp"/>
+                            <constraint firstItem="JHc-B3-0jv" firstAttribute="leading" secondItem="BqA-Nh-kqZ" secondAttribute="leading" id="wku-zW-Z7F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BqA-Nh-kqZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="apartmentTextfield" destination="AXo-bW-oxB" id="FRW-tv-CEX"/>
+                        <outlet property="backgroundImageView" destination="JHc-B3-0jv" id="kib-6b-1qn"/>
+                        <outlet property="formScrollView" destination="wQ8-QH-LZH" id="eEy-Hn-TrY"/>
+                        <outlet property="houseNumberTextfield" destination="S0A-XZ-N6D" id="Moc-M2-aFQ"/>
+                        <outlet property="searchButton" destination="IEF-y7-I7j" id="XZq-L9-jLP"/>
+                        <outlet property="streetNameTextfield" destination="rPg-fJ-bGz" id="4Dm-5F-rcm"/>
+                        <outlet property="zipCodeTextfield" destination="s6v-Wi-6OY" id="et4-t3-dZi"/>
+                        <segue destination="uSb-s2-rZu" kind="presentation" identifier="ViolationsSegue" id="j5E-QN-tWZ"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1514" y="165"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Lower-Manhattan" width="1200" height="800"/>
         <image name="back" width="100" height="100"/>
         <image name="dots" width="14" height="84"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="j5E-QN-tWZ"/>
+    </inferredMetricsTieBreakers>
 </document>
