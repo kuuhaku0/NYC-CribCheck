@@ -24,14 +24,14 @@ class BoroughSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.present(vc, animated: false, completion: nil)
     }
     var vc = TutorialPageViewController.storyboardInstance()
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !UserDefaults.standard.bool(forKey: "dismissedTutorial") {
-            tabBarController?.present(vc, animated: false, completion: nil)
-        }
+       // if !UserDefaults.standard.bool(forKey: "dismissedTutorial") {
+      //  }
         
     }
 }
@@ -54,11 +54,13 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        var cellTransform = CATransform3DIdentity
-        cellTransform = CATransform3DTranslate(cellTransform, 10, 10, 10)
-        cell?.imageView?.layer.transform = cellTransform
-        
+        let cell = tableView.cellForRow(at: indexPath) as! BoroughTableViewCell
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 12, options: .curveLinear, animations: {
+            cell.layoutIfNeeded()
+        }, completion: nil)
+//        UIView.animate(withDuration: 0.5, delay: 0, options: [.], animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>) (withDuration: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 12, options: .curveLinear, animations: {
+//            cell.layoutIfNeeded()
+//        }, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

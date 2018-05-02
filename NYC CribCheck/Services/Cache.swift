@@ -51,6 +51,10 @@ class Cache {
     public func getSearches() -> [LocationRequest] {
         return searches
     }
+    
+    public func deleteSearches() {
+        self.searches = []
+    }
     // will load previous searches into cache
     public func configureSearches() {
         searches = PersistenceService.manager.getPreviousSearches()

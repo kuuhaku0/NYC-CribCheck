@@ -23,7 +23,6 @@ class DemoCell: FoldingCell {
     @IBOutlet weak var violationID: UILabel!
     @IBOutlet weak var severityLabelUnfolded: UILabel!
     @IBOutlet weak var statusLabelUnfolded: UILabel!
-    @IBOutlet weak var boroughLabel: UIButton!
     @IBOutlet weak var DescriptionLabelUnfolded: UILabel!
     @IBOutlet weak var insectionDate: UILabel!
     @IBOutlet weak var issueDate: UILabel!
@@ -66,18 +65,19 @@ class DemoCell: FoldingCell {
                                                                inputDateFormat: "yyyy-MM-dd'T'HH:mm:ss",
                                                                outputDateFormat: "MMM d, yyyy")
         
-        boroughLabel.isEnabled = false
         switch violation.violationStatus {
         case "Open":
             leftView.backgroundColor = UIColor.red
             bar.backgroundColor = UIColor.red
             topContaier.backgroundColor = UIColor.red
             statusLabel.text = violation.violationStatus.uppercased()
+            statusLabelUnfolded.text = "STATUS: \(violation.violationStatus.uppercased())"
         case "Close":
             leftView.backgroundColor = UIColor(displayP3Red: 12 / 255, green: 150 / 255, blue: 67 / 255, alpha: 1)
             bar.backgroundColor = UIColor(displayP3Red: 12 / 255, green: 150 / 255, blue: 67 / 255, alpha: 1)
             topContaier.backgroundColor = UIColor(displayP3Red: 12 / 255, green: 150 / 255, blue: 67 / 255, alpha: 1)
             statusLabel.text = violation.violationStatus.uppercased() + "D"
+            statusLabelUnfolded.text = "STATUS: \(violation.violationStatus.uppercased() + "D")"
         default:
             //WHITE
             leftView.backgroundColor = UIColor.white
@@ -87,7 +87,6 @@ class DemoCell: FoldingCell {
         violationID.text = violation.violationID
         DescriptionLabel.text = violation.description
         DescriptionLabelUnfolded.text = violation.description
-        boroughLabel.setTitle(borough, for: .normal)
         severityClassLabel.text = violation.`class`
         severityLabelUnfolded.text = "Severity: \(violation.`class`)".uppercased()
         insectionDate.text = inspectionDate

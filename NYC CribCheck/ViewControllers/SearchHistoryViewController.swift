@@ -21,8 +21,14 @@ class SearchHistoryViewControlle: MDCCollectionViewController {
     }
     var currentViolationArr = [Violation]()
     
+    lazy var clearHistoryButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem(title: "Clear History", style: .plain, target: self, action: #selector(clearHistoryFromPersistance))
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = clearHistoryButton
         self.view.backgroundColor = collectionView?.backgroundColor
         styler.cellStyle = .card
         self.collectionView?.register(MDCCollectionViewTextCell.self,
@@ -38,6 +44,14 @@ class SearchHistoryViewControlle: MDCCollectionViewController {
             self.collectionView?.isHidden = false
         }
     }
+    
+    @objc private func clearHistoryFromPersistance() {
+        self.searchHistory = []
+        self.currentViolationArr = []
+        Cache.manager.deleteSearches()
+        PersistenceService.manager.delete()
+    }
+    
     private func showAlert(title: String, message: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

@@ -56,6 +56,10 @@ class PersistenceService {
         }
     }
     
+    public func delete() {
+        self.locationRequests = []
+    }
+    
     private func documentDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
@@ -66,5 +70,4 @@ class PersistenceService {
     
     // just loads things into manager
     public func configure(){}
-    
 }

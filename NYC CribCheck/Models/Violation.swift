@@ -76,5 +76,4 @@ struct Violation: Codable {
         case latitude = "latitude"
         case longitude = "longitude"
     }
-    
 }
