@@ -59,6 +59,7 @@ class StreetImageAPIClient {
             } else if let data = response.data {
                 if let image = UIImage.init(data: data) {
                     completion(.success(image))
+                    print(urlStr)
                     Cache.manager.add(image: image, withUrlStr: urlStr)
                 } else {
                     completion(.failure(.badData))
