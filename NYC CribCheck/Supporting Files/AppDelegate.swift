@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PersistenceService.manager.loadData()
         Cache.manager.configureSearches()
         // Override point for customization after application launch.
-        Thread.sleep(forTimeInterval: 1.3)
         return true
     }
 
