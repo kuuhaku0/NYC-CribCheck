@@ -5,7 +5,6 @@ import UIKit
 import SnapKit
 import Material
 
-// FOR TYLER'S USE ONLY 
 
 class MainTableViewController: UIViewController {
     
@@ -23,6 +22,7 @@ class MainTableViewController: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: // All comments
@@ -43,13 +43,11 @@ class MainTableViewController: UIViewController {
         let biv = UIImageView()
         biv.alpha = 0.0
         biv.contentMode = .scaleAspectFill
-        biv.image = #imageLiteral(resourceName: "Lower-Manhattan").blur(radius: 10, tintColor: UIColor.clear, saturationDeltaFactor: 1)
         return biv
     }()
     
     private lazy var headerImageView: UIImageView = {
         let hiv = UIImageView()
-        hiv.image = #imageLiteral(resourceName: "Lower-Manhattan")
         hiv.contentMode = .scaleAspectFill
         return hiv
     }()
@@ -65,7 +63,6 @@ class MainTableViewController: UIViewController {
     var allViolations = [Violation]() {
         didSet {
             tableView?.reloadData()
-            print("ALL VIOLATIONS: \(allViolations)")
         }
     }
 
@@ -88,12 +85,6 @@ class MainTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        let btn = UIButton(frame: CGRect(x: 4, y: 20, width: 44, height: 44))
-        //        btn.setImage(#imageLiteral(resourceName: "Menu"), for: .normal)
-        //        btn.tintColor = UIColor.white
-        
-        // ADDS BUTTON TO ALL VIEWS
-        //        UIApplication.shared.keyWindow?.addSubview(btn)
 
         setup()
         setupUI()
@@ -121,14 +112,13 @@ class MainTableViewController: UIViewController {
         cellHeights = Array(repeating: kCloseCellHeight, count: allViolations.count )
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-        //UIColor(displayP3Red: 130 / 255, green: 118 / 255, blue: 179 / 255, alpha: 1)
         tableView.backgroundView?.contentMode = .scaleAspectFill
-
-//        dump(locationRequest)
         boroughHiddenLabel.text = locationRequest.borough
         
+        address.textAlignment = .center
         address.text = "\(locationRequest.houseNumber.capitalized) \(locationRequest.streetName.capitalized), \(locationRequest.borough.capitalized), NY \(locationRequest.zipCode)"
+        
+        tableView.tableHeaderView?.backgroundColor = .darkGray
     }
 
     private func setupUI() {
@@ -175,12 +165,10 @@ extension MainTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! DemoCell
-        let violation = violationsArr[indexPath.row]
+        let violation = violationsArr.reversed()[indexPath.row]
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
-        
-        dump(violation)
         cell.configCell(with: violation, borough: locationRequest.borough)
         return cell
     }

@@ -9,9 +9,9 @@
 import UIKit
 import MaterialComponents.MaterialTextFields
 import MaterialComponents.MaterialButtons
+import SVProgressHUD
 
 class SearchFormViewController: UIViewController {
-    //TODO: get borough from borough select view
     var borough = ""
     var violationsArr = [Violation]()
     var bgImage: UIImage!
@@ -22,28 +22,29 @@ class SearchFormViewController: UIViewController {
     @IBOutlet weak var zipCodeTextfield: MDCTextField!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
-    
-    
     var hnTFController: MDCTextInputControllerLegacyDefault!
     var snTFController: MDCTextInputControllerLegacyDefault!
     var aptTFController: MDCTextInputControllerLegacyDefault!
     var zcTFController: MDCTextInputControllerLegacyDefault!
-    //    @IBOutlet weak var houseNumberLabel: UILabel!
-    //    @IBOutlet weak var streetNameLabel: UILabel!
-    //    @IBOutlet weak var apartmentLabel: UILabel!
-    //    @IBOutlet weak var zipCodeLabel: UILabel!
-    
     
     @IBOutlet weak var searchButton:MDCRaisedButton!
     
-    public static func storyboardInstance() -> SearchFormViewController {
-        let storyboard = UIStoryboard(name: "SearchForm", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SearchFormViewController") as! SearchFormViewController
-        return vc
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerForKeyboardNotifications()
+        addDismisKeyboardOnTap()
+        
+        houseNumberTextfield.textColor = .white
+        streetNameTextfield.textColor = .white
+        apartmentTextfield.textColor = .white
+        zipCodeTextfield.textColor = .white
+        houseNumberTextfield.font = UIFont.systemFont(ofSize: 20)
+        streetNameTextfield.font = UIFont.systemFont(ofSize: 20)
+        apartmentTextfield.font = UIFont.systemFont(ofSize: 20)
+        zipCodeTextfield.font = UIFont.systemFont(ofSize: 20)
+        
+        
         navigationItem.title = borough
         houseNumberTextfield.delegate = self
         houseNumberTextfield.tag = 1
@@ -75,6 +76,11 @@ class SearchFormViewController: UIViewController {
         snTFController.inlinePlaceholderColor = UIColor.white
         aptTFController.inlinePlaceholderColor = UIColor.white
         zcTFController.inlinePlaceholderColor = UIColor.white
+        hnTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        snTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        aptTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        zcTFController.inlinePlaceholderFont = UIFont.systemFont(ofSize: 20)
+        
         
         
         hnTFController.setErrorText("i.e. 1234", errorAccessibilityValue: nil)
@@ -88,21 +94,19 @@ class SearchFormViewController: UIViewController {
         zcTFController.isFloatingEnabled = true
         
         searchButton.isEnabled = false
-//        searchButton.setElevation(.none, for: .normal)
         searchButton.setBackgroundColor(UIColor.white)
         searchButton.setTitleColor(UIColor.black, for: .normal)
-//        searchButton
+        
         houseNumberTextfield.autocorrectionType = .no
         houseNumberTextfield.autocapitalizationType = .none
         streetNameTextfield.autocorrectionType = .no
-        streetNameTextfield.autocapitalizationType = .none
+        streetNameTextfield.autocapitalizationType = .words
         apartmentTextfield.autocorrectionType = .no
         apartmentTextfield.autocapitalizationType = .none
         zipCodeTextfield.autocorrectionType = .no
         zipCodeTextfield.autocapitalizationType = .none
         
         backgroundImageView.image = bgImage
-        
     }
     
     func showAlert(title: String, message: String) {
@@ -117,7 +121,6 @@ class SearchFormViewController: UIViewController {
         guard searchButton.isEnabled else {
             return
         }
-//        var apartment = apartmentTextfield.text?.uppercased()
         guard let houseNumber = houseNumberTextfield.text else {
             showAlert(title: "Missing Input", message: "All Fields must be filled in")
             return
@@ -138,26 +141,16 @@ class SearchFormViewController: UIViewController {
         }
         
         locationRequest = LocationRequest(borough: borough, houseNumber: houseNumber, streetName: streetName, apartment: apartment, zipCode: zipCode)
-        //TODO: api call with the above params, completion handler contains perform segue
-        //completion should populate violationsArr
-        //violationsArr = [Violation]()
-        //switch on result if failure error
-        //        switch result {
-        //        case .success(let success):
-        // returns [violations]
-        //        case let .failure(let failure):
-        //        returns an error
-        
-        
         HousingAPIClient.manager.getViolations(usingLocation: locationRequest) { (result) in
             switch result {
                 
             case .success(let onlineViolations):
-//                           PersistanceService.manager.addToPreviousSearches(search: location)
                 self.violationsArr = onlineViolations
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "ViolationsSegue", sender: self)
             case .failure(let error):
                 print(error)
+                SVProgressHUD.dismiss()
                 self.showAlert(title: "Error", message: "No results found, please check address")
             }
         }
@@ -173,17 +166,63 @@ class SearchFormViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
+        SVProgressHUD.show()
         search()
     }
     
+    // MARK: - Keyboard handling
+    
+    @IBOutlet weak var formScrollView: UIScrollView!
+    var activeTextfield: UITextField?
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: Notification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWasShown(_ aNotification: NSNotification) {
+        guard let info = aNotification.userInfo,
+            let activeTextfield = self.activeTextfield else { return }
+        let kbSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        let contentInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: kbSize.height, right: 0)
+        
+        self.formScrollView.contentInset = contentInsets
+        self.formScrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect = self.view.frame
+        aRect.size.height -= kbSize.height
+        if (!aRect.contains(activeTextfield.frame.origin)) {
+            
+            let scrollPoint = CGPoint(x: 0.0, y: activeTextfield.frame.origin.y - kbSize.height)
+            self.formScrollView.setContentOffset(scrollPoint, animated: true)
+        }
+    }
+    
+    @objc func keyboardWillBeHidden(_ aNotification: NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        self.formScrollView.contentInset = contentInsets
+        self.formScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    
+    // MARK: Dismiss keyboard with tap
+    
+    func addDismisKeyboardOnTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.formScrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.activeTextfield?.resignFirstResponder()
+    }
 }
 extension SearchFormViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextfield = textField
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var fieldsFilledOut: Bool
-//        let fieldsFilledOut = !(houseNumberTextfield.text!.isEmpty ||
-//                                streetNameTextfield.text!.isEmpty ||
-//                                 zipCodeTextfield.text!.isEmpty)
-//        searchButton.isEnabled = fieldsFilledOut
         switch textField {
         case houseNumberTextfield:
             let allowedCharacters = CharacterSet.init(charactersIn: "1234567890-")
@@ -223,12 +262,54 @@ extension SearchFormViewController: UITextFieldDelegate {
             search()
         default: return true
         }
-        
-        
         return true
     }
-    
-    
 }
+
+
+//// Call this method somewhere in your view controller setup code.
+//- (void)registerForKeyboardNotifications
+//    {
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//            selector:@selector(keyboardWasShown:)
+//            name:UIKeyboardDidShowNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//            selector:@selector(keyboardWillBeHidden:)
+//            name:UIKeyboardWillHideNotification object:nil];
+//    }
+//
+//
+//
+//
+//    // Called when the UIKeyboardDidShowNotification is sent.
+//    - (void)keyboardWasShown:(NSNotification*)aNotification
+//{
+//    NSDictionary* info = [aNotification userInfo];
+//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+//    scrollView.contentInset = contentInsets;
+//    scrollView.scrollIndicatorInsets = contentInsets;
+//
+//    // If active text field is hidden by keyboard, scroll it so it's visible
+//    // Your application might not need or want this behavior.
+//    CGRect aRect = self.view.frame;
+//    aRect.size.height -= kbSize.height;
+//    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+//        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbSize.height);
+//        [scrollView setContentOffset:scrollPoint animated:YES];
+//    }
+//    }
+//
+//
+//    // Called when the UIKeyboardWillHideNotification is sent
+//    - (void)keyboardWillBeHidden:(NSNotification*)aNotification
+//{
+//    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+//    scrollView.contentInset = contentInsets;
+//    scrollView.scrollIndicatorInsets = contentInsets;
+//}
+//
+
+
 
 

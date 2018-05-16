@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents
 
 class BoroughTableViewCell: UITableViewCell {
 

@@ -21,11 +21,16 @@ class SearchHistoryViewControlle: MDCCollectionViewController {
     }
     var currentViolationArr = [Violation]()
     
+    lazy var clearHistoryButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem(title: "Clear History", style: .plain, target: self, action: #selector(clearHistoryFromPersistance))
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = clearHistoryButton
+        self.view.backgroundColor = collectionView?.backgroundColor
         styler.cellStyle = .card
-//        self.collectionView = CustomCollectionView(frame: (self.collectionView?.frame)!,
-//                                                   collectionViewLayout: (self.collectionViewLayout))
         self.collectionView?.register(MDCCollectionViewTextCell.self,
                                       forCellWithReuseIdentifier: reusableIdentifierItem)
         self.searchHistory = Cache.manager.getSearches()
@@ -39,6 +44,14 @@ class SearchHistoryViewControlle: MDCCollectionViewController {
             self.collectionView?.isHidden = false
         }
     }
+    
+    @objc private func clearHistoryFromPersistance() {
+        self.searchHistory = []
+        self.currentViolationArr = []
+        Cache.manager.deleteSearches()
+        PersistenceService.manager.delete()
+    }
+    
     private func showAlert(title: String, message: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -54,9 +67,8 @@ class SearchHistoryViewControlle: MDCCollectionViewController {
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let location = searchHistory[indexPath.item]
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifierItem, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifierItem, for: indexPath)
         if let cell = cell as? MDCCollectionViewTextCell {
-//            cell.heightPreset = MDCCellDefaultTwoLineHeight
             cell.textLabel?.text = "\(location.houseNumber) \(location.streetName) \(location.apartment ?? "" )"
             cell.detailTextLabel?.text = "\(location.borough), New York \(location.zipCode)"
         }

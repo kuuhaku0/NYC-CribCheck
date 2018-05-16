@@ -19,7 +19,6 @@ struct LocationRequest: Codable, Equatable {
             lhs.zipCode == rhs.zipCode
     }
     
-    
     let borough: String
     let houseNumber: String
     let streetName: String

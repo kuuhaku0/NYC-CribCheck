@@ -18,9 +18,11 @@ struct DateFormatHelper {
         let date = date.replacingOccurrences(of: ".000", with: "")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = inputFormat
-        print(date)
         let date1 = dateFormatter.date(from: date)
         dateFormatter.dateFormat = outputFormat
+        if date == "Present" {
+            return ""
+        }
         return dateFormatter.string(from: date1!)
     }
 }

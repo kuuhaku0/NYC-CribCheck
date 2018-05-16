@@ -9,10 +9,10 @@
 import Foundation
 
 
-class PersistanceService {
+class PersistenceService {
     private init() {}
     static let searchHistoryPath = "SearchHistory.plist"
-    static let manager = PersistanceService()
+    static let manager = PersistenceService()
     
     private var locationRequests = [LocationRequest]() {
         didSet {
@@ -34,7 +34,7 @@ class PersistanceService {
     private func saveSearchedAddress() {
 
         let propertyEncoder = PropertyListEncoder()
-        let path = dataFilePath(withPathName: PersistanceService.searchHistoryPath)
+        let path = dataFilePath(withPathName: PersistenceService.searchHistoryPath)
         do {
             let encodedUsers = try propertyEncoder.encode(locationRequests)
             try encodedUsers.write(to: path, options: .atomic)
@@ -45,7 +45,7 @@ class PersistanceService {
     
     public func loadData() {
         let propertyDecoder = PropertyListDecoder()
-        let path = dataFilePath(withPathName: PersistanceService.searchHistoryPath)
+        let path = dataFilePath(withPathName: PersistenceService.searchHistoryPath)
         do {
             let data = try Data(contentsOf: path)
             let locationsRequested = try propertyDecoder.decode([LocationRequest].self, from: data)
@@ -56,15 +56,18 @@ class PersistanceService {
         }
     }
     
+    public func delete() {
+        self.locationRequests = []
+    }
+    
     private func documentDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     private func dataFilePath(withPathName path: String) -> URL {
-        return PersistanceService.manager.documentDirectory().appendingPathComponent(path)
+        return PersistenceService.manager.documentDirectory().appendingPathComponent(path)
     }
     
     // just loads things into manager
     public func configure(){}
-    
 }

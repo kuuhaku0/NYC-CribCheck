@@ -25,16 +25,13 @@ class BoroughSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     var vc = TutorialPageViewController.storyboardInstance()
-//    var vc = StillImageViewController.storyboardInstance(withName: "One")
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//       vc.view.backgroundColor = .blue
-//        let vc = TutorialPageViewController.storyboardInstance()
-//        let vc = SearchFormViewController.storyboardInstance()
-//       tabBarController?.present(vc, animated: true, completion: nil)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !UserDefaults.standard.bool(forKey: "dismissedTutorial") {
+            tabBarController?.present(vc, animated: false, completion: nil)
+        }
     }
 }
 
@@ -56,36 +53,13 @@ extension BoroughSelectViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        //        switch indexPath.row {
-        //        case 0:
-        //            currentBorough = "MANHATTAN"
-        //            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-        //            print("M")
-        //        case 1:
-        //            currentBorough = "BROOKLYN"
-        //            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-        //            print("Bk")
-        //        case 2:
-        //            currentBorough = "QUEENS"
-        //            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-        //            print("Q")
-        //        case 3:
-        //            currentBorough = "BRONX"
-        //            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-        //            print("Bx")
-        //        case 4:
-        //            currentBorough = "STATEN ISLAND"
-        //            self.performSegue(withIdentifier: "BoroughSegue", sender: self)
-        //            print("SI")
-        //        default:
-        //            print("gdf")
-        //
-        //        }
-        var cellTransform = CATransform3DIdentity
-        cellTransform = CATransform3DTranslate(cellTransform, 10, 10, 10)
-        cell?.imageView?.layer.transform = cellTransform
-        
+        let cell = tableView.cellForRow(at: indexPath) as! BoroughTableViewCell
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 12, options: .curveLinear, animations: {
+            cell.layoutIfNeeded()
+        }, completion: nil)
+//        UIView.animate(withDuration: 0.5, delay: 0, options: [.], animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>) (withDuration: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 12, options: .curveLinear, animations: {
+//            cell.layoutIfNeeded()
+//        }, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
