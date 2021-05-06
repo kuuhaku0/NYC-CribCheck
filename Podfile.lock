@@ -15,13 +15,13 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Buttons+Extensions (45.0.0):
-    - MaterialComponents/Buttons+Extensions/ColorThemer (= 45.0.0)
-    - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 45.0.0)
-  - MaterialComponents/Buttons+Extensions/ColorThemer (45.0.0):
+  - "MaterialComponents/Buttons+Extensions (45.0.0)":
+    - "MaterialComponents/Buttons+Extensions/ColorThemer (= 45.0.0)"
+    - "MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 45.0.0)"
+  - "MaterialComponents/Buttons+Extensions/ColorThemer (45.0.0)":
     - MaterialComponents/Buttons
     - MaterialComponents/Themes
-  - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (45.0.0):
+  - "MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (45.0.0)":
     - MaterialComponents/Buttons
     - MDFTextAccessibility
   - MaterialComponents/CollectionCells (45.0.0):
@@ -73,9 +73,9 @@ PODS:
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/TextFields+Extensions (45.0.0):
-    - MaterialComponents/TextFields+Extensions/ColorThemer (= 45.0.0)
-  - MaterialComponents/TextFields+Extensions/ColorThemer (45.0.0):
+  - "MaterialComponents/TextFields+Extensions (45.0.0)":
+    - "MaterialComponents/TextFields+Extensions/ColorThemer (= 45.0.0)"
+  - "MaterialComponents/TextFields+Extensions/ColorThemer (45.0.0)":
     - MaterialComponents/TextFields
     - MaterialComponents/Themes
   - MaterialComponents/Themes (45.0.0)
@@ -94,12 +94,25 @@ DEPENDENCIES:
   - FoldingCell
   - Kingfisher
   - Material
-  - MaterialComponents/Buttons+Extensions
+  - "MaterialComponents/Buttons+Extensions"
   - MaterialComponents/Collections
   - MaterialComponents/Palettes
-  - MaterialComponents/TextFields+Extensions
+  - "MaterialComponents/TextFields+Extensions"
   - SnapKit
   - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FoldingCell
+    - Kingfisher
+    - Material
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - Motion
+    - SnapKit
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -115,4 +128,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 51597ba9a420b789215e1078b4817beac623d97e
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.9.3

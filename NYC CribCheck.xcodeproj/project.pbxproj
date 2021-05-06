@@ -276,7 +276,6 @@
 				81A01633204A69FD001AB55D /* Frameworks */,
 				81A01634204A69FD001AB55D /* Resources */,
 				14B7D57DBD900B084DB33B53 /* [CP] Embed Pods Frameworks */,
-				897AB9A2C29B8DFBEA6326F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,8 +294,6 @@
 				81A01646204A69FD001AB55D /* Sources */,
 				81A01647204A69FD001AB55D /* Frameworks */,
 				81A01648204A69FD001AB55D /* Resources */,
-				4522D1F4490A8F57C82A9180 /* [CP] Embed Pods Frameworks */,
-				692E3DAA2F2A360A4A5A82B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,8 +313,6 @@
 				81A01651204A69FD001AB55D /* Sources */,
 				81A01652204A69FD001AB55D /* Frameworks */,
 				81A01653204A69FD001AB55D /* Resources */,
-				8345D73932977E124317EA60 /* [CP] Embed Pods Frameworks */,
-				17452B70EE2669D3FAFC032C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,7 +406,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -438,37 +433,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		17452B70EE2669D3FAFC032C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4522D1F4490A8F57C82A9180 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4FD32A3FF3433E3D5005FC6F /* [CP] Check Pods Manifest.lock */ = {
@@ -489,21 +454,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		692E3DAA2F2A360A4A5A82B3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckTests/Pods-NYC CribCheckTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		739B1E7CA9470C6CBD491541 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,36 +470,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8345D73932977E124317EA60 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheckUITests/Pods-NYC CribCheckUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		897AB9A2C29B8DFBEA6326F9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NYC CribCheck/Pods-NYC CribCheck-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BAA046F01CD6FBAAFC10ECDD /* [CP] Check Pods Manifest.lock */ = {
